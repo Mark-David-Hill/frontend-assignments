@@ -1,0 +1,41 @@
+.navbar {
+  border: 1px solid black;
+  background-color: rgb(211, 214, 255);
+}
+
+.navbar ul {
+  list-style-type: none;
+}
+
+.navbar li {
+  display: inline-block;
+  padding-right: 1em;
+}
+
+.title h1 {
+  text-align: center;
+}
+
+.hero img {
+  width: 100%;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+th,
+td {
+  width: 8em;
+  padding: 1em;
+}
+
+table {
+  padding: 0.5em;
+}
+
+table img {
+  width: 8em;
+}
