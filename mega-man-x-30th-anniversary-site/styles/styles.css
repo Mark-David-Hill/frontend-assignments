@@ -22,13 +22,12 @@ footer {
   margin-top: 1em;
 }
 
-.navbar ul {
-  list-style-type: none;
-}
-
 .navbar li {
   display: inline-block;
-  padding-right: 1em;
+  padding: 0.5em;
+  border: 1px black solid;
+  background-color: rgb(179, 188, 255);
+  color
 }
 
 .title h1 {
