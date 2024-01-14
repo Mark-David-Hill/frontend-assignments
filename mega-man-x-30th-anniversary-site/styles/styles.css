@@ -20,6 +20,7 @@ footer {
 
 footer {
   margin-top: 1em;
+  color: rgb(14, 0, 212);
 }
 
 .navbar li {
@@ -27,7 +28,6 @@ footer {
   padding: 0.5em;
   border: 1px black solid;
   background-color: rgb(179, 188, 255);
-  color
 }
 
 .title h1 {
@@ -58,6 +58,27 @@ table {
   margin-bottom: 1em;
 }
 
+footer table {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+footer table,
+footer td {
+  border: none;
+  box-shadow: none;
+  background-color: rgb(211, 214, 255);
+}
+footer td {
+  width: 20em;
+}
+
 table img {
   width: 8em;
+}
+
+games th,
+td {
+  width: 10em;
 }
