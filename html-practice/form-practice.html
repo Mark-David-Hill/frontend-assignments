@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Survey Form</h2>
+    <form>
+      <div id="referral-field">
+        <label for="referral">How did you hear about us?</label>
+        <select name="referral" id="referral">
+          <option value="">Choose an option</option>
+          <option value="friend">Friend</option>
+          <option value="online">Online Advertisement</option>
+          <option value="social">Social Media</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <br />
+      <div id="experience-field">
+        <label for="experience">Please rate your experience</label>
+        <input name="experience" id="poor" type="radio" value="poor" />
+        <label for="experience">Poor</label>
+        <input name="experience" id="fair" type="radio" value="fair" />
+        <label for="experience">Fair</label>
+        <input name="experience" id="good" type="radio" value="good" />
+        <label for="experience">Good</label>
+        <input
+          name="experience"
+          id="excellent"
+          type="radio"
+          value="excellent"
+        />
+        <label for="experience">Excellent</label>
+      </div>
+      <br />
+      <!-- Additional Comments (textarea for users to provide additional feedback) -->
+      <div id="interests-field">
+        <label for="interests">Select your interests</label>
+        <input
+          name="technology"
+          id="technology"
+          type="checkbox"
+          value="technology"
+        />
+        <label for="technology">Technology</label>
+        <input name="sports" id="sports" type="checkbox" value="sports" />
+        <label for="sports">Sports</label>
+        <input name="music" id="music" type="checkbox" value="music" />
+        <label for="music">Music</label>
+        <input name="travel" id="travel" type="checkbox" value="travel" />
+        <label for="travel">Travel</label>
+      </div>
+      <br />
+      <div id="comments-field">
+        <label for="comments">Comments</label>
+        <textarea name="comments" id="comments" cols="30" rows="5"></textarea>
+      </div>
+    </form>
+    <br />
+    <hr />
+    <h2>Product Order Form</h2>
+    <form>
+      <div id="product-name-field">
+        <label for="product-name">Product Name</label>
+        <input name="product-name" id="product-name" type="text" />
+      </div>
+      <br />
+      <div id="quantity-field">
+        <label for="quantity">Quantity</label>
+        <input name="quantity" id="quantity" type="number" />
+      </div>
+      <br />
+      <div id="delivery-address-field">
+        <label for="address">Delivery Address</label>
+        <textarea name="address" id="address" cols="30" rows="4"></textarea>
+      </div>
+      <br />
+      <div id="delivery-date-field">
+        <label for="delivery-date">Preferred Delivery Date</label>
+        <input name="delivery-date" id="delivery-date" type="date" />
+      </div>
+      <br />
+      <div id="gift-wrapping-field">
+        <input
+          name="gift-wrapping"
+          id="gift-wrapping"
+          type="checkbox"
+          value="gift-wrapping"
+        />
+        <label for="gift-wrapping">Gift Wrapping</label>
+      </div>
+      <br />
+      <!-- Payment Method (radio buttons with options like "Credit Card," "PayPal," "Bank Transfer") -->
+      <div id="payment-method-field">
+        <label for="payment-method">Payment Method</label>
+        <input name="payment-method" id="credit" type="radio" value="credit" />
+        <label for="payment-method">Credit Card</label>
+        <input name="payment-method" id="paypal" type="radio" value="paypal" />
+        <label for="payment-method">PayPal</label>
+        <input
+          name="payment-method"
+          id="bank-transfer"
+          type="radio"
+          value="bank-transfer"
+        />
+        <label for="payment-method">Bank Transfer</label>
+      </div>
+    </form>
+  </body>
+</html>
