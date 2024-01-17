@@ -1,3 +1,34 @@
 * {
   margin: 0;
 }
+
+@media screen and (min-width: 1200px) {
+  #sections {
+    padding-left: 3em;
+  }
+}
+@media screen and (min-width: 1300px) {
+  #sections {
+    padding-left: 6em;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #sections {
+    padding-left: 8em;
+  }
+}
+@media screen and (min-width: 1500px) {
+  #sections {
+    padding-left: 12em;
+  }
+}
+@media screen and (min-width: 1600px) {
+  #sections {
+    padding-left: 16em;
+  }
+}
+@media screen and (min-width: 1700px) {
+  #sections {
+    padding-left: 22em;
+  }
+}
