@@ -82,3 +82,11 @@ games th,
 td {
   width: 10em;
 }
+
+form {
+  margin: 2em;
+}
+
+.form-option {
+  margin: 1em;
+}

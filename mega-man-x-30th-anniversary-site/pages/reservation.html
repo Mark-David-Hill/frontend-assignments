@@ -34,19 +34,95 @@
           </ul>
         </nav>
       </div>
-      <div class="title">
-        <h1>Reservations</h1>
-      </div>
+      <h1 align="center">Reservations</h1>
       <div class="hero">
         <img src="../assets/mmx_banner.jpeg" alt="Mega Man X Site Hero Image" />
       </div>
-      <div align="center">
+      <!-- <div align="center">
         <video
           autoplay
           loop
           src="../assets/coming-soon.mp4"
           width="800px"
-        ></video>
+        ></video> -->
+      </div>
+      <div id="reservation-form" align="center">
+        <h2>Coaching Reservation Form</h2>
+        <p>Please fill out the following form to reserve a date for receiving a coaching on how to level-up your skills playing Mega Man X.</p>
+        <form action="https://httpbin.org/post" method="post">
+          <div id="first-name-field" class="form-option">
+            <label for="first-name">First Name</label>
+            <input id="first-name" name="first-name" value="" type="text" autocomplete="given-name" required/>
+          </div>
+          <div class="last-name-field" class="form-option">
+            <label for="last-name">Last Name</label>
+            <input id="last-name" name="last-name" value="" type="text" autocomplete="family-name" required/>
+          </div>
+          <div id="email-field" class="form-option">
+            <label for="email">Email</label>
+            <input id="email" name="email" value="" type="email" autocomplete="email" required/>
+          </div>
+          <div id="phone-field" class="form-option">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" value="" type="tel" autocomplete="tel"/>
+          </div>
+          <div id="start-date-field" class="form-option">
+            <label for="start-date">Start Date</label>
+            <input id="start-date" name="start-date" value="" type="date" required/>
+          </div>
+          <div id="end-date-field" class="form-option">
+            <label for="end-date">End Date</label>
+            <input id="end-date" name="end-date" value="" type="date" required/>
+          </div>
+          
+          <div id="package-selection-field" class="form-option">
+            <p>Please select your package:</p>
+            <input name="package" id="basic" type="radio" value="basic" required/>
+            <label for="basic">Basic</label>
+            <input name="package" id="premium" type="radio" value="premium" required/>
+            <label for="premium">Premium</label>
+          </div>
+          <div id="optiona-features-field" class="form-option">
+            <p>Select optional features you would like to have included:</p>
+            <input
+              name="features"
+              id="car-rental"
+              type="checkbox"
+              value="car-rental"
+            />
+            <label for="car-rental">Car Rental</label>
+            <input name="features" id="hotel" type="checkbox" value="hotel" />
+            <label for="hotel">Hotel Reservation</label>
+            <input name="features" id="tour" type="checkbox" value="tour">
+            <label for="tour">Behind-the-scenes Tour</label>
+          </div>
+
+          <div id="experience-field" class="form-option">
+            <label for="experience">Level of Experience playing Mega Man games:</label>
+            <select name="experience" id="experience">
+              <option value="">Choose an option</option>
+            <option value="beginner">Complete Beginner</option>
+            <option value="dabbler">Have Played a little</option>
+            <option value="intermediate">Have beaten at least one game</option>
+            <option value="expert">Expert level player</option>
+            </select>
+          </div>
+          
+          <div id="comments-field" class="form-option">
+            <label for="comments" align="top">Additional Comments:</label>
+            <br>
+            <br>
+            <textarea
+              name="comments"
+              id="comments"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <div id="submit-field" class="form-option">
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
       </div>
     </main>
     <footer align="center">
