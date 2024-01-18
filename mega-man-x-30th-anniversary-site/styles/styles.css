@@ -23,7 +23,7 @@ footer {
   color: rgb(14, 0, 212);
 }
 
-.navbar li {
+.navbar a {
   display: inline-block;
   padding: 0.5em;
   border: 1px black solid;
@@ -78,7 +78,7 @@ table img {
   width: 8em;
 }
 
-games th,
+.games th,
 td {
   width: 10em;
 }
@@ -87,6 +87,6 @@ form {
   margin: 2em;
 }
 
-.form-option {
+form div {
   margin: 1em;
 }

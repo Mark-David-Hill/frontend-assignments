@@ -11,78 +11,61 @@
     <main>
       <div class="navbar">
         <nav>
-          <ul>
-            <img
-              align="center"
-              height="50px"
-              style="margin-right: 2em"
-              src="../assets/mmx-logo.jpg"
-              alt="Mega Man X Logo"
-            />
-            <li>
-              <a href="../index.html">Home</a>
-            </li>
-            <li>
-              <a href="series.html">Series</a>
-            </li>
-            <li>
-              <a href="media.html">Media</a>
-            </li>
-            <li>
-              <a href="reservation.html">Reservations</a>
-            </li>
-          </ul>
+          <img
+            align="center"
+            height="50px"
+            style="margin-right: 2em"
+            src="../assets/mmx-logo.jpg"
+            alt="Mega Man X Logo"
+          />
+          <a href="../index.html">Home</a>
+          <a href="series.html">Series</a>
+          <a href="media.html">Media</a>
+          <a href="reservation.html">Reservations</a>
         </nav>
       </div>
       <h1 align="center">Reservations</h1>
       <div class="hero">
         <img src="../assets/mmx_banner.jpeg" alt="Mega Man X Site Hero Image" />
       </div>
-      <!-- <div align="center">
-        <video
-          autoplay
-          loop
-          src="../assets/coming-soon.mp4"
-          width="800px"
-        ></video> -->
       </div>
       <div id="reservation-form" align="center">
         <h2>Coaching Reservation Form</h2>
         <p>Please fill out the following form to reserve a date for receiving a coaching on how to level-up your skills playing Mega Man X.</p>
         <form action="https://httpbin.org/post" method="post">
-          <div id="first-name-field" class="form-option">
+          <div class="first-name-field">
             <label for="first-name">First Name</label>
             <input id="first-name" name="first-name" value="" type="text" autocomplete="given-name" required/>
           </div>
-          <div class="last-name-field" class="form-option">
+          <div class="last-name-field">
             <label for="last-name">Last Name</label>
             <input id="last-name" name="last-name" value="" type="text" autocomplete="family-name" required/>
           </div>
-          <div id="email-field" class="form-option">
+          <div class="email-field">
             <label for="email">Email</label>
             <input id="email" name="email" value="" type="email" autocomplete="email" required/>
           </div>
-          <div id="phone-field" class="form-option">
+          <div class="phone-field">
             <label for="phone">Phone</label>
             <input id="phone" name="phone" value="" type="tel" autocomplete="tel"/>
           </div>
-          <div id="start-date-field" class="form-option">
+          <div class="start-date-field">
             <label for="start-date">Start Date</label>
             <input id="start-date" name="start-date" value="" type="date" required/>
           </div>
-          <div id="end-date-field" class="form-option">
+          <div class="end-date-field">
             <label for="end-date">End Date</label>
             <input id="end-date" name="end-date" value="" type="date" required/>
           </div>
           
-          <div id="package-selection-field" class="form-option">
+          <div class="package-selection-field">
             <p>Please select your package:</p>
             <input name="package" id="basic" type="radio" value="basic" required/>
             <label for="basic">Basic</label>
             <input name="package" id="premium" type="radio" value="premium" required/>
             <label for="premium">Premium</label>
           </div>
-          <div id="optiona-features-field" class="form-option">
+          <div class="optiona-features-field">
             <p>Select optional features you would like to have included:</p>
             <input
               name="features"
@@ -97,7 +80,7 @@
             <label for="tour">Behind-the-scenes Tour</label>
           </div>
 
-          <div id="experience-field" class="form-option">
+          <div class="experience-field">
             <label for="experience">Level of Experience playing Mega Man games:</label>
             <select name="experience" id="experience">
               <option value="">Choose an option</option>
@@ -108,7 +91,7 @@
             </select>
           </div>
           
-          <div id="comments-field" class="form-option">
+          <div class="comments-field">
             <label for="comments" align="top">Additional Comments:</label>
             <br>
             <br>
@@ -119,7 +102,7 @@
               rows="10"
             ></textarea>
           </div>
-          <div id="submit-field" class="form-option">
+          <div class="submit-field">
             <input type="submit" value="Submit" />
           </div>
         </form>
