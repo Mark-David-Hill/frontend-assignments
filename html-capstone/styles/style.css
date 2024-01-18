@@ -37,21 +37,33 @@
   display: block;
   background-color: white;
   color: black;
+  text-decoration: none;
 }
 
-#dropdown-content {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  background-color: white;
-  color: black;
+.dropdown-btn:hover {
+  text-decoration: underline;
 }
 
 .dropdown:hover {
   text-decoration: underline;
 }
 
-.dropdown:hover #dropdown-content {
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 0.8em 1em;
+  padding-right: 7em;
+  font-size: medium;
+  margin-top: 0.2;
+}
+
+.dropdown:hover + div {
+  display: block;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
   display: block;
 }
 
@@ -60,8 +72,7 @@
 }
 
 .hover-dash:hover {
-  text-decoration: dotted;
-  text-decoration-color: white;
+  text-decoration-style: dashed;
 }
 
 .hover-blue {
