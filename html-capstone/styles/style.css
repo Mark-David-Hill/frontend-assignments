@@ -83,6 +83,10 @@
   color: #7b90ff;
 }
 
+.hover-underline {
+  text-decoration: none;
+}
+
 .hover-underline:hover {
   text-decoration: underline;
 }
