@@ -25,10 +25,15 @@
     >
       <ul align="right" style="padding: 8px">
         <li style="display: inline">
-          <a href="" style="color: white; text-decoration: none">Register</a>
+          <a class="hover-blue" href="" style="text-decoration: none"
+            >Register</a
+          >
         </li>
         <li style="display: inline">
-          <a href="" style="color: white; text-decoration: none; padding: 4px"
+          <a
+            class="hover-blue"
+            href=""
+            style="text-decoration: none; padding: 4px"
             >Log In</a
           >
         </li>
@@ -56,13 +61,20 @@
         "
         align="center"
       >
-        <a style="color: white; font-style: italic" href="index.html"
+        <a
+          class="hover-dash"
+          style="color: white; font-style: italic"
+          href="index.html"
           >Twenty Twenty-Two</a
         >
         <ul style="color: white">
-          <li style="display: inline; padding: 0.5em">About</li>
-          <li style="display: inline; padding: 0.5em">
+          <li class="hover-underline" style="display: inline; padding: 0.5em">
+            About
+          </li>
+          <div style="position: relative; display: inline-block"></div>
+          <li class="dropdown" style="display: inline; padding: 0.5em">
             Parent Page<button
+              class="dropdown"
               style="
                 border: none;
                 text-decoration: none;
@@ -76,6 +88,10 @@
               ⌄
             </button>
           </li>
+          <!-- style="display: none; position: absolute; z-index: 1" -->
+          <div id="dropdown-content">
+            <a class="dropdown-btn" href="">Sub-page</a>
+          </div>
         </ul>
       </div>
       <div id="hero" align="center" style="padding-top: 3em">
@@ -94,8 +110,8 @@
         style="margin: 4.5em; margin-top: 5.5em; margin-bottom: 10em"
       >
         <h2
+          class="hover-dash"
           style="
-            text-decoration: underline;
             font-family: 'Source Serif 4', serif;
             font-size: 52px;
             font-weight: lighter;
@@ -119,6 +135,7 @@
         <p style="padding-top: 2em; font-size: 16px; font-weight: lighter">
           <a
             href=""
+            class="hover-dash"
             style="
               color: black;
               text-decoration-thickness: 1px;
@@ -133,8 +150,8 @@
         style="margin: 4.5em; margin-top: 5.5em; margin-bottom: 10em"
       >
         <h2
+          class="hover-dash"
           style="
-            text-decoration: underline;
             font-family: 'Source Serif 4', serif;
             font-size: 52px;
             font-weight: lighter;
@@ -162,6 +179,7 @@
         <p style="padding-top: 2em; font-size: 16px; font-weight: lighter">
           <a
             href=""
+            class="hover-dash"
             style="
               color: black;
               text-decoration-thickness: 1px;
@@ -177,8 +195,8 @@
         style="margin: 4.5em; margin-top: 5.5em; margin-bottom: 10em"
       >
         <h2
+          class="hover-dash"
           style="
-            text-decoration: underline;
             font-family: 'Source Serif 4', serif;
             font-size: 52px;
             font-weight: lighter;
@@ -202,6 +220,7 @@
         <p style="padding-top: 2em; font-size: 16px; font-weight: lighter">
           <a
             href=""
+            class="hover-dash"
             style="
               color: black;
               text-decoration-thickness: 1px;
@@ -217,8 +236,8 @@
         style="margin: 4.5em; margin-top: 5.5em; margin-bottom: 10em"
       >
         <h2
+          class="hover-dash"
           style="
-            text-decoration: underline;
             font-family: 'Source Serif 4', serif;
             font-size: 52px;
             font-weight: lighter;
@@ -246,6 +265,7 @@
         <p style="padding-top: 2em; font-size: 16px; font-weight: lighter">
           <a
             href=""
+            class="hover-dash"
             style="
               color: black;
               text-decoration-thickness: 1px;
@@ -261,8 +281,8 @@
         style="margin: 4.5em; margin-top: 5.5em; margin-bottom: 10em"
       >
         <h2
+          class="hover-dash"
           style="
-            text-decoration: underline;
             font-family: 'Source Serif 4', serif;
             font-size: 52px;
             font-weight: lighter;
@@ -286,6 +306,7 @@
         </p>
         <p style="padding-top: 2em; font-size: 16px; font-weight: lighter">
           <a
+            class="hover-dash"
             href=""
             style="
               color: black;
@@ -302,8 +323,8 @@
         style="margin: 4.5em; margin-top: 5.5em; margin-bottom: 10em"
       >
         <h2
+          class="hover-dash"
           style="
-            text-decoration: underline;
             font-family: 'Source Serif 4', serif;
             font-size: 52px;
             font-weight: lighter;
@@ -332,6 +353,7 @@
         <p style="padding-top: 2em; font-size: 16px; font-weight: lighter">
           <a
             href=""
+            class="hover-dash"
             style="
               color: black;
               text-decoration-thickness: 1px;
@@ -347,8 +369,8 @@
         style="margin: 4.5em; margin-top: 5.5em; margin-bottom: 10em"
       >
         <h2
+          class="hover-dash"
           style="
-            text-decoration: underline;
             font-family: 'Source Serif 4', serif;
             font-size: 52px;
             font-weight: lighter;
@@ -373,6 +395,7 @@
         <p style="padding-top: 2em; font-size: 16px; font-weight: lighter">
           <a
             href=""
+            class="hover-dash"
             style="
               color: black;
               text-decoration-thickness: 1px;
@@ -395,10 +418,11 @@
         font-weight: lighter;
       "
     >
-      <p style="text-decoration: underline; font-style: italic">
-        Twenty Twenty-Two
+      <p class="hover-dash" style="font-style: italic">Twenty Twenty-Two</p>
+      <p>
+        Proudly powered by
+        <a class="hover-dash" style="color: black" href="">WordPress</a>
       </p>
-      <p>Proudly powered by <a style="color: black" href="">WordPress</a></p>
     </footer>
   </body>
 </html>
