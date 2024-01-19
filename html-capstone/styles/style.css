@@ -3,32 +3,32 @@
 }
 
 @media screen and (min-width: 1200px) {
-  #sections {
+  .sections {
     padding-left: 3em;
   }
 }
 @media screen and (min-width: 1300px) {
-  #sections {
+  .sections {
     padding-left: 6em;
   }
 }
 @media screen and (min-width: 1400px) {
-  #sections {
+  .sections {
     padding-left: 8em;
   }
 }
 @media screen and (min-width: 1500px) {
-  #sections {
+  .sections {
     padding-left: 12em;
   }
 }
 @media screen and (min-width: 1600px) {
-  #sections {
+  .sections {
     padding-left: 16em;
   }
 }
 @media screen and (min-width: 1700px) {
-  #sections {
+  .sections {
     padding-left: 22em;
   }
 }
