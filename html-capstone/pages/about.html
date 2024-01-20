@@ -23,21 +23,17 @@
         min-width: 100%;
       "
     >
-      <ul align="right" style="padding: 8px">
-        <li style="display: inline">
-          <a class="hover-blue" href="" style="text-decoration: none"
-            >Register</a
-          >
-        </li>
-        <li style="display: inline">
-          <a
-            class="hover-blue"
-            href=""
-            style="text-decoration: none; padding: 4px"
-            >Log In</a
-          >
-        </li>
-      </ul>
+      <div align="right" style="padding: 8px">
+        <div class="hover-blue" style="display: inline; text-decoration: none">
+          Register
+        </div>
+        <div
+          class="hover-blue"
+          style="display: inline; text-decoration: none; padding: 4px"
+        >
+          Log In
+        </div>
+      </div>
     </div>
     <div
       class="sub-nav-wrapper"
@@ -62,20 +58,26 @@
           href="../index.html"
           >Twenty Twenty-Two</a
         >
-        <ul style="color: black">
-          <li style="display: inline; padding: 0.5em">
-            <a class="hover-underline" style="color: black" href="about.html"
-              >About</a
-            >
-          </li>
-          <div style="position: relative; display: inline-block"></div>
-          <li class="dropdown" style="display: inline; padding: 0.5em">
+        <div>
+          <a
+            class="hover-underline"
+            style="
+              display: inline;
+              padding: 0.5em;
+              margin-right: 0.5em;
+              color: black;
+            "
+            href="about.html"
+            >About</a
+          >
+          <div class="dropdown" style="display: inline; padding-bottom: 0.5em">
             <a
               class="hover-underline"
-              style="color: black"
+              style="padding-right: 0; color: black"
               href="parent-page.html"
               >Parent Page</a
-            ><button
+            >
+            <button
               class="dropdown"
               style="
                 border: none;
@@ -83,18 +85,18 @@
                 background-color: white;
                 color: black;
                 margin: 0;
-                padding-left: 3px;
+                padding-left: 0;
                 font-size: large;
               "
             >
               ⌄
             </button>
-          </li>
-          <!-- style="display: none; position: absolute; z-index: 1" -->
-          <div class="dropdown-content">
-            <a class="dropdown-btn" href="">Sub-page</a>
+            <!-- style="display: none; position: absolute; z-index: 1" -->
+            <div class="dropdown-content" style="border-color: #d5d9da">
+              <div class="dropdown-btn" style="font-size: 1.1em">Sub-page</div>
+            </div>
           </div>
-        </ul>
+        </div>
       </div>
       <div class="hero" align="center" style="padding-top: 3em"></div>
     </div>
@@ -141,7 +143,6 @@
             margin-top: 0.4em;
             margin-bottom: 0.2em;
           "
-          2
           align="left"
         >
           WordPress Theme <br />Development Resources
@@ -226,7 +227,7 @@
         >
           Leave a Reply
         </h3>
-        <p align="left" style="margin-top: 2.5em;">
+        <p align="left" style="margin-top: 2.5em">
           You must be
           <span
             class="hover-dash"
@@ -240,8 +241,7 @@
           to post a comment.
         </p>
       </div>
-
-      
+    </div>
     <footer
       style="
         display: flex;
