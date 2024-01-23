@@ -1,0 +1,78 @@
+/* .main,
+.main > p {
+  color: blue;
+  border: solid;
+  width: 40%;
+} */
+
+/* .main + p {
+  color: blue;
+  border: solid;
+  width: 40%;
+} */
+
+/* .main ~ p {
+  color: blue;
+  border: solid;
+  width: 40%;
+} */
+
+/* .main > p {
+  color: blue;
+  border: solid;
+  width: 40%;
+} */
+
+/* .main p {
+  color: blue;
+  border: solid;
+  width: 40%;
+} */
+
+/* Exercise 1 */
+/* Border around direct children, not around grandchildren */
+
+/* .main > * {
+  color: green;
+  border: 1px solid green;
+  width: 50%;
+} */
+
+/* Exercise 2 */
+/* Unlike with the child combinator, all p tags are affected, both children and grandchildren of .main */
+
+/* .main p {
+  color: purple;
+  border: 1px solid purple;
+  width: 40%;
+} */
+
+/* Exercise 3 */
+/* Both sibling elements of .main (the body-1 divs) are styled. */
+
+/* .main ~ * {
+  color: orange;
+  border: 1px solid orange;
+  width: 30%;
+} */
+
+/* Exercise 4 */
+/* Unlike with the general sibling combinator, the agacent sibling modifier 
+only styles sibling elements directly adjacent to it (in this case body-1) */
+
+/* .main + * {
+  color: red;
+  border: 1px solid red;
+  width: 40%;
+} */
+
+/* Exercise 5 */
+/* If you want more than one grouping of elements to be styled in the same way, 
+it is cleaner and easier to use separators to do so, rather than writing the same styling rules multiple times. */
+
+.main,
+.main > p {
+  color: blue;
+  border: 1px solid blue;
+  width: 40%;
+}
