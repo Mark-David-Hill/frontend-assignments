@@ -1,0 +1,184 @@
+/* .sibling-one {
+  display: inline;
+}
+
+.page-heading {
+  display: inline;
+  background-color: blue;
+  color: white;
+}
+
+img {
+  display: inline;
+  width: 2.5%;
+} */
+
+/* .page-heading {
+  display: block;
+  width: 50%;
+  margin: auto;
+  background-color: blue;
+  color: white;
+}
+
+img {
+  display: block;
+  padding: 36px;
+  background-color: blue;
+  margin: auto;
+  width: 25%;
+} */
+/* 
+.sibling-one {
+  display: inline;
+}
+
+.page-heading {
+  display: inline-block;
+  background-color: blue;
+  width: 130px;
+  color: white;
+}
+
+img {
+  display: inline;
+  width: 20%;
+} */
+
+/* .sibling-one {
+  background-color: blue;
+  margin-bottom: 25px;
+}
+
+img {
+  display: block;
+  margin-top: 25px;
+  width: 25%;
+} */
+
+/* body {
+  background-color: rgb(0, 80, 50);
+}
+
+.page-content {
+  width: 40%;
+  margin: 48px auto;
+  background-color: white;
+  padding: 24px;
+}
+
+img {
+  width: 50%;
+  float: right;
+  margin: 48px;
+}
+
+.page-description {
+  clear: left;
+  line-height: 48px;
+  font-size: 24px;
+  text-align: justify;
+  margin: 48px;
+} */
+
+/* .page-content {
+  border: 4px solid black;
+}
+
+img {
+  width: 25%;
+  position: relative;
+  left: 20px;
+  top: 50%;
+} */
+
+/* body {
+  height: 200vh;
+  width: 200vw;
+}
+
+img {
+  width: 25%;
+  position: fixed;
+  left: 10%;
+  top: 10%;
+} */
+
+/* body {
+  height: 200vh;
+}
+
+.page-content {
+  height: 100vh;
+  border: 4px solid black;
+}
+
+img {
+  width: 25%;
+  position: sticky;
+  top: 0;
+} */
+
+/* body {
+  height: 120vh;
+  font-size: 48px;
+}
+
+img {
+  width: 25%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+} */
+
+/* .page-content {
+  overflow-y: scroll;
+  width: 50%;
+  font-size: 36px;
+  height: 50vh;
+}
+
+.page-description {
+  text-align: justify;
+}
+
+img {
+  width: 100%;
+} */
+
+/* img {
+  width: 25%;
+}
+
+.sibling-one {
+  display: inline;
+  margin-bottom: 15px;
+}
+
+.page-heading {
+  display: block;
+}
+
+.sibling-two {
+  display: inline-block;
+  margin-top: 10px;
+} */
+/* .sibling-one {
+  background-color: blue;
+  margin-bottom: 25px;
+}
+
+.sibling-two {
+  margin-top: 25px;
+} */
+
+/* img {
+
+  display: fixed;
+} */
+img {
+  width: 25%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+}
