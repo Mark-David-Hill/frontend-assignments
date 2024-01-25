@@ -6,6 +6,10 @@ body {
   margin: 0;
 }
 
+.main-content {
+  display: flex;
+}
+
 .navbar {
   background-color: black;
   color: white;
@@ -19,8 +23,7 @@ i {
 }
 
 .hero {
-  width: 50%;
-  float: left;
+  width: 50vw;
 }
 
 .hero img {
@@ -29,16 +32,21 @@ i {
 }
 
 .login {
-  width: 50%;
-  display: inline;
-  margin: 30%;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-form {
-  text-align: center;
-  margin-top: 18%;
+.login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
 }
 
 h2 {
-  margin-top: 0;
+  margin: 0;
 }
