@@ -1,0 +1,44 @@
+:root {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+.navbar {
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 3rem;
+}
+
+i {
+  font-size: 2em;
+  margin: 0.2em;
+}
+
+.hero {
+  width: 50%;
+  float: left;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+.login {
+  width: 50%;
+  display: inline;
+  margin: 30%;
+}
+
+form {
+  text-align: center;
+  margin-top: 18%;
+}
+
+h2 {
+  margin-top: 0;
+}
