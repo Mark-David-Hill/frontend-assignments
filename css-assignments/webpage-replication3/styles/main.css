@@ -4,10 +4,15 @@
 
 body {
   margin: 0;
+  background-image: url(../assets/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .main-content {
   display: flex;
+  width: 100%;
+  height: 100vh;
 }
 
 .navbar {
@@ -15,6 +20,8 @@ body {
   color: white;
   width: 100%;
   height: 3rem;
+  position: absolute;
+  z-index: 5;
 }
 
 i {
@@ -23,20 +30,18 @@ i {
 }
 
 .hero {
-  width: 50vw;
-}
-
-.hero img {
   width: 100%;
   height: auto;
 }
 
 .login {
-  width: 50vw;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: white;
 }
 
 .login form {

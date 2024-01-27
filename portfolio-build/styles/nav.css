@@ -1,0 +1,25 @@
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.nav-wrapper > .nav-links-wrapper > .nav-label,
+.nav-wrapper > .nav-search {
+  display: inline-block;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.nav-wrapper > .nav-search {
+  width: 30px;
+  text-align: center;
+}
+
+.nav-wrapper > .nav-links-wrapper > .nav-label:hover {
+  background-color: #333;
+}

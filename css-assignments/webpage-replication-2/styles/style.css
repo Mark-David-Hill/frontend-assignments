@@ -25,6 +25,7 @@ body {
   width: 100%;
   position: fixed;
   background-color: rgba(22, 32, 55, 0.9);
+  z-index: 3;
 }
 
 .navbar > img {
