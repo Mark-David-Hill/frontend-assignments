@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <title>MMX30 | Reservations</title>
+    <link rel="icon" type="image/x-icon" href="../assets/mmx-favicon.jpg" />
+  </head>
+  <body>
+    <main>
+      <div class="navbar">
+        <img src="../assets/mmx-logo.jpg" alt="Mega Man X Logo" />
+        <a href="../index.html">Home</a>
+        <a href="series.html">Series</a>
+        <a href="media.html">Media</a>
+        <a href="reservation.html">Reservations</a>
+      </div>
+      <div class="title">
+        <h1>Reservations</h1>
+      </div>
+      <div class="hero-wrapper">
+        <img src="../assets/mmx_banner.jpeg" alt="Mega Man X Site Hero Image" />
+      </div>
+      <div class="reservation-form introduction">
+        <h2>Coaching Reservation Form</h2>
+        <p>
+          Please fill out the following form to reserve a date for receiving a
+          coaching on how to level-up your skills playing Mega Man X.
+        </p>
+        <form action="https://httpbin.org/post" method="post">
+          <div class="first-name-field">
+            <label for="first-name">First Name</label>
+            <input
+              id="first-name"
+              name="first-name"
+              value=""
+              type="text"
+              autocomplete="given-name"
+              required
+            />
+          </div>
+          <div class="last-name-field">
+            <label for="last-name">Last Name</label>
+            <input
+              id="last-name"
+              name="last-name"
+              value=""
+              type="text"
+              autocomplete="family-name"
+              required
+            />
+          </div>
+          <div class="email-field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              value=""
+              type="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <div class="phone-field">
+            <label for="phone">Phone</label>
+            <input
+              id="phone"
+              name="phone"
+              value=""
+              type="tel"
+              autocomplete="tel"
+            />
+          </div>
+          <div class="start-date-field">
+            <label for="start-date">Start Date</label>
+            <input
+              id="start-date"
+              name="start-date"
+              value=""
+              type="date"
+              required
+            />
+          </div>
+          <div class="end-date-field">
+            <label for="end-date">End Date</label>
+            <input
+              id="end-date"
+              name="end-date"
+              value=""
+              type="date"
+              required
+            />
+          </div>
+
+          <div class="package-selection-field">
+            <p>Please select your package:</p>
+            <input
+              name="package"
+              id="basic"
+              type="radio"
+              value="basic"
+              required
+            />
+            <label for="basic">Basic</label>
+            <input
+              name="package"
+              id="premium"
+              type="radio"
+              value="premium"
+              required
+            />
+            <label for="premium">Premium</label>
+          </div>
+          <div class="optiona-features-field">
+            <p>Select optional features you would like to have included:</p>
+            <input
+              name="features"
+              id="car-rental"
+              type="checkbox"
+              value="car-rental"
+            />
+            <label for="car-rental">Car Rental</label>
+            <input name="features" id="hotel" type="checkbox" value="hotel" />
+            <label for="hotel">Hotel Reservation</label>
+            <input name="features" id="tour" type="checkbox" value="tour" />
+            <label for="tour">Behind-the-scenes Tour</label>
+          </div>
+
+          <div class="experience-field">
+            <label for="experience"
+              >Level of Experience playing Mega Man games:</label
+            >
+            <select name="experience" id="experience">
+              <option value="">Choose an option</option>
+              <option value="beginner">Complete Beginner</option>
+              <option value="dabbler">Have Played a little</option>
+              <option value="intermediate">
+                Have beaten at least one game
+              </option>
+              <option value="expert">Expert level player</option>
+            </select>
+          </div>
+
+          <div class="comments-field">
+            <label for="comments" align="top">Additional Comments:</label>
+            <br />
+            <br />
+            <textarea
+              name="comments"
+              id="comments"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <div class="submit-field">
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-section">
+        <p>Site created by Mark Hill</p>
+        <p>
+          Capcom, Mega Man, and all related characters are registered trademarks
+          of Capcom Co., Ltd.
+        </p>
+      </div>
+      <div class="footer-section">
+        <p>Phone: 555-555-5555</p>
+        <p>
+          Kaisuka, Kamogawa,<br />Kamogawa Fishing Port,<br />Chiba 296-0004
+        </p>
+      </div>
+      <div class="footer-section">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12099.720138390452!2d140.09437721506583!3d35.092036139957195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x603d5316f65d1d75%3A0x1c7a3a42abde7441!2sBenten%20Island%20in%20Kamogawa%20Fishing%20Port.!5e0!3m2!1sen!2sus!4v1705204031109!5m2!1sen!2sus"
+          width="200"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </footer>
+  </body>
+</html>
