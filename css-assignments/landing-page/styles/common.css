@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  background-color: #e2e8ce;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  background-color: #3587a4;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1em;
+}
+.navbar > i {
+  margin: 0.1em;
+  font-size: 1.5em;
+}
+.navbar a {
+  margin: 0.1em;
+  padding: 0.1em;
+  text-decoration: none;
+  background-color: #e2e8ce;
+  color: #262626;
+  border: 4px solid #acbfa4;
+  border-radius: 2px;
+}
+.navbar a:hover {
+  border-color: #d17700;
+}
+
+.hero-section {
+  width: 100%;
+  height: 100%;
+  top: 10%;
+  padding-top: 30vw;
+}
+.hero-section > .header-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-section > .header-wrapper > h1 {
+  font-family: "Pacifico", cursive;
+  background-color: #3587a4;
+  text-align: center;
+  font-size: 1.5em;
+  position: relative;
+  top: 10vw;
+  z-index: 2;
+  background-color: black;
+  opacity: 0.6;
+  padding: 10px;
+  letter-spacing: 8px;
+  color: #e2e8ce;
+}
+.hero-section video {
+  width: 100%;
+  position: absolute;
+}
+
+.info-section-container {
+  margin: 0 auto 2vw auto;
+  display: flex;
+  justify-content: center;
+  max-width: 95vw;
+}
+
+.section-1 {
+  margin: 35vw auto 2vw auto;
+}
+
+.album-wrapper {
+  border: 2px solid #d17700;
+  margin: 2em;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  text-align: center;
+  color: #e2e8ce;
+}
+.album-wrapper img {
+  width: 80%;
+  height: auto;
+  border: 2px solid #acbfa4;
+}
+.album-wrapper .album-pair {
+  background-color: #3587a4;
+  padding: 1em;
+  padding-bottom: 3em;
+}
+
+footer {
+  width: 100%;
+  background-color: #3587a4;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0.1em;
+}
+footer p {
+  margin: 0.1em;
+  padding: 0.3em;
+  text-decoration: none;
+  color: #262626;
+  border-radius: 2px;
+}
+
+@media (min-width: 900px) {
+  .album-wrapper {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1600px) {
+  .info-section-container {
+    max-width: 80vw;
+  }
+}
+@media (min-width: 1900px) {
+  .album-wrapper {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .info-section-container {
+    max-width: 70vw;
+  }
+}/*# sourceMappingURL=common.css.map */

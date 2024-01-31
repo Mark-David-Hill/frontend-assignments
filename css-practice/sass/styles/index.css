@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+}
+
+.hero-img {
+  background: linear-gradient(white, orange);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-msg-con {
+  border: 16px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+}
+
+.hero-msg {
+  text-align: center;
+  color: white;
+  font-size: 48px;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: $main-font;
+  background-color: $light-color;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  background-color: $main-color;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1em;
+  > i {
+    margin: 0.1em;
+    font-size: 1.5em;
+  }
+  a {
+    margin: 0.1em;
+    padding: 0.1em;
+    text-decoration: none;
+    background-color: $light-color;
+    color: $dark-color;
+    border: 4px solid $secondary-color;
+    border-radius: 2px;
+    &:hover {
+      border-color: $highlight-color;
+    }
+  }
+}
+
+.hero-section {
+  width: 100%;
+  height: 100%;
+  top: 10%;
+  padding-top: 30vw;
+  > .header-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > h1 {
+      font-family: $header-font;
+      background-color: $main-color;
+      text-align: center;
+      font-size: 1.5em;
+      position: relative;
+      top: 10vw;
+      z-index: 2;
+      background-color: black;
+      opacity: 0.6;
+      padding: 10px;
+      letter-spacing: 8px;
+      color: $light-color;
+    }
+  }
+
+  video {
+    width: 100%;
+    position: absolute;
+  }
+}
+
+.info-section-container {
+  margin: 0 auto 2vw auto;
+  display: flex;
+  justify-content: center;
+  max-width: 95vw;
+}
+
+.section-1 {
+  margin: 35vw auto 2vw auto;
+}
+
+.album-wrapper {
+  border: 2px solid $highlight-color;
+  margin: 2em;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  text-align: center;
+  color: $light-color;
+  img {
+    width: 80%;
+    height: auto;
+    border: 2px solid $secondary-color;
+  }
+  .album-pair {
+    background-color: $main-color;
+    padding: 1em;
+    padding-bottom: 3em;
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: $main-color;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0.1em;
+  p {
+    margin: 0.1em;
+    padding: 0.3em;
+    text-decoration: none;
+    color: $dark-color;
+    border-radius: 2px;
+  }
+}
+
+@media (min-width: 900px) {
+  .album-wrapper {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1600px) {
+  .info-section-container {
+    max-width: 80vw;
+  }
+}
+
+@media (min-width: 1900px) {
+  .album-wrapper {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .info-section-container {
+    max-width: 70vw;
+  }
+}

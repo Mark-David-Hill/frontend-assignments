@@ -1,0 +1,58 @@
+// .main {
+//   text-decoration: underline;
+
+//   .sub {
+//     font-weight: bold;
+//   }
+
+//   &:hover {
+//     color: blue;
+//     border: 1px solid black;
+//     width: 40%;
+//   }
+
+//   > p {
+//     color: blue;
+//     border: 1px solid red;
+//     width: 40%;
+//   }
+
+//   ~ p {
+//     color: lightblue;
+//     border: 1px solid green;
+//     width: 40%;
+//   }
+
+//   + p {
+//     color: darkblue;
+//     border: 2px solid burlywood;
+//     width: 40%;
+//   }
+// }
+
+* {
+  margin: 0;
+}
+
+.hero-img {
+  background: $gradient-theme;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-msg-con {
+  border: 16px solid $accent-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+}
+
+.hero-msg {
+  text-align: center;
+  color: $accent-color;
+  font-size: 48px;
+}
