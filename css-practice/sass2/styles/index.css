@@ -1,0 +1,26 @@
+.custom-container {
+  background-color: blue;
+  height: 150px;
+  width: 250px;
+  border-radius: 10px;
+  border-color: white;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.updated-flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.rounded-box {
+  border-radius: 10px;
+  border-color: white;
+}/*# sourceMappingURL=index.css.map */

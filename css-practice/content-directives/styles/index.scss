@@ -1,0 +1,45 @@
+$base-color: orange;
+$accent-color: white;
+$gradient-theme: linear-gradient($accent-color, $base-color);
+
+@mixin con-size($height: 250px, $width: 250px) {
+  height: $height;
+  width: $width;
+}
+
+@mixin mid-center-flex(
+  $justify-content: center,
+  $align-items: center,
+  $gap: 18px
+) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+  @content;
+}
+
+* {
+  margin: 0;
+}
+
+.hero-img {
+  @include mid-center-flex($gap: none) {
+    background: $gradient-theme;
+  }
+  @include con-size(100vh, null);
+}
+
+.hero-msg-con {
+  @include mid-center-flex(flex-end, flex-end, none) {
+    border: 16px solid $accent-color;
+  }
+  @include con-size;
+}
+
+.hero-msg {
+  text-align: center;
+  color: $accent-color;
+  font-size: 48px;
+  padding-right: 3%;
+}

@@ -1,0 +1,97 @@
+$base-color: orange;
+$accent-color: white;
+$gradient-theme: linear-gradient($accent-color, $base-color);
+
+// @mixin mid-center-flex(
+//   $flex-direction: row,
+//   $justify-content: center,
+//   $align-items: center,
+//   $gap: 25px
+// ) {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: $flex-direction;
+//   justify-content: $justify-content;
+//   align-items: $align-items;
+//   gap: $gap;
+// }
+
+// @mixin button-default($width, $color) {
+//   border: none;
+//   background-color: $color;
+//   color: gray;
+//   font-size: 45px;
+//   width: $width;
+// }
+
+// @mixin con-size($width: 250px, $height: 250px) {
+//   width: $width;
+//   height: $height;
+// }
+
+// button {
+//   @include button-default(65px, blue);
+// }
+
+// .larger-button {
+//   @include button-default(150px, $base-color);
+// }
+
+// * {
+//   margin: 0;
+// }
+
+// .hero-img {
+//   background: $gradient-theme;
+//   height: 100vh;
+//   @include mid-center-flex(row);
+//   @include con-size;
+// }
+
+// .hero-msg-con {
+//   border: 16px solid $accent-color;
+//   @include mid-center-flex($flex-direction: column);
+//   height: 250px;
+//   width: 250px;
+// }
+
+// .hero-msg {
+//   text-align: center;
+//   color: $accent-color;
+//   font-size: 48px;
+// }
+@mixin container-styles($container-color, $height: 200px, $width: 300px) {
+  background-color: $container-color;
+  height: $height;
+  width: $width;
+}
+
+@mixin mid-center-flex($gap: 10px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin rounded-border($border-radius: 10px, $border-color: $accent-color) {
+  border-radius: $border-radius;
+  border-color: $border-color;
+}
+
+.custom-container {
+  @include container-styles(blue, 150px, 250px);
+  @include rounded-border;
+}
+
+.flex-container {
+  @include mid-center-flex(20px);
+}
+
+.updated-flex-container {
+  @include mid-center-flex;
+}
+
+.rounded-box {
+  @include rounded-border;
+}
