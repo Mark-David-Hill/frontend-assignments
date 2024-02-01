@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hestia | Home</title>
+    <link rel="stylesheet" href="./styles/index.css" />
   </head>
-  <body>
-    <nav>
+  <body onscroll="checkScroll()">
+    <nav id="home-nav" class="at-top">
       <div class="left-nav">
         <a href="#">Hestia</a>
       </div>
       <div class="right-nav">
-        <a href="">Home</a>
-        <a href="">Blog</a>
-        <a href="">Contact</a>
-        <button>More</button>
+        <a href="">HOME</a>
+        <a href="">BLOG</a>
+        <a href="">CONTACT</a>
+        <button>MORE</button>
       </div>
     </nav>
     <main>
@@ -23,7 +24,7 @@
           <div class="hero-content">
             <h1>Welcome to Hestia!</h1>
             <p>Lorem ipsum dolor sit amet</p>
-            <button>See More</button>
+            <button>SEE MORE</button>
           </div>
         </div>
       </div>
@@ -126,4 +127,18 @@
       </div>
     </footer>
   </body>
+  <script>
+    function checkScroll() {
+      console.log(`ScrollTop: ${document.documentElement.scrollTop}`);
+      if (
+        // console.log('ScrollTop body: ', document.body.scrollTop);
+        document.body.scrollTop > 50 ||
+        document.documentElement.scrollTop > 50
+      ) {
+        document.getElementById("home-nav").className = "not-at-top";
+      } else {
+        document.getElementById("home-nav").className = "at-top";
+      }
+    }
+  </script>
 </html>

@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding-top: 5em;
+}
+body .at-top {
+  background-color: transparent;
+}
+body .not-at-top {
+  background-color: white;
+}
+body nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+body nav a,
+body nav button {
+  padding: 1em 1.8em;
+}
+body nav a {
+  text-decoration: none;
+  color: gray;
+}
+body nav > .left-nav,
+body nav > .right-nav {
+  padding: 1em;
+}
+body nav > .right-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding-right: 3em;
+}
+body nav > .right-nav > a {
+  padding: 1em;
+}
+body nav > .right-nav > button {
+  color: white;
+  background-color: rgb(226, 34, 130);
+  border: none;
+  border-radius: 30px;
+}/*# sourceMappingURL=index.css.map */

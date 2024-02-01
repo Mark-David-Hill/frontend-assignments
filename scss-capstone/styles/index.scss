@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding-top: 5em;
+
+  .at-top {
+    background-color: transparent;
+  }
+
+  .not-at-top {
+    background-color: white;
+  }
+
+  nav {
+    a,
+    button {
+      padding: 1em 1.8em;
+    }
+
+    a {
+      text-decoration: none;
+      color: gray;
+    }
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+
+    > .left-nav,
+    > .right-nav {
+      padding: 1em;
+    }
+
+    > .left-nav {
+    }
+
+    > .right-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      padding-right: 3em;
+      > a {
+        padding: 1em;
+      }
+      > button {
+        color: white;
+        background-color: rgb(226, 34, 130);
+        border: none;
+        border-radius: 30px;
+      }
+    }
+  }
+}
