@@ -68,10 +68,10 @@
                 Need more details? Please check our full documentation for
                 detailed information on how to use Hestia.
               </p>
-              <!-- <img
+              <img
                 src="./assets/about-content.png"
                 alt="About Documentation Image"
-              /> -->
+              />
             </div>
           </div>
         </div>
@@ -117,25 +117,23 @@
             </div>
           </div>
         </div>
+        <footer>
+          <div class="subsection">
+            <p>ABOUT</p>
+            <p>PARENT PAGE</p>
+          </div>
+          <div class="subsection">
+            <p>Hestia | Developed by ThemeIsle</p>
+          </div>
+        </footer>
       </div>
     </main>
-    <footer>
-      <div class="subsection">
-        <p>ABOUT</p>
-        <p>PARENT PAGE</p>
-      </div>
-      <div class="subsection">
-        <p>Hestia | Developed by ThemeIsle</p>
-      </div>
-    </footer>
   </body>
   <script>
     function checkScroll() {
-      console.log(`ScrollTop: ${document.documentElement.scrollTop}`);
       if (
-        // console.log('ScrollTop body: ', document.body.scrollTop);
-        document.body.scrollTop > 50 ||
-        document.documentElement.scrollTop > 50
+        document.body.scrollTop > 70 ||
+        document.documentElement.scrollTop > 70
       ) {
         document.getElementById("home-nav").className = "not-at-top";
       } else {
