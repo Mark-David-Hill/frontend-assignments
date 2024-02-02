@@ -1,45 +1,71 @@
 body {
   margin: 0;
-  padding-top: 5em;
+  padding-top: 10em;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 }
-body .at-top {
-  background-color: transparent;
-}
+body .at-top,
 body .not-at-top {
   background-color: white;
 }
 body nav {
+  border: 1px solid red;
+  display: flex;
+  font-size: 30px;
   position: fixed;
   top: 0;
   width: 100%;
-  display: flex;
   justify-content: space-between;
-  padding: 1em;
+  padding: 16.5px 8px;
 }
-body nav a,
-body nav button {
-  padding: 1em 1.8em;
+body nav > .nav-wrapper {
+  margin: auto;
+  border: 1px solid indigo;
+  display: flex;
 }
-body nav a {
+body nav > .nav-wrapper a {
   text-decoration: none;
   color: gray;
 }
-body nav > .left-nav,
-body nav > .right-nav {
-  padding: 1em;
+body nav > .nav-wrapper > .left-nav a {
+  border: 1px solid blue;
+  padding: 10px 15px;
 }
-body nav > .right-nav {
+body nav > .nav-wrapper > .right-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
-  padding-right: 3em;
 }
-body nav > .right-nav > a {
-  padding: 1em;
+body nav > .nav-wrapper > .right-nav > a {
+  font-size: 12px;
+  padding: 15px;
 }
-body nav > .right-nav > button {
+body nav > .nav-wrapper > .right-nav > button {
+  font-size: 12px;
   color: white;
   background-color: rgb(226, 34, 130);
   border: none;
   border-radius: 30px;
+  padding: 15px 20px;
+  margin-right: 2em;
+}
+
+@media (min-width: 768px) {
+  body .at-top {
+    background-color: transparent;
+  }
+  body .not-at-top {
+    background-color: white;
+  }
+  body nav {
+    font-size: 30px;
+  }
+  body nav > .nav-wrapper {
+    width: 800px;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1200px) {
+  body nav > .nav-wrapper {
+    width: 1150px;
+  }
 }/*# sourceMappingURL=index.css.map */

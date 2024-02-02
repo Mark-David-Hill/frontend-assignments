@@ -1,53 +1,104 @@
+@mixin test-border($color: red) {
+  border: 1px solid $color;
+}
+
 body {
   margin: 0;
-  padding-top: 5em;
+  padding-top: 10em;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 
-  .at-top {
-    background-color: transparent;
-  }
-
+  .at-top,
   .not-at-top {
     background-color: white;
   }
 
   nav {
-    a,
-    button {
-      padding: 1em 1.8em;
-    }
-
-    a {
-      text-decoration: none;
-      color: gray;
-    }
+    @include test-border;
+    display: flex;
+    font-size: 30px;
     position: fixed;
     top: 0;
     width: 100%;
-    display: flex;
     justify-content: space-between;
-    padding: 1em;
+    padding: 16.5px 8px;
 
-    > .left-nav,
-    > .right-nav {
-      padding: 1em;
-    }
-
-    > .left-nav {
-    }
-
-    > .right-nav {
+    > .nav-wrapper {
+      margin: auto;
+      @include test-border(indigo);
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.5em;
-      padding-right: 3em;
-      > a {
-        padding: 1em;
+
+      a,
+      button {
+        // padding: 1em 1.8em;
       }
-      > button {
-        color: white;
-        background-color: rgb(226, 34, 130);
-        border: none;
-        border-radius: 30px;
+
+      a {
+        text-decoration: none;
+        color: gray;
+      }
+
+      > .left-nav {
+        a {
+          // font-size: 3.5vw;
+          @include test-border(blue);
+          padding: 10px 15px;
+        }
+      }
+
+      > .right-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        // padding-right: 3em;
+        > a {
+          font-size: 12px;
+          padding: 15px;
+        }
+        > button {
+          font-size: 12px;
+          color: white;
+          background-color: rgb(226, 34, 130);
+          border: none;
+          border-radius: 30px;
+          padding: 15px 20px;
+          margin-right: 2em;
+        }
+      }
+    }
+  }
+}
+
+// Bigger than 600px wide (activate transparency effect when at top.)
+@media (min-width: 768px) {
+  body {
+    // background-color: tan;
+    .at-top {
+      background-color: transparent;
+    }
+
+    .not-at-top {
+      background-color: white;
+    }
+
+    nav {
+      font-size: 30px;
+      > .nav-wrapper {
+        width: 800px;
+        justify-content: space-between;
+        > .left-nav {
+          a {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    nav {
+      > .nav-wrapper {
+        width: 1150px;
       }
     }
   }
