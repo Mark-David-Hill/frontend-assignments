@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  padding-top: 10em;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+body .at-top,
+body .not-at-top {
+  background-color: rgb(255, 255, 255);
+}
+body nav {
+  display: flex;
+  font-size: 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  justify-content: space-between;
+  padding: 16.5px 8px;
+  z-index: 9;
+  box-shadow: 0 1px 10px -6px rgba(0, 0, 0, 0.42), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px -2px rgba(0, 0, 0, 0.1);
+}
+body nav > .nav-wrapper {
+  margin: auto;
+  display: flex;
+}
+body nav > .nav-wrapper a {
+  text-decoration: none;
+  color: #555555;
+}
+body nav > .nav-wrapper .left-nav a {
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: lighter;
+}
+body nav > .nav-wrapper .left-nav a:hover {
+  color: #7e7e7e;
+}
+body nav > .nav-wrapper .right-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+body nav > .nav-wrapper .right-nav a {
+  font-size: 12px;
+  padding: 15px;
+}
+body nav > .nav-wrapper .right-nav a:hover {
+  color: #e91e63;
+}
+body nav > .nav-wrapper .right-nav a:nth-child(1):hover {
+  color: #7e7e7e;
+}
+body nav > .nav-wrapper .right-nav button {
+  font-size: 12px;
+  color: white;
+  background-color: #e91e63;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 20px;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  margin-right: 2em;
+}
+body nav > .nav-wrapper .right-nav button:hover {
+  color: #e5e5e5;
+  box-shadow: 0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2);
+  cursor: pointer;
+}
+body .sections-container footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #323437;
+  color: white;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 32px 0px;
+}
+body .sections-container footer p {
+  padding: 15px;
+  margin: 0px;
+}
+body .sections-container footer .sub-section {
+  display: flex;
+}
+body .sections-container footer .sub-section:nth-child(2) {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+@media (min-width: 768px) {
+  body .at-top {
+    background-color: transparent;
+  }
+  body .not-at-top {
+    background-color: white;
+  }
+  body nav {
+    font-size: 30px;
+  }
+  body nav > .nav-wrapper {
+    width: 800px;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1200px) {
+  body nav > .nav-wrapper {
+    width: 1150px;
+  }
+}/*# sourceMappingURL=contact.css.map */
