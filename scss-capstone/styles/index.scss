@@ -199,6 +199,15 @@ body {
       }
     }
 
+    > .section-wrapper:nth-child(1) {
+      .section-content {
+        .sub-section {
+          margin: auto;
+          max-width: 85vw;
+        }
+      }
+    }
+
     > .section-wrapper:nth-child(2) {
       @include background-image-standard(url(../assets/contact.jpg));
       color: white;
@@ -298,12 +307,53 @@ body {
       > .section-content {
         background-color: $dark-overlay;
       }
+
+      > .section-content {
+        padding: 6em 25px 2.5em;
+        padding-bottom: 4.2em;
+
+        h2 {
+          text-align: left;
+          font-family: $secondary-font-family;
+          font-size: 24px;
+          padding-bottom: 0.7em;
+        }
+
+        h3 {
+          font-size: 18px;
+        }
+
+        i {
+          font-size: 36.4px;
+        }
+
+        > .sub-section {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .icon-pair {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          }
+
+          h2 {
+          }
+
+          p {
+            padding-left: 38px;
+            margin: 5px 0px;
+          }
+        }
+      }
     }
 
     > footer {
       // Always have a little bit visible at bottom of page?
       display: flex;
       width: 100%;
+      height: 3000px;
     }
   }
 }
