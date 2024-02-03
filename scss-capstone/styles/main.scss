@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding-top: 10em;
+  font-family: $main-font-family;
+
+  .at-top,
+  .not-at-top {
+    background-color: rgb(255, 255, 255);
+  }
+
+  nav {
+    display: flex;
+    font-size: 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 16.5px 8px;
+    z-index: 9;
+    box-shadow: 0 1px 10px -6px rgba(0, 0, 0, 0.42),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px -2px rgba(0, 0, 0, 0.1);
+
+    > .nav-wrapper {
+      margin: auto;
+      display: flex;
+
+      a {
+        text-decoration: none;
+        color: $header-gray;
+      }
+
+      .left-nav {
+        a {
+          padding: 10px 15px;
+          font-size: 18px;
+          font-weight: lighter;
+          &:hover {
+            color: $light-hover;
+          }
+        }
+      }
+
+      .right-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        a {
+          font-size: 12px;
+          padding: 15px;
+          &:hover {
+            color: $hot-pink;
+          }
+        }
+        a:nth-child(1) {
+          &:hover {
+            color: $light-hover;
+          }
+        }
+        button {
+          @include button-standard;
+          font-family: $main-font-family;
+          margin-right: 2em;
+        }
+      }
+    }
+  }
+
+  .sections-container {
+    footer {
+      @include centered-flex(column);
+      background-color: $footer-background-color;
+      color: white;
+      width: 100%;
+      font-size: 12px;
+      font-weight: 400;
+      padding: 32px 0px;
+      p {
+        padding: 15px;
+        margin: 0px;
+      }
+      .sub-section {
+        display: flex;
+      }
+
+      .sub-section:nth-child(2) {
+        font-size: 14px;
+        font-weight: lighter;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    .at-top {
+      background-color: transparent;
+    }
+
+    .not-at-top {
+      background-color: white;
+    }
+
+    nav {
+      font-size: 30px;
+      > .nav-wrapper {
+        width: 800px;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    nav {
+      > .nav-wrapper {
+        width: 1150px;
+      }
+    }
+  }
+}

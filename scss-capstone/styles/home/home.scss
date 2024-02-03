@@ -1,153 +1,15 @@
-// To do:
-// Get hover on SEE MORE button to work
-// Set up homepage links
-
-$hot-pink: #e91e63;
-$header-gray: #555555;
-$light-hover: #7e7e7e;
-$light-button-hover: #e5e5e5;
-$light-section-p-color: #999999;
-$dark-section-p-color: #fefefe;
-$light-overlay: rgba(0, 0, 0, 0.5);
-$dark-overlay: rgba(0, 0, 0, 0.7);
-$link-color: #23527c;
-$blog-color1: #89229b;
-$blog-color2: #00bcd4;
-$blog-color3: #f44336;
-$footer-background-color: #323437;
-
-$main-font-family: "Roboto", Helvetica, Arial, sans-serif;
-$secondary-font-family: "Roboto Slab", "Times New Roman", serif;
-
-$box-shadow-hover: 0 14px 26px -12px rgba(233, 30, 99, 0.42),
-  0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2);
-
-@mixin test-border($color: red) {
-  border: 1px solid $color;
-}
-
-@mixin button-standard($border-radius: 30px) {
-  font-size: 12px;
-  color: white;
-  background-color: $hot-pink;
-  border: none;
-  border-radius: $border-radius;
-  padding: 15px 20px;
-  &:hover {
-    color: $light-button-hover;
-    box-shadow: $box-shadow-hover;
-    cursor: pointer;
-  }
-}
-
-@mixin background-image-standard($url) {
-  background-image: $url;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-@mixin centered-flex($flex-direction: row) {
-  display: flex;
-  flex-direction: $flex-direction;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin blog-category($color) {
-  color: $color;
-  font-size: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  &:hover {
-    opacity: 0.75;
-  }
-}
-
-html,
-body {
-  height: 100%;
-}
+@import "../variables.scss", "../mixins.scss", "../main.scss";
 
 body {
-  margin: 0;
-  padding-top: 10em;
-  font-family: $main-font-family;
-
-  .at-top,
-  .not-at-top {
-    background-color: white;
-  }
-
-  nav {
-    display: flex;
-    font-size: 30px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    justify-content: space-between;
-    padding: 16.5px 8px;
-    z-index: 9;
-    box-shadow: 0 1px 10px -6px rgba(0, 0, 0, 0.42),
-      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px -2px rgba(0, 0, 0, 0.1);
-
-    > .nav-wrapper {
-      margin: auto;
-      display: flex;
-
-      a {
-        text-decoration: none;
-        color: $header-gray;
-      }
-
-      > .left-nav {
-        a {
-          padding: 10px 15px;
-          font-size: 18px;
-          font-weight: lighter;
-          &:hover {
-            color: $light-hover;
-          }
-        }
-      }
-
-      > .right-nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5em;
-        > a {
-          font-size: 12px;
-          padding: 15px;
-          &:hover {
-            color: $hot-pink;
-          }
-        }
-        > a:nth-child(1) {
-          &:hover {
-            color: $light-hover;
-          }
-        }
-        > button {
-          @include button-standard;
-          font-family: $main-font-family;
-          margin-right: 2em;
-        }
-      }
-    }
-  }
-
   .hero-container {
-    @include background-image-standard(url(../assets/parallax_1.jpg));
+    @include background-image-standard(url(../../assets/parallax_1.jpg));
     position: absolute;
     z-index: 3;
     top: 0;
     background-attachment: fixed;
     > .hero-wrapper {
-      @include background-image-standard(url(../assets/parallax_2.png));
-      > .hero-content {
+      @include background-image-standard(url(../../assets/parallax_2.png));
+      .hero-content {
         @include centered-flex(column);
         width: 100%;
         height: 100%;
@@ -158,7 +20,7 @@ body {
         color: white;
         z-index: 5;
 
-        > h1 {
+        h1 {
           font-size: 36px;
           text-wrap: wrap;
           margin-bottom: 10px;
@@ -191,10 +53,10 @@ body {
       > .section-content {
         height: 100%;
         padding-bottom: 7em;
-        > .sub-section {
+        .sub-section {
           font-family: $secondary-font-family;
 
-          > img {
+          img {
             padding-top: 3.5em;
             padding-bottom: 0;
           }
@@ -224,7 +86,7 @@ body {
     }
 
     > .section-wrapper:nth-child(2) {
-      @include background-image-standard(url(../assets/contact.jpg));
+      @include background-image-standard(url(../../assets/contact.jpg));
       color: white;
       background-color: transparent;
       background-attachment: fixed;
@@ -313,7 +175,7 @@ body {
     }
 
     > .section-wrapper:nth-child(4) {
-      @include background-image-standard(url(../assets/contact.jpg));
+      @include background-image-standard(url(../../assets/contact.jpg));
       color: white;
       background-color: transparent;
       > .section-content {
@@ -350,9 +212,6 @@ body {
             gap: 12px;
           }
 
-          h2 {
-          }
-
           p {
             padding-left: 38px;
             margin: 5px 0px;
@@ -360,60 +219,15 @@ body {
         }
       }
     }
-
-    > footer {
-      @include centered-flex(column);
-      background-color: $footer-background-color;
-      color: white;
-      width: 100%;
-      font-size: 12px;
-      font-weight: 400;
-      padding: 32px 0px;
-      p {
-        padding: 15px;
-        margin: 0px;
-      }
-      .sub-section {
-        display: flex;
-      }
-
-      .sub-section:nth-child(2) {
-        font-size: 14px;
-        font-weight: lighter;
-      }
-    }
   }
 }
 
-// Bigger than 600px wide (activate transparency effect when at top.)
 @media (min-width: 768px) {
-  body {
-    .at-top {
-      background-color: transparent;
-    }
-
-    .not-at-top {
-      background-color: white;
-    }
-
-    nav {
-      font-size: 30px;
-      > .nav-wrapper {
-        width: 800px;
-        justify-content: space-between;
-        > .left-nav {
-          a {
-          }
-        }
-      }
-    }
-
-    .hero-container {
-      > .hero-wrapper {
-        > .hero-content {
-          > h1 {
-            font-size: 67px;
-          }
+  .hero-container {
+    > .hero-wrapper {
+      > .hero-content {
+        h1 {
+          font-size: 67px;
         }
       }
     }
@@ -422,10 +236,5 @@ body {
 
 @media (min-width: 1200px) {
   body {
-    nav {
-      > .nav-wrapper {
-        width: 1150px;
-      }
-    }
   }
 }
