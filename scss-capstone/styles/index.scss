@@ -10,6 +10,10 @@ $light-section-p-color: #999999;
 $dark-section-p-color: #fefefe;
 $light-overlay: rgba(0, 0, 0, 0.5);
 $dark-overlay: rgba(0, 0, 0, 0.7);
+$link-color: #23527c;
+$blog-color1: #89229b;
+$blog-color2: #00bcd4;
+$blog-color3: #f44336;
 
 $main-font-family: "Roboto", Helvetica, Arial, sans-serif;
 $secondary-font-family: "Roboto Slab", "Times New Roman", serif;
@@ -67,6 +71,8 @@ body {
     justify-content: space-between;
     padding: 16.5px 8px;
     z-index: 9;
+    box-shadow: 0 1px 10px -6px rgba(0, 0, 0, 0.42),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px -2px rgba(0, 0, 0, 0.1);
 
     > .nav-wrapper {
       margin: auto;
@@ -123,7 +129,7 @@ body {
     @include background-image-standard(url(../assets/parallax_1.jpg));
     position: absolute;
     top: 0;
-    height: 800px;
+    // height: 800px;
     background-attachment: fixed;
     > .hero-wrapper {
       @include background-image-standard(url(../assets/parallax_2.png));
@@ -160,7 +166,7 @@ body {
     position: absolute;
     text-align: center;
     margin: auto;
-    top: 730px;
+    top: 850px;
     width: 100%;
     z-index: 3;
     background-color: white;
@@ -182,7 +188,9 @@ body {
             font-size: 14px;
             font-weight: lighter;
             font-family: $main-font-family;
-            color: $light-section-p-color;
+            &:nth-child(3) {
+              color: $light-section-p-color;
+            }
           }
         }
         h2 {
@@ -225,6 +233,64 @@ body {
       }
     }
 
+    > .section-wrapper:nth-child(3) {
+      @include centered-flex(column);
+      padding-top: 30px;
+      padding-bottom: 0px;
+      .section-content {
+        padding-bottom: 0px;
+        h2 {
+          font-size: 24px;
+          font-family: $secondary-font-family;
+          margin-bottom: 3em;
+        }
+
+        a {
+          text-decoration: none;
+          h3 {
+            font-size: 18px;
+            color: black;
+            text-decoration: none;
+            margin: 0px;
+          }
+        }
+
+        .sub-section {
+          margin-bottom: 7em;
+          max-width: 70vw;
+
+          p {
+            span {
+              color: $link-color;
+
+              &:hover {
+                color: $hot-pink;
+                cursor: pointer;
+              }
+            }
+          }
+
+          p:nth-child(1) {
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+
+          .blog1 {
+            color: $blog-color1;
+          }
+
+          .blog2 {
+            color: $blog-color2;
+          }
+
+          .blog3 {
+            color: $blog-color3;
+          }
+        }
+      }
+    }
+
     > .section-wrapper:nth-child(4) {
       @include background-image-standard(url(../assets/contact.jpg));
       color: white;
@@ -235,6 +301,7 @@ body {
     }
 
     > footer {
+      // Always have a little bit visible at bottom of page?
       display: flex;
       width: 100%;
     }
