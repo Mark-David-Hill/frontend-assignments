@@ -2,6 +2,13 @@
 // nav button/link hover effects
 // Fix colors/assign to variables
 
+$hot-pink: #e91e63;
+$header-gray: #555555;
+$light-hover: #7e7e7e;
+$light-button-hover: #e5e5e5;
+
+$main-font-family: "Roboto", Helvetica, Arial, sans-serif;
+$secondary-font-family: "Roboto Slab", "Times New Roman", serif;
 @mixin test-border($color: red) {
   border: 1px solid $color;
 }
@@ -9,10 +16,27 @@
 @mixin button-standard($border-radius: 30px) {
   font-size: 12px;
   color: white;
-  background-color: rgb(226, 34, 130);
+  background-color: $hot-pink;
   border: none;
   border-radius: $border-radius;
   padding: 15px 20px;
+}
+
+@mixin background-image-standard($url) {
+  background-image: $url;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+@mixin centered-flex($flex-direction: row) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: center;
+  align-items: center;
 }
 
 html,
@@ -23,7 +47,7 @@ body {
 body {
   margin: 0;
   padding-top: 10em;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: $main-font-family;
 
   .at-top,
   .not-at-top {
@@ -46,13 +70,17 @@ body {
 
       a {
         text-decoration: none;
-        color: gray;
+        color: $header-gray;
       }
 
       > .left-nav {
         a {
           padding: 10px 15px;
           font-size: 18px;
+          font-weight: lighter;
+          &:hover {
+            color: $light-hover;
+          }
         }
       }
 
@@ -63,41 +91,45 @@ body {
         > a {
           font-size: 12px;
           padding: 15px;
+          &:hover {
+            color: $hot-pink;
+          }
+        }
+        > a:nth-child(1) {
+          &:hover {
+            color: $light-hover;
+          }
         }
         > button {
           @include button-standard;
           margin-right: 2em;
+          &:hover {
+            color: $light-button-hover;
+
+            box-shadow: 0 14px 26px -12px rgba(233, 30, 99, 0.42),
+              0 4px 23px 0 rgba(0, 0, 0, 0.12),
+              0 8px 10px -5px rgba(233, 30, 99, 0.2);
+          }
         }
       }
     }
   }
 
   .hero-container {
-    width: 100%;
+    @include background-image-standard(url(../assets/parallax_1.jpg));
     position: absolute;
     top: 0;
-    z-index: -1;
     height: 800px;
-    background-image: url(../assets/parallax_1.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed;
     > .hero-wrapper {
-      width: 100%;
-      height: 800px;
-      background-image: url(../assets/parallax_2.png);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+      @include background-image-standard(url(../assets/parallax_2.png));
+      // height: 800px;
       > .hero-content {
+        @include centered-flex(column);
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         position: relative;
         top: 0;
         color: white;
@@ -105,6 +137,13 @@ body {
         > h1 {
           font-size: 36px;
           text-wrap: wrap;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-family: $secondary-font-family;
+          font-size: 18px;
+          margin-bottom: 50px;
         }
 
         > button {
@@ -113,6 +152,7 @@ body {
       }
     }
   }
+
   .sections-container {
     position: absolute;
     text-align: center;
@@ -122,26 +162,39 @@ body {
     z-index: 3;
     background-color: white;
     @include test-border;
-    // Needs border and to be centered horizontally
     > .section-wrapper {
       width: 100%;
       @include test-border(blue);
 
       > .section-content {
         height: 100%;
+        padding-bottom: 7em;
         > .sub-section {
+          font-family: $secondary-font-family;
+
+          > img {
+            padding-top: 3.5em;
+            padding-bottom: 0;
+          }
+
+          p {
+            font-size: 14px;
+            font-weight: lighter;
+            color: #999999;
+            // @include test-border(blue);
+            // font-family: $secondary-font-family;
+          }
+        }
+        h2 {
+          font-size: 28px;
         }
       }
     }
 
     > .section-wrapper:nth-child(2) {
+      @include background-image-standard(url(../assets/contact.jpg));
       color: white;
       background-color: transparent;
-      z-index: -1;
-      background-image: url(../assets/contact.jpg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
       background-attachment: fixed;
       > .section-content {
         background-color: rgba(0, 0, 0, 0.5);
@@ -154,22 +207,15 @@ body {
     }
 
     > .section-wrapper:nth-child(4) {
+      @include background-image-standard(url(../assets/contact.jpg));
       color: white;
       background-color: transparent;
-      z-index: -1;
-      // height: 800px;
-      background-image: url(../assets/contact.jpg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      // background-attachment: fixed;
       > .section-content {
         background-color: rgba(0, 0, 0, 0.5);
       }
     }
 
     > footer {
-      // position: absolute;
       display: flex;
       width: 100%;
     }
