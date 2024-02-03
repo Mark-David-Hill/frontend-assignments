@@ -6,6 +6,10 @@ $hot-pink: #e91e63;
 $header-gray: #555555;
 $light-hover: #7e7e7e;
 $light-button-hover: #e5e5e5;
+$light-section-p-color: #999999;
+$dark-section-p-color: #fefefe;
+$light-overlay: rgba(0, 0, 0, 0.5);
+$dark-overlay: rgba(0, 0, 0, 0.7);
 
 $main-font-family: "Roboto", Helvetica, Arial, sans-serif;
 $secondary-font-family: "Roboto Slab", "Times New Roman", serif;
@@ -123,12 +127,11 @@ body {
     background-attachment: fixed;
     > .hero-wrapper {
       @include background-image-standard(url(../assets/parallax_2.png));
-      // height: 800px;
       > .hero-content {
         @include centered-flex(column);
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: $light-overlay;
         display: flex;
         position: relative;
         top: 0;
@@ -161,10 +164,8 @@ body {
     width: 100%;
     z-index: 3;
     background-color: white;
-    @include test-border;
     > .section-wrapper {
       width: 100%;
-      @include test-border(blue);
 
       > .section-content {
         height: 100%;
@@ -180,9 +181,8 @@ body {
           p {
             font-size: 14px;
             font-weight: lighter;
-            color: #999999;
-            // @include test-border(blue);
-            // font-family: $secondary-font-family;
+            font-family: $main-font-family;
+            color: $light-section-p-color;
           }
         }
         h2 {
@@ -197,10 +197,29 @@ body {
       background-color: transparent;
       background-attachment: fixed;
       > .section-content {
-        background-color: rgba(0, 0, 0, 0.5);
+        padding-bottom: 5.5em;
+        background-color: $dark-overlay;
         > .sub-section {
-          > img {
-            width: 80%;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          padding: 60px 40px 0px;
+          h2 {
+            align-self: flex-start;
+            margin-bottom: 0;
+          }
+
+          p {
+            text-align: left;
+            font-size: 18px;
+            color: $dark-section-p-color;
+            padding-bottom: 16px;
+            line-height: 1.5;
+          }
+
+          img {
+            width: 100%;
+            align-self: center;
           }
         }
       }
@@ -211,7 +230,7 @@ body {
       color: white;
       background-color: transparent;
       > .section-content {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: $dark-overlay;
       }
     }
 

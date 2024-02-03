@@ -127,11 +127,9 @@ body .sections-container {
   width: 100%;
   z-index: 3;
   background-color: white;
-  border: 1px solid red;
 }
 body .sections-container > .section-wrapper {
   width: 100%;
-  border: 1px solid blue;
 }
 body .sections-container > .section-wrapper > .section-content {
   height: 100%;
@@ -147,6 +145,7 @@ body .sections-container > .section-wrapper > .section-content > .sub-section > 
 body .sections-container > .section-wrapper > .section-content > .sub-section p {
   font-size: 14px;
   font-weight: lighter;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   color: #999999;
 }
 body .sections-container > .section-wrapper > .section-content h2 {
@@ -165,10 +164,29 @@ body .sections-container > .section-wrapper:nth-child(2) {
   background-attachment: fixed;
 }
 body .sections-container > .section-wrapper:nth-child(2) > .section-content {
-  background-color: rgba(0, 0, 0, 0.5);
+  padding-bottom: 5.5em;
+  background-color: rgba(0, 0, 0, 0.7);
 }
-body .sections-container > .section-wrapper:nth-child(2) > .section-content > .sub-section > img {
-  width: 80%;
+body .sections-container > .section-wrapper:nth-child(2) > .section-content > .sub-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 60px 40px 0px;
+}
+body .sections-container > .section-wrapper:nth-child(2) > .section-content > .sub-section h2 {
+  align-self: flex-start;
+  margin-bottom: 0;
+}
+body .sections-container > .section-wrapper:nth-child(2) > .section-content > .sub-section p {
+  text-align: left;
+  font-size: 18px;
+  color: #fefefe;
+  padding-bottom: 16px;
+  line-height: 1.5;
+}
+body .sections-container > .section-wrapper:nth-child(2) > .section-content > .sub-section img {
+  width: 100%;
+  align-self: center;
 }
 body .sections-container > .section-wrapper:nth-child(4) {
   background-image: url(../assets/contact.jpg);
@@ -182,7 +200,7 @@ body .sections-container > .section-wrapper:nth-child(4) {
   background-color: transparent;
 }
 body .sections-container > .section-wrapper:nth-child(4) > .section-content {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 body .sections-container > footer {
   display: flex;
