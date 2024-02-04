@@ -2,6 +2,8 @@ body {
   margin: 0;
   padding-top: 10em;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
+  background-color: #e5e5e5;
+  overflow-x: hidden;
 }
 body .at-top,
 body .not-at-top {
@@ -32,7 +34,7 @@ body nav > .nav-wrapper .left-nav a {
   font-weight: lighter;
 }
 body nav > .nav-wrapper .left-nav a:hover {
-  color: #7e7e7e;
+  opacity: 0.75;
 }
 body nav > .nav-wrapper .right-nav {
   display: flex;
@@ -47,7 +49,8 @@ body nav > .nav-wrapper .right-nav a:hover {
   color: #e91e63;
 }
 body nav > .nav-wrapper .right-nav a:nth-child(1):hover {
-  color: #7e7e7e;
+  color: white;
+  opacity: 0.75;
 }
 body nav > .nav-wrapper .right-nav button {
   font-size: 12px;
@@ -64,7 +67,7 @@ body nav > .nav-wrapper .right-nav button:hover {
   box-shadow: 0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2);
   cursor: pointer;
 }
-body .sections-container footer {
+body footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,15 +78,17 @@ body .sections-container footer {
   font-size: 12px;
   font-weight: 400;
   padding: 32px 0px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
-body .sections-container footer p {
+body footer p {
   padding: 15px;
   margin: 0px;
 }
-body .sections-container footer .sub-section {
+body footer .sub-section {
   display: flex;
 }
-body .sections-container footer .sub-section:nth-child(2) {
+body footer .sub-section:nth-child(2) {
   font-size: 14px;
   font-weight: lighter;
 }
@@ -97,16 +102,47 @@ body .sections-container footer .sub-section:nth-child(2) {
   }
   body nav {
     font-size: 30px;
+    box-shadow: none;
+    padding: 1.2em 0;
   }
   body nav > .nav-wrapper {
     width: 800px;
     justify-content: space-between;
+  }
+  body nav > .nav-wrapper > .left-nav a {
+    color: white;
+  }
+  body nav > .nav-wrapper > .left-nav:hover {
+    color: white;
+  }
+  body nav > .nav-wrapper > .right-nav a {
+    color: white;
+  }
+  body nav > .nav-wrapper > .right-nav a:hover {
+    color: white;
+    opacity: 0.75;
+    background-color: rgba(255, 255, 255, 0.097);
+    border-radius: 3px;
+  }
+  body footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 9vw;
+  }
+  body footer .sub-section {
+    flex-direction: row;
+    padding-right: 18vw;
   }
 }
 @media (min-width: 1200px) {
   body nav > .nav-wrapper {
     width: 1150px;
   }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 420vh;
 }
 body .hero-container {
   background-image: url(../../assets/parallax_1.jpg);
@@ -170,7 +206,7 @@ body .hero-container > .hero-wrapper .hero-content button:hover {
 body .sections-container {
   position: absolute;
   text-align: center;
-  margin: auto;
+  margin: 0 auto;
   top: 850px;
   width: 100%;
   z-index: 5;
@@ -318,6 +354,7 @@ body .sections-container > .section-wrapper:nth-child(4) {
   z-index: -1;
   color: white;
   background-color: transparent;
+  box-shadow: 0 1px 10px -6px rgba(0, 0, 0, 0.42), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px -2px rgba(0, 0, 0, 0.1);
 }
 body .sections-container > .section-wrapper:nth-child(4) > .section-content {
   background-color: rgba(0, 0, 0, 0.7);
@@ -354,7 +391,22 @@ body .sections-container > .section-wrapper:nth-child(4) > .section-content > .s
 }
 
 @media (min-width: 768px) {
-  .hero-container > .hero-wrapper > .hero-content h1 {
+  html body .hero-container > .hero-wrapper > .hero-content h1 {
     font-size: 67px;
+    width: 400px;
+    text-align: center;
+  }
+  html body .sections-container {
+    top: 46.5em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 96.5%;
+    border-radius: 6px;
+  }
+}
+@media (min-width: 1000px) {
+  html body .hero-container .hero-wrapper .hero-content h1 {
+    width: 1000px;
   }
 }/*# sourceMappingURL=home.css.map */

@@ -2,6 +2,8 @@ body {
   margin: 0;
   padding-top: 10em;
   font-family: $main-font-family;
+  background-color: $background-gray;
+  overflow-x: hidden;
 
   .at-top,
   .not-at-top {
@@ -35,7 +37,7 @@ body {
           font-size: 18px;
           font-weight: lighter;
           &:hover {
-            color: $light-hover;
+            opacity: 0.75;
           }
         }
       }
@@ -53,7 +55,9 @@ body {
         }
         a:nth-child(1) {
           &:hover {
-            color: $light-hover;
+            // color: $light-hover;
+            color: white;
+            opacity: 0.75;
           }
         }
         button {
@@ -65,27 +69,28 @@ body {
     }
   }
 
-  .sections-container {
-    footer {
-      @include centered-flex(column);
-      background-color: $footer-background-color;
-      color: white;
-      width: 100%;
-      font-size: 12px;
-      font-weight: 400;
-      padding: 32px 0px;
-      p {
-        padding: 15px;
-        margin: 0px;
-      }
-      .sub-section {
-        display: flex;
-      }
+  footer {
+    @include centered-flex(column);
+    background-color: $footer-background-color;
+    color: white;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 32px 0px;
+    width: 100vw;
+    // width: calc(100vw - 20px);
+    margin-left: calc(-50vw + 50%);
+    p {
+      padding: 15px;
+      margin: 0px;
+    }
+    .sub-section {
+      display: flex;
+    }
 
-      .sub-section:nth-child(2) {
-        font-size: 14px;
-        font-weight: lighter;
-      }
+    .sub-section:nth-child(2) {
+      font-size: 14px;
+      font-weight: lighter;
     }
   }
 }
@@ -102,9 +107,44 @@ body {
 
     nav {
       font-size: 30px;
+      box-shadow: none;
+      padding: 1.2em 0;
+      // Change text colors
       > .nav-wrapper {
         width: 800px;
         justify-content: space-between;
+        > .left-nav {
+          a {
+            color: white;
+          }
+          &:hover {
+            color: white;
+          }
+        }
+        > .right-nav {
+          // Change hover effect for links
+
+          a {
+            color: white;
+            &:hover {
+              color: white;
+              opacity: 0.75;
+              background-color: rgba(255, 255, 255, 0.097);
+              border-radius: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      flex-direction: row;
+      justify-content: space-between;
+      // padding-left: 2em;
+      padding-left: 9vw;
+      .sub-section {
+        flex-direction: row;
+        padding-right: 18vw;
       }
     }
   }
