@@ -109,7 +109,6 @@ body {
       font-size: 30px;
       box-shadow: none;
       padding: 1.2em 0;
-      // Change text colors
       > .nav-wrapper {
         width: 800px;
         justify-content: space-between;
@@ -122,8 +121,6 @@ body {
           }
         }
         > .right-nav {
-          // Change hover effect for links
-
           a {
             color: white;
             &:hover {

@@ -10,18 +10,18 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@100;400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/blog/blog.css" />
   </head>
-  <body onscroll="checkScroll()">
-    <nav id="home-nav" class="at-top">
+  <body">
+    <nav id="home-nav" class="not-at-top">
       <div class="nav-wrapper">
         <div class="left-nav">
-          <a href="#">Hestia</a>
+          <a href="../index.html">Hestia</a>
         </div>
         <div class="right-nav">
-          <a href="">HOME</a>
-          <a href="">BLOG</a>
-          <a href="">CONTACT</a>
+          <a href="../index.html">HOME</a>
+          <a href="./blog.html">BLOG</a>
+          <a href="./contact.html">CONTACT</a>
           <button>MORE</button>
         </div>
       </div>
@@ -89,11 +89,11 @@
         </div>
         
         <footer>
-          <div class="subsection">
+          <div class="sub-section">
             <p>ABOUT</p>
             <p>PARENT PAGE</p>
           </div>
-          <div class="subsection">
+          <div class="sub-section">
             <p>Hestia | Developed by ThemeIsle</p>
           </div>
         </footer>
@@ -101,15 +101,5 @@
     </main>
   </body>
   <script>
-    function checkScroll() {
-      if (
-        document.body.scrollTop > 70 ||
-        document.documentElement.scrollTop > 70
-      ) {
-        document.getElementById("home-nav").className = "not-at-top";
-      } else {
-        document.getElementById("home-nav").className = "at-top";
-      }
-    }
   </script>
 </html>
