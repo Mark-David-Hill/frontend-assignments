@@ -142,7 +142,7 @@ body footer .sub-section:nth-child(2) {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 420vh;
+  min-height: 300vh;
 }
 body .hero-container {
   background-image: url(../../assets/parallax_1.jpg);
@@ -403,6 +403,87 @@ body .sections-container > .section-wrapper:nth-child(4) > .section-content > .s
     margin: 0 auto;
     width: 96.5%;
     border-radius: 6px;
+  }
+  html body .sections-container .section-wrapper:nth-child(1) .section-content {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+  html body .sections-container .section-wrapper:nth-child(1) .section-content h2 {
+    font-family: "Roboto Slab", "Times New Roman", serif;
+    font-size: 37px;
+    margin: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    align-self: self-end;
+  }
+  html body .sections-container .section-wrapper:nth-child(1) .section-content .sub-section h3 {
+    margin: 5px 0px;
+  }
+  html body .sections-container .section-wrapper:nth-child(1) .section-content .sub-section p {
+    padding: 0px 5px;
+  }
+  html body .sections-container .section-wrapper:nth-child(2) .section-content .sub-section {
+    display: grid;
+    grid-template-rows: 1f 1fr;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    -moz-column-gap: 6em;
+         column-gap: 6em;
+  }
+  html body .sections-container .section-wrapper:nth-child(2) .section-content h2 {
+    font-size: 37px;
+  }
+  html body .sections-container .section-wrapper:nth-child(2) .section-content p {
+    padding-right: 2em;
+  }
+  html body .sections-container .section-wrapper:nth-child(2) .section-content img {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+  }
+  html body .sections-container .section-wrapper:nth-child(3) {
+    padding: 0 2em;
+  }
+  html body .sections-container .section-wrapper:nth-child(3) .section-content {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    -moz-column-gap: 2em;
+         column-gap: 2em;
+    max-height: 450px;
+  }
+  html body .sections-container .section-wrapper:nth-child(3) .section-content .sub-section {
+    text-align: left;
+    padding: 0 2em;
+    margin-bottom: 0;
+  }
+  html body .sections-container .section-wrapper:nth-child(3) .section-content h2 {
+    font-size: 37px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  html body .sections-container .section-wrapper:nth-child(3) .section-content p {
+    padding-right: 2em;
+  }
+  html body .sections-container .section-wrapper:nth-child(4) .section-content h2 {
+    padding-left: 10vw;
+  }
+  html body .sections-container .section-wrapper:nth-child(4) .section-content .sub-section {
+    padding-left: 10vw;
+  }
+  html body .sections-container .section-wrapper .section-content {
+    padding-left: 10vw;
+    padding-right: 10vw;
   }
 }
 @media (min-width: 1000px) {

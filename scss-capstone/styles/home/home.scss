@@ -3,7 +3,7 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 420vh;
+  min-height: 300vh;
   .hero-container {
     @include background-image-standard(url(../../assets/parallax_1.jpg));
     position: absolute;
@@ -226,7 +226,6 @@ body {
     }
   }
 }
-// body > main > div.hero-container > div > div > h1
 
 @media (min-width: 768px) {
   html {
@@ -249,8 +248,98 @@ body {
         margin: 0 auto;
         width: 96.5%;
         border-radius: 6px;
-        > .section-wrapper {
-          > .section-content {
+
+        .section-wrapper:nth-child(1) {
+          .section-content {
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+            padding-left: 8vw;
+            padding-right: 8vw;
+            h2 {
+              font-family: $secondary-font-family;
+              font-size: 37px;
+              margin: 0;
+              grid-column-start: 1;
+              grid-column-end: 4;
+              align-self: self-end;
+            }
+            .sub-section {
+              h3 {
+                margin: 5px 0px;
+              }
+              p {
+                padding: 0px 5px;
+              }
+            }
+          }
+        }
+        .section-wrapper:nth-child(2) {
+          .section-content {
+            .sub-section {
+              display: grid;
+              grid-template-rows: 1f 1fr;
+              grid-template-columns: 1fr 1fr;
+              text-align: left;
+              column-gap: 6em;
+            }
+            h2 {
+              font-size: 37px;
+            }
+            p {
+              padding-right: 2em;
+            }
+            img {
+              grid-row-start: 1;
+              grid-row-end: 3;
+              grid-column-start: 2;
+            }
+          }
+        }
+        .section-wrapper:nth-child(3) {
+          padding: 0 2em;
+          .section-content {
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 2em;
+            max-height: 450px;
+
+            .sub-section {
+              text-align: left;
+              padding: 0 2em;
+              margin-bottom: 0;
+            }
+            h2 {
+              font-size: 37px;
+              grid-column-start: 1;
+              grid-column-end: 4;
+              margin-top: 2em;
+              margin-bottom: 2em;
+            }
+            p {
+              padding-right: 2em;
+            }
+          }
+        }
+        .section-wrapper:nth-child(4) {
+          .section-content {
+            h2 {
+              padding-left: 10vw;
+            }
+            .sub-section {
+              padding-left: 10vw;
+            }
+          }
+        }
+        .section-wrapper {
+          .section-content {
+            padding-left: 10vw;
+            padding-right: 10vw;
           }
         }
       }
