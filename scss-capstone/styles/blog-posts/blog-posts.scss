@@ -37,7 +37,7 @@ body {
     padding: 2em;
   }
 
-  .sections-container:not(footer) {
+  .sections-container {
     @include centered-flex(column);
     position: absolute;
     top: 25em;
