@@ -1,8 +1,27 @@
 @import "../variables.scss", "../mixins.scss", "../main.scss";
 
 body {
+  form {
+    width: 90%;
+    input,
+    textarea {
+      border: none;
+    }
+    hr {
+      margin-bottom: 2em;
+    }
+  }
+
+  .submit-field {
+    input {
+      @include button-standard(3px);
+      padding: 1.5em 3em;
+    }
+  }
+
   display: flex;
   flex-direction: column;
+  background-color: white;
   .hero-container {
     position: absolute;
     z-index: 3;
@@ -29,17 +48,12 @@ body {
     .sections-sub-container {
       @include centered-flex;
       gap: 20vw;
+      padding-bottom: 3em;
       .section-wrapper {
-        //  .section-wrapper:nth-child(4) {
-
         .section-content {
-          // padding: 6em 25px 2.5em;
-          // padding-bottom: 4.2em;
-
-          //
-
           i {
-            font-size: 36.4px;
+            font-size: 25px;
+            color: $hot-pink;
           }
 
           .sub-section {
@@ -50,16 +64,19 @@ body {
             .icon-pair {
               display: flex;
               align-items: center;
-              gap: 12px;
+              gap: 8px;
+              font-size: 18px;
             }
 
             p {
               padding-left: 38px;
               margin: 5px 0px;
+              font-size: 14px;
+              color: $light-section-p-color;
+              font-weight: lighter;
             }
           }
         }
-        // }
       }
     }
     position: absolute;

@@ -119,6 +119,31 @@ body footer .sub-section:nth-child(2) {
 body {
   display: flex;
   flex-direction: column;
+  background-color: white;
+}
+body form {
+  width: 90%;
+}
+body form input,
+body form textarea {
+  border: none;
+}
+body form hr {
+  margin-bottom: 2em;
+}
+body .submit-field input {
+  font-size: 12px;
+  color: white;
+  background-color: #e91e63;
+  border: none;
+  border-radius: 3px;
+  padding: 15px 20px;
+  padding: 1.5em 3em;
+}
+body .submit-field input:hover {
+  color: #e5e5e5;
+  box-shadow: 0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2);
+  cursor: pointer;
 }
 body .hero-container {
   position: absolute;
@@ -153,9 +178,11 @@ body .sections-container .sections-sub-container {
   justify-content: center;
   align-items: center;
   gap: 20vw;
+  padding-bottom: 3em;
 }
 body .sections-container .sections-sub-container .section-wrapper .section-content i {
-  font-size: 36.4px;
+  font-size: 25px;
+  color: #e91e63;
 }
 body .sections-container .sections-sub-container .section-wrapper .section-content .sub-section {
   display: flex;
@@ -165,11 +192,15 @@ body .sections-container .sections-sub-container .section-wrapper .section-conte
 body .sections-container .sections-sub-container .section-wrapper .section-content .sub-section .icon-pair {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  font-size: 18px;
 }
 body .sections-container .sections-sub-container .section-wrapper .section-content .sub-section p {
   padding-left: 38px;
   margin: 5px 0px;
+  font-size: 14px;
+  color: #999999;
+  font-weight: lighter;
 }
 
 @media (max-width: 782px) {
