@@ -2,7 +2,6 @@
 
 body {
   nav {
-    @include test-border;
     color: black;
     a {
       color: black;
@@ -27,7 +26,19 @@ body {
     }
   }
 
-  .sections-container {
+  .headings {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+  }
+
+  .sections-container:not(footer) {
+    @include centered-flex(column);
     position: absolute;
     top: 25em;
     left: 0;
@@ -41,6 +52,7 @@ body {
       @include centered-flex(column);
       padding-top: 30px;
       padding-bottom: 0px;
+
       .section-content {
         p {
           text-align: center;
