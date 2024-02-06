@@ -122,11 +122,24 @@ body {
   background-color: white;
 }
 body form {
-  width: 90%;
+  min-width: 27em;
+  padding-left: 0 1em;
 }
 body form input,
 body form textarea {
+  width: 100%;
   border: none;
+  outline: none;
+}
+body form input:focus + hr,
+body form textarea:focus + hr {
+  border-top: 2px solid red;
+}
+body form input + hr {
+  background-color: red;
+}
+body form input:focus + hr {
+  background-color: red;
 }
 body form hr {
   margin-bottom: 2em;

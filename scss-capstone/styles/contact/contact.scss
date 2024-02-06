@@ -2,11 +2,34 @@
 
 body {
   form {
-    width: 90%;
+    min-width: 27em;
+    padding-left: 0 1em;
     input,
     textarea {
+      width: 100%;
       border: none;
+      outline: none;
+
+      &:focus + hr {
+        border-top: 2px solid red;
+      }
     }
+
+    input + hr {
+      background-color: red;
+    }
+
+    input {
+      &:focus + hr {
+        background-color: red;
+      }
+      // :focus + hr {
+      //   background-color: red;
+      //   color: red;
+      //   width: 200em;
+      // }
+    }
+
     hr {
       margin-bottom: 2em;
     }
