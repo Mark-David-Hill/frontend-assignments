@@ -43,24 +43,15 @@ body {
           text-align: center;
         }
 
-        // height: 100%;
-        // padding-bottom: 7em;
         .sub-section {
           font-family: $secondary-font-family;
-          // p {
-          //   font-size: 14px;
-          //   font-weight: lighter;
-          //   font-family: $main-font-family;
-          //   &:nth-child(3) {
-          //     color: $light-section-p-color;
-          //   }
-          // }
+          padding-bottom: 0px;
         }
+
         h2 {
           font-size: 28px;
         }
 
-        padding-bottom: 0px;
         h2 {
           font-size: 24px;
           font-family: $secondary-font-family;

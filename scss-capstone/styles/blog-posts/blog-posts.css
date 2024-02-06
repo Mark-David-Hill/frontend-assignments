@@ -93,12 +93,6 @@ body footer .sub-section:nth-child(2) {
 }
 
 @media (min-width: 768px) {
-  body .at-top {
-    background-color: transparent;
-  }
-  body .not-at-top {
-    background-color: white;
-  }
   body nav {
     font-size: 30px;
     padding: 1.2em 0;
@@ -164,14 +158,12 @@ body .sections-container .section-wrapper {
   padding-top: 30px;
   padding-bottom: 0px;
 }
-body .sections-container .section-wrapper .section-content {
-  padding-bottom: 0px;
-}
 body .sections-container .section-wrapper .section-content p {
   text-align: center;
 }
 body .sections-container .section-wrapper .section-content .sub-section {
   font-family: "Roboto Slab", "Times New Roman", serif;
+  padding-bottom: 0px;
 }
 body .sections-container .section-wrapper .section-content h2 {
   font-size: 28px;

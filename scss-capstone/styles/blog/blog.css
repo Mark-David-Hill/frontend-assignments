@@ -93,12 +93,6 @@ body footer .sub-section:nth-child(2) {
 }
 
 @media (min-width: 768px) {
-  body .at-top {
-    background-color: transparent;
-  }
-  body .not-at-top {
-    background-color: white;
-  }
   body nav {
     font-size: 30px;
     padding: 1.2em 0;
@@ -173,11 +167,7 @@ body .sections-container .section-wrapper .section-content .sub-section p:nth-ch
 }
 body .sections-container .section-wrapper .section-content h2 {
   font-size: 28px;
-}
-body .sections-container .section-wrapper .section-content h2 {
-  font-size: 24px;
-  font-family: "Roboto Slab", "Times New Roman", serif;
-  margin-bottom: 3em;
+  color: black;
 }
 body .sections-container .section-wrapper .section-content a {
   text-decoration: none;
