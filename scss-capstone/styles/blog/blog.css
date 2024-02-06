@@ -130,6 +130,8 @@ body .hero-container {
 body .hero-container h1 {
   position: relative;
   bottom: 40px;
+  color: white;
+  font-size: 26px;
 }
 body .sections-container {
   position: absolute;
@@ -137,11 +139,9 @@ body .sections-container {
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 96.5%;
-  border-radius: 6px;
+  width: 100%;
   z-index: 3;
   background-color: white;
-  border-radius: 5px;
 }
 body .sections-container .section-wrapper {
   display: flex;
@@ -254,4 +254,14 @@ body .sections-container .section-wrapper .section-content .sub-section .blog7 {
 }
 body .sections-container .section-wrapper .section-content .sub-section .blog7:hover {
   opacity: 0.75;
+}
+
+@media (min-width: 768px) {
+  body .hero-container h1 {
+    font-size: 42px;
+  }
+  body .sections-container {
+    width: 96.5%;
+    border-radius: 5px;
+  }
 }/*# sourceMappingURL=blog.css.map */
