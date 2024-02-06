@@ -6,7 +6,6 @@ body {
     padding-left: 0 1em;
     input,
     textarea {
-      // width: 100%;
       border: none;
       outline: none;
 
@@ -23,11 +22,6 @@ body {
       &:focus + hr {
         background-color: red;
       }
-      // :focus + hr {
-      //   background-color: red;
-      //   color: red;
-      //   width: 200em;
-      // }
     }
 
     hr {
