@@ -373,6 +373,9 @@ body .sections-container > .section-wrapper:nth-child(4) > .section-content > .s
     width: 400px;
     text-align: center;
   }
+  html body .at-top {
+    background-color: transparent;
+  }
   html body .at-top > .nav-wrapper > .left-nav > a {
     color: white;
   }

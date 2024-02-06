@@ -127,7 +127,6 @@ body form {
 }
 body form input,
 body form textarea {
-  width: 100%;
   border: none;
   outline: none;
 }
