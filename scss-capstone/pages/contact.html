@@ -34,90 +34,84 @@
       </div>
     </nav>
     <main>
+      <div class="hero-container">
+        <div class="hero-wrapper">
+          <div class="hero-content">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d22785.421725301356!2d26.092743!3d44.450027!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff5499e689fd%3A0xec3a46eabd83835b!2sStrada%20Povernei%2020%2C%20Bucure%C8%99ti%2C%20Romania!5e0!3m2!1sen!2sus!4v1707182090160!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
       <div class="sections-container">
-        <div class="section-wrapper">
-          <div class="section-content">
-            <div class="sub-section">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d22785.421725301356!2d26.092743!3d44.450027!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff5499e689fd%3A0xec3a46eabd83835b!2sStrada%20Povernei%2020%2C%20Bucure%C8%99ti%2C%20Romania!5e0!3m2!1sen!2sus!4v1707170413836!5m2!1sen!2sus"
-                width="600"
-                height="450"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+        <div class="sections-sub-container">
+          <div class="section-wrapper">
+            <div class="section-content">
+              <div class="sub-section">
+                <h1>Send us a message</h1>
+                <form action="https://httpbin.org/post" method="post">
+                  <div class="first-name-field">
+                    <label for="first-name"></label>
+                    <input
+                      id="first-name"
+                      name="name"
+                      value=""
+                      type="text"
+                      autocomplete="given-name"
+                      placeholder="Your name..."
+                      required
+                    />
+                  </div>
+                  <hr />
+                  <div class="last-name-field">
+                    <label for="last-name"></label>
+                    <input
+                      id="last-name"
+                      name="name"
+                      value=""
+                      type="text"
+                      autocomplete="given-name"
+                      placeholder="Your last name..."
+                      required
+                    />
+                  </div>
+                  <hr />
+                  <div class="comments-field">
+                    <label for="comments"></label>
+                    <textarea
+                      name="comments"
+                      id="comments"
+                      cols="30"
+                      rows="10"
+                    ></textarea>
+                  </div>
+                  <hr />
+                  <div class="submit-field">
+                    <input type="submit" value="Submit" />
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="section-wrapper">
-          <div class="section-content">
-            <div class="sub-section">
-              <h1>Send us a message</h1>
-              <form action="https://httpbin.org/post" method="post">
-                <div class="first-name-field">
-                  <label for="first-name"></label>
-                  <input
-                    id="first-name"
-                    name="name"
-                    value=""
-                    type="text"
-                    autocomplete="given-name"
-                    placeholder="Your name..."
-                    required
-                  />
+          <div class="section-wrapper">
+            <div class="section-content">
+              <div class="sub-section">
+                <div class="icon-pair">
+                  <i class="fa-solid fa-map"></i>
+                  <h3>Find us at the office</h3>
                 </div>
-                <hr />
-                <div class="last-name-field">
-                  <label for="last-name"></label>
-                  <input
-                    id="last-name"
-                    name="name"
-                    value=""
-                    type="text"
-                    autocomplete="given-name"
-                    placeholder="Your last name..."
-                    required
-                  />
-                </div>
-                <hr />
-                <div class="comments-field">
-                  <label for="comments"></label>
-                  <textarea
-                    name="comments"
-                    id="comments"
-                    cols="30"
-                    rows="10"
-                  ></textarea>
-                </div>
-                <hr />
-                <div class="submit-field">
-                  <input type="submit" value="Submit" />
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="section-wrapper">
-          <div class="section-content">
-            <div class="sub-section">
-              <div class="icon-pair">
-                <i class="fa-solid fa-map"></i>
-                <h3>Find us at the office</h3>
+                <p>Strada Povernei, nr 20,<br />Bucharest,<br />Romania</p>
               </div>
-              <p>Strada Povernei, nr 20,<br />Bucharest,<br />Romania</p>
-            </div>
-            <div class="sub-section">
-              <div class="icon-pair">
-                <i class="fa-solid fa-phone-flip"></i>
-                <h3>Give us a ring</h3>
+              <div class="sub-section">
+                <div class="icon-pair">
+                  <i class="fa-solid fa-phone-flip"></i>
+                  <h3>Give us a ring</h3>
+                </div>
+                <p>John Doe +40 712 345 678 Mon – Fri, 8:00-22:00</p>
               </div>
-              <p>John Doe +40 712 345 678 Mon – Fri, 8:00-22:00</p>
-            </div>
-            <div class="sub-section">
-              <div class="icon-pair">
-                <i class="fa-solid fa-briefcase"></i>
-                <h3>Legal information</h3>
+              <div class="sub-section">
+                <div class="icon-pair">
+                  <i class="fa-solid fa-briefcase"></i>
+                  <h3>Legal information</h3>
+                </div>
                 <p>
                   John Doe Co.<br />
                   Fiscal Code: 12345678
