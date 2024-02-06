@@ -20,39 +20,38 @@ body nav {
   z-index: 9;
   box-shadow: 0 1px 10px -6px rgba(0, 0, 0, 0.42), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px -2px rgba(0, 0, 0, 0.1);
 }
-body nav > .nav-wrapper {
+body nav .nav-wrapper {
   margin: auto;
   display: flex;
 }
-body nav > .nav-wrapper a {
+body nav .nav-wrapper a {
   text-decoration: none;
   color: #555555;
 }
-body nav > .nav-wrapper .left-nav a {
+body nav .nav-wrapper .left-nav a {
   padding: 10px 15px;
   font-size: 18px;
   font-weight: lighter;
 }
-body nav > .nav-wrapper .left-nav a:hover {
+body nav .nav-wrapper .left-nav a:hover {
   opacity: 0.75;
 }
-body nav > .nav-wrapper .right-nav {
+body nav .nav-wrapper .right-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
 }
-body nav > .nav-wrapper .right-nav a {
+body nav .nav-wrapper .right-nav a {
   font-size: 12px;
   padding: 15px;
 }
-body nav > .nav-wrapper .right-nav a:hover {
+body nav .nav-wrapper .right-nav a:hover {
   color: #e91e63;
 }
-body nav > .nav-wrapper .right-nav a:nth-child(1):hover {
-  color: white;
+body nav .nav-wrapper .right-nav a:nth-child(1):hover {
   opacity: 0.75;
 }
-body nav > .nav-wrapper .right-nav button {
+body nav .nav-wrapper .right-nav button {
   font-size: 12px;
   color: white;
   background-color: #e91e63;
@@ -62,7 +61,7 @@ body nav > .nav-wrapper .right-nav button {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   margin-right: 2em;
 }
-body nav > .nav-wrapper .right-nav button:hover {
+body nav .nav-wrapper .right-nav button:hover {
   color: #e5e5e5;
   box-shadow: 0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2);
   cursor: pointer;
@@ -102,27 +101,11 @@ body footer .sub-section:nth-child(2) {
   }
   body nav {
     font-size: 30px;
-    box-shadow: none;
     padding: 1.2em 0;
   }
   body nav > .nav-wrapper {
     width: 800px;
     justify-content: space-between;
-  }
-  body nav > .nav-wrapper > .left-nav a {
-    color: white;
-  }
-  body nav > .nav-wrapper > .left-nav:hover {
-    color: white;
-  }
-  body nav > .nav-wrapper > .right-nav a {
-    color: white;
-  }
-  body nav > .nav-wrapper > .right-nav a:hover {
-    color: white;
-    opacity: 0.75;
-    background-color: rgba(255, 255, 255, 0.097);
-    border-radius: 3px;
   }
   body footer {
     flex-direction: row;
@@ -395,6 +378,32 @@ body .sections-container > .section-wrapper:nth-child(4) > .section-content > .s
     font-size: 67px;
     width: 400px;
     text-align: center;
+  }
+  html body .at-top > .nav-wrapper > .left-nav > a {
+    color: white;
+  }
+  html body .at-top > .nav-wrapper > .right-nav a {
+    color: white;
+  }
+  html body .not-at-top {
+    background-color: white;
+  }
+  html body nav {
+    box-shadow: none;
+  }
+  html body nav > .nav-wrapper > .left-nav a {
+    color: #555555;
+  }
+  html body nav > .nav-wrapper > .left-nav:hover {
+    opacity: 0.75;
+  }
+  html body nav > .nav-wrapper > .right-nav a {
+    color: #555555;
+  }
+  html body nav > .nav-wrapper > .right-nav a:hover {
+    opacity: 0.75;
+    background-color: rgba(255, 255, 255, 0.097);
+    border-radius: 3px;
   }
   html body .sections-container {
     top: 46.5em;

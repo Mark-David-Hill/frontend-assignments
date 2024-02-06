@@ -241,6 +241,50 @@ body {
           }
         }
       }
+
+      .at-top {
+        > .nav-wrapper {
+          > .left-nav {
+            > a {
+              color: white;
+            }
+          }
+          > .right-nav {
+            a {
+              color: white;
+            }
+          }
+        }
+      }
+
+      .not-at-top {
+        background-color: white;
+      }
+
+      nav {
+        box-shadow: none;
+        > .nav-wrapper {
+          > .left-nav {
+            a {
+              color: $header-gray;
+            }
+            &:hover {
+              opacity: 0.75;
+            }
+          }
+          > .right-nav {
+            a {
+              color: $header-gray;
+              &:hover {
+                opacity: 0.75;
+                background-color: rgba(255, 255, 255, 0.097);
+                border-radius: 3px;
+              }
+            }
+          }
+        }
+      }
+
       .sections-container {
         top: 46.5em;
         left: 0;
@@ -360,10 +404,5 @@ body {
         }
       }
     }
-  }
-}
-
-@media (min-width: 1200px) {
-  body {
   }
 }

@@ -1,6 +1,14 @@
 @import "../variables.scss", "../mixins.scss", "../main.scss";
 
 body {
+  nav {
+    @include test-border;
+    color: black;
+    a {
+      color: black;
+    }
+  }
+
   .hero-container {
     @include centered-flex;
     background-image: linear-gradient(to right, rgb(181, 13, 170), $hot-pink);
@@ -31,18 +39,22 @@ body {
       padding-top: 30px;
       padding-bottom: 0px;
       .section-content {
+        p {
+          text-align: center;
+        }
+
         // height: 100%;
         // padding-bottom: 7em;
         .sub-section {
           font-family: $secondary-font-family;
-          p {
-            font-size: 14px;
-            font-weight: lighter;
-            font-family: $main-font-family;
-            &:nth-child(3) {
-              color: $light-section-p-color;
-            }
-          }
+          // p {
+          //   font-size: 14px;
+          //   font-weight: lighter;
+          //   font-family: $main-font-family;
+          //   &:nth-child(3) {
+          //     color: $light-section-p-color;
+          //   }
+          // }
         }
         h2 {
           font-size: 28px;
