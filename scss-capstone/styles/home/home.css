@@ -1,7 +1,12 @@
-body {
+body,
+html {
   margin: 0;
-  padding-top: 10em;
+  min-width: 100%;
+  min-height: 100%;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+body {
   background-color: #e5e5e5;
   overflow-x: hidden;
 }
@@ -23,6 +28,7 @@ body nav {
 body nav .nav-wrapper {
   margin: auto;
   display: flex;
+  width: 80%;
 }
 body nav .nav-wrapper a {
   text-decoration: none;
@@ -94,11 +100,9 @@ body footer .sub-section:nth-child(2) {
 
 @media (min-width: 768px) {
   body nav {
-    font-size: 30px;
     padding: 1.2em 0;
   }
   body nav > .nav-wrapper {
-    width: 800px;
     justify-content: space-between;
   }
   body footer {
@@ -110,16 +114,6 @@ body footer .sub-section:nth-child(2) {
     flex-direction: row;
     padding-right: 18vw;
   }
-}
-@media (min-width: 1200px) {
-  body nav > .nav-wrapper {
-    width: 1150px;
-  }
-}
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 300vh;
 }
 body .hero-container {
   background-image: url(../../assets/parallax_1.jpg);
@@ -148,19 +142,16 @@ body .hero-container > .hero-wrapper .hero-content {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  position: relative;
-  top: 0;
   color: white;
-  z-index: 5;
 }
 body .hero-container > .hero-wrapper .hero-content h1 {
   font-size: 36px;
   text-wrap: wrap;
   margin-bottom: 10px;
+  text-align: center;
+  width: 50%;
 }
 body .hero-container > .hero-wrapper .hero-content p {
   font-family: "Roboto Slab", "Times New Roman", serif;
@@ -184,7 +175,7 @@ body .sections-container {
   position: absolute;
   text-align: center;
   margin: 0 auto;
-  top: 850px;
+  top: 90%;
   width: 100%;
   z-index: 5;
   background-color: white;
@@ -227,7 +218,6 @@ body .sections-container > .section-wrapper:nth-child(2) {
   height: 100%;
   z-index: -1;
   color: white;
-  background-color: transparent;
   background-attachment: fixed;
 }
 body .sections-container > .section-wrapper:nth-child(2) > .section-content {
@@ -370,7 +360,6 @@ body .sections-container > .section-wrapper:nth-child(4) > .section-content > .s
 @media (min-width: 768px) {
   html body .hero-container > .hero-wrapper > .hero-content h1 {
     font-size: 67px;
-    width: 400px;
     text-align: center;
   }
   html body .at-top {
@@ -403,10 +392,8 @@ body .sections-container > .section-wrapper:nth-child(4) > .section-content > .s
     border-radius: 3px;
   }
   html body .sections-container {
-    top: 46.5em;
     left: 0;
     right: 0;
-    margin: 0 auto;
     width: 96.5%;
     border-radius: 6px;
   }
@@ -464,7 +451,7 @@ body .sections-container > .section-wrapper:nth-child(4) > .section-content > .s
     grid-template-columns: 1fr 1fr 1fr;
     -moz-column-gap: 2em;
          column-gap: 2em;
-    max-height: 450px;
+    max-height: 90%;
   }
   html body .sections-container .section-wrapper:nth-child(3) .section-content .sub-section {
     text-align: left;
@@ -490,10 +477,5 @@ body .sections-container > .section-wrapper:nth-child(4) > .section-content > .s
   html body .sections-container .section-wrapper .section-content {
     padding-left: 10vw;
     padding-right: 10vw;
-  }
-}
-@media (min-width: 1000px) {
-  html body .hero-container .hero-wrapper .hero-content h1 {
-    width: 1000px;
   }
 }/*# sourceMappingURL=home.css.map */

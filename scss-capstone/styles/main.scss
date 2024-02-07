@@ -1,7 +1,12 @@
-body {
+body,
+html {
   margin: 0;
-  padding-top: 10em;
+  min-width: 100%;
+  min-height: 100%;
   font-family: $main-font-family;
+}
+
+body {
   background-color: $background-gray;
   overflow-x: hidden;
 
@@ -25,6 +30,7 @@ body {
     .nav-wrapper {
       margin: auto;
       display: flex;
+      width: 80%;
 
       a {
         text-decoration: none;
@@ -95,10 +101,8 @@ body {
 @media (min-width: 768px) {
   body {
     nav {
-      font-size: 30px;
       padding: 1.2em 0;
       > .nav-wrapper {
-        width: 800px;
         justify-content: space-between;
       }
     }
@@ -110,16 +114,6 @@ body {
       .sub-section {
         flex-direction: row;
         padding-right: 18vw;
-      }
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  body {
-    nav {
-      > .nav-wrapper {
-        width: 1150px;
       }
     }
   }

@@ -1,9 +1,6 @@
 @import "../variables.scss", "../mixins.scss", "../main.scss";
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 300vh;
   .hero-container {
     @include background-image-standard(url(../../assets/parallax_1.jpg));
     position: absolute;
@@ -14,19 +11,16 @@ body {
       @include background-image-standard(url(../../assets/parallax_2.png));
       .hero-content {
         @include centered-flex(column);
-        width: 100%;
         height: 100%;
         background-color: $light-overlay;
-        display: flex;
-        position: relative;
-        top: 0;
         color: white;
-        z-index: 5;
 
         h1 {
           font-size: 36px;
           text-wrap: wrap;
           margin-bottom: 10px;
+          text-align: center;
+          width: 50%;
         }
 
         p {
@@ -46,7 +40,7 @@ body {
     position: absolute;
     text-align: center;
     margin: 0 auto;
-    top: 850px;
+    top: 90%;
     width: 100%;
     z-index: 5;
     background-color: white;
@@ -91,7 +85,6 @@ body {
     > .section-wrapper:nth-child(2) {
       @include background-image-standard(url(../../assets/contact.jpg));
       color: white;
-      background-color: transparent;
       background-attachment: fixed;
       > .section-content {
         padding-bottom: 5.5em;
@@ -235,7 +228,6 @@ body {
           > .hero-content {
             h1 {
               font-size: 67px;
-              width: 400px;
               text-align: center;
             }
           }
@@ -287,10 +279,8 @@ body {
       }
 
       .sections-container {
-        top: 46.5em;
         left: 0;
         right: 0;
-        margin: 0 auto;
         width: 96.5%;
         border-radius: 6px;
 
@@ -352,7 +342,7 @@ body {
             grid-template-rows: 1fr 2fr;
             grid-template-columns: 1fr 1fr 1fr;
             column-gap: 2em;
-            max-height: 450px;
+            max-height: 90%;
 
             .sub-section {
               text-align: left;
@@ -385,22 +375,6 @@ body {
           .section-content {
             padding-left: 10vw;
             padding-right: 10vw;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 1000px) {
-  html {
-    body {
-      .hero-container {
-        .hero-wrapper {
-          .hero-content {
-            h1 {
-              width: 1000px;
-            }
           }
         }
       }
