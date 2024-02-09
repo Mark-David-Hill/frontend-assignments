@@ -12,11 +12,11 @@ const testSortString = "Hi there";
 newString = alphabetize(testSortString);
 console.log(newString);
 
-function alphabetizePlus(string) {
+function alphabetizeBonus(string) {
   charArray = string.split("");
   sortedArray = charArray.sort((a, b) => a.localeCompare(b));
   newString = sortedArray.join("");
   return newString;
 }
 
-console.log(alphabetizePlus(testSortString));
+console.log(alphabetizeBonus(testSortString));
