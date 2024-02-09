@@ -14,4 +14,5 @@ function flipFlop(array) {
   }
 }
 
+console.log("\nChallenge 3 Begin:\n\n");
 flipFlop(exampleArray);

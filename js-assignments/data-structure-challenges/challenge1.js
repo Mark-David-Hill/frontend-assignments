@@ -28,6 +28,7 @@ const hobbit = {
   },
 };
 
+console.log("Challenge 1 Begin:\n\n");
 hobbit.logSelf();
 console.log(hobbit);
 delete hobbit.deleteMe;

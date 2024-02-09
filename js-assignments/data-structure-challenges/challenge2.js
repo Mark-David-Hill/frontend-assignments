@@ -13,6 +13,7 @@ const user = {
   },
 };
 
+console.log("\nChallenge 2 Begin:\n\n");
 user.completeSemester("semesterOne");
 delete user.semesters.semesterFour;
 user.favoriteLanguage =
