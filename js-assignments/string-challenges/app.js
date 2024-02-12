@@ -13,7 +13,7 @@ console.log("isString(190) => false");
 console.log(isString(190));
 
 function isBlankString(str) {
-  if (str === "") {
+  if (str.trim() === "") {
     return true;
   } else {
     return false;
@@ -23,6 +23,8 @@ function isBlankString(str) {
 console.log("\nisBlankString Function tests:\n");
 console.log('isBlankString("") => true');
 console.log(isBlankString(""));
+console.log('isBlankString(" ") => true');
+console.log(isBlankString(" "));
 console.log('isBlankString("fjfjf") => false');
 console.log(isBlankString("fjfjf"));
 
