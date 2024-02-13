@@ -13,3 +13,9 @@ function getLongestWord(string) {
 
 exampleSentence = "This string has several different values";
 console.log(getLongestWord(exampleSentence));
+
+const userSentence = prompt(
+  "Challenge 6: Get the longest word. Please enter a sentence:"
+);
+const longestUserWord = getLongestWord(userSentence);
+prompt(`The longest word in that sentence is: "${longestUserWord}"`);

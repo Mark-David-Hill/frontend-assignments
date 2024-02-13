@@ -13,4 +13,12 @@ function pow(baseVal, exponent) {
   return product;
 }
 
+console.log("pow(4,2) => 16");
 console.log(pow(4, 2));
+
+const userBaseNum = Number(prompt("Challenge 10: Please enter a base number:"));
+const userExponent = Number(prompt("Please enter a number for the exponent:"));
+const result = pow(userBaseNum, userExponent);
+prompt(
+  `The result of ${userBaseNum} to the ${userExponent} power is ${result}`
+);

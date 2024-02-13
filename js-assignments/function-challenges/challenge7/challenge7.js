@@ -9,3 +9,9 @@ function alphabetize(string) {
 
 exampleSentence = "Hi there";
 console.log(alphabetize(exampleSentence));
+
+const userString = prompt(
+  "Challenge 7: Please Enter a string to be alphabetized:"
+);
+const orderedString = alphabetize(userString);
+prompt(`Your alphabetized string is "${orderedString}"`);

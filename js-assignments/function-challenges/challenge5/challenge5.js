@@ -13,3 +13,9 @@ function titleCase(string) {
 
 exampleSentence = "I am a sentence";
 console.log(titleCase(exampleSentence));
+
+const userSentence = prompt(
+  "Challenge 5: Please enter a sentence to Title-case:"
+);
+const titleCaseSentence = titleCase(userSentence);
+prompt(`Your Title-cased sentence is: "${titleCaseSentence}"`);
