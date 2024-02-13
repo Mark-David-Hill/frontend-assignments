@@ -5,10 +5,10 @@ const arrayTwo = ["a", "b", "c", "d"];
 
 let matrix = [];
 
-for (let i of arrayOne) {
-  for (let j of arrayTwo) {
-    matrix.push([i, j]);
-    matrix.push([j, i]);
+for (let itemOne of arrayOne) {
+  for (let itemTwo of arrayTwo) {
+    matrix.push([itemOne, itemTwo]);
+    matrix.push([itemTwo, itemOne]);
   }
 }
 

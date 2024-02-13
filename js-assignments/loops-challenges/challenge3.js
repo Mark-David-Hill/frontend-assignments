@@ -4,8 +4,8 @@ function numToArray(num) {
   numString = num.toString();
   numArray = [];
 
-  for (let i of numString) {
-    numArray.push(Number(i));
+  for (let num of numString) {
+    numArray.push(Number(num));
   }
 
   return numArray;
