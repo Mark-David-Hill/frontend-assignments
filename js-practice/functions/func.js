@@ -184,29 +184,109 @@
 // // //Arrow Functions
 // //
 
-// Declare an arrow function called greetUser that takes no parameters and implicitly returns the string "Welcome to the course!". Call the function and log the result to the console.
+// // Declare an arrow function called greetUser that takes no parameters and implicitly returns the string "Welcome to the course!". Call the function and log the result to the console.
+// // Exercise 1
+// const greetUser = () => "Welcome to the course!";
+// console.log(greetUser());
+
+// // Create an arrow function named doubleNumber that takes a single parameter num and returns the result of doubling that number. Call the function with the argument 7 and log the result.
+// // Exercise 2
+// const doubleNumber = (num) => num * 2;
+// console.log(doubleNumber(7));
+
+// // Declare an arrow function called cubeRoot that takes a single parameter x. Use the return keyword explicitly to return the cube root of the parameter.
+// // Exercise 3
+// const cubeRoot = (x) => {
+//   return x ** 3;
+// };
+// console.log(cubeRoot(5));
+
+// // Create an arrow function named generateRandomNumber that takes no parameters and returns a random integer between 1 and 10 (inclusive). Call the function and log the result to the console.
+// // Exercise 4
+// const generateRandomNumber = () => Math.floor(Math.random() * 10) + 1;
+// console.log(generateRandomNumber());
+
+// // Declare an arrow function called calculateArea that takes two parameters length and width. Calculate and return the area (length * width) using the implicit return feature of arrow functions.
+// // Exercise 5
+// const calculateArea = (length, width) => length * width;
+// console.log(calculateArea(3, 5));
+
+// const count = 0;
+
+// function addCount() {
+//   return ++count;
+// }
+
+// addCount();
+
+// > TypeError: Assignment to constant variable.
+
+// milkInventory = {
+//   price: 2.78,
+//   quantity: 4,
+// };
+
+// const subtotal = (item) => item["price"] * item["quantity"];
+// const transaction = subtotal(milkInventory);
+// console.log(transaction);
+
+// console.log(myFunc());
+
+// function myFunc() {
+//   return "declaration";
+// }
+
+// class House {
+//   foundation = "concrete";
+// }
+
+// const cabin = new House();
+// console.log(cabin);
+// console.log(cabin.foundation);
+
 // Exercise 1
-const greetUser = () => "Welcome to the course!";
-console.log(greetUser());
 
-// Create an arrow function named doubleNumber that takes a single parameter num and returns the result of doubling that number. Call the function with the argument 7 and log the result.
-// Exercise 2
-const doubleNumber = (num) => num * 2;
-console.log(doubleNumber(7));
+class Car {
+  constructor(make, model, year, color) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.color = color;
+  }
 
-// Declare an arrow function called cubeRoot that takes a single parameter x. Use the return keyword explicitly to return the cube root of the parameter.
-// Exercise 3
-const cubeRoot = (x) => {
-  return x ** 3;
-};
-console.log(cubeRoot(5));
+  startEngine = () => console.log("Engine starting... now!");
+  drive = (speed) => console.log(`The car is driving at a speed of ${speed}`);
+}
 
-// Create an arrow function named generateRandomNumber that takes no parameters and returns a random integer between 1 and 10 (inclusive). Call the function and log the result to the console.
-// Exercise 4
-const generateRandomNumber = () => Math.floor(Math.random() * 10) + 1;
-console.log(generateRandomNumber());
+class ElectricCar extends Car {
+  constructor(make, model, year, color, batteryCapacity) {
+    super(make, model, year, color);
+    this.batteryCapacity = batteryCapacity;
+  }
+  chargeBattery = () => console.log("The battery is being charged");
+}
 
-// Declare an arrow function called calculateArea that takes two parameters length and width. Calculate and return the area (length * width) using the implicit return feature of arrow functions.
-// Exercise 5
-const calculateArea = (length, width) => length * width;
-console.log(calculateArea(3, 5));
+const honda = new Car("honda", "accord", 2010, "blue");
+
+console.log(honda);
+console.log(honda.make);
+console.log(honda.year);
+honda.startEngine();
+honda.drive("30mph");
+
+const tesla = new ElectricCar(
+  "tesla",
+  "Model 3 compact sedan",
+  2020,
+  "silver",
+  "50kWh"
+);
+
+console.log("\n\nPart 2: Electric Car Subclass\n\n");
+console.log(tesla);
+tesla.startEngine();
+console.log(tesla);
+tesla.drive("60mph");
+console.log(tesla);
+tesla.chargeBattery();
+console.log(tesla);
