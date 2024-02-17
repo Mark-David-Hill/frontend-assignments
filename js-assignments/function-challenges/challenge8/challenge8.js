@@ -1,7 +1,7 @@
 console.log("\nChallenge 8 Start:\n\n");
 
 function extract(array, indices) {
-  newArray = [];
+  let newArray = [];
   for (let i of indices) {
     newArray.push(array[i]);
   }

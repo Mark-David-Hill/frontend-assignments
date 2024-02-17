@@ -1,13 +1,13 @@
 console.log("\nChallenge 7 Start:\n\n");
 
 function alphabetize(string) {
-  charArray = string.toLowerCase().split("");
+  let charArray = string.toLowerCase().split("");
   charArray.sort();
-  newString = charArray.join("");
+  const newString = charArray.join("");
   return newString;
 }
 
-exampleSentence = "Hi there";
+const exampleSentence = "Hi there";
 console.log(alphabetize(exampleSentence));
 
 const userString = prompt(

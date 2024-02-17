@@ -1,7 +1,7 @@
 console.log("Challenge 1 Start:\n\n");
 
 function getLongestWord(wordArray) {
-  longestWord = "";
+  let longestWord = "";
   for (const word of wordArray) {
     if (word.length && word.length > longestWord.length) {
       longestWord = word;
@@ -10,7 +10,7 @@ function getLongestWord(wordArray) {
   return longestWord;
 }
 
-testArray = ["a", "b", "cc"];
+const testArray = ["a", "b", "cc"];
 console.log(getLongestWord(testArray));
 
 const userWords = [];

@@ -1,17 +1,17 @@
 console.log("\nChallenge 5 Start:\n\n");
 
 function titleCase(string) {
-  wordArray = string.split(" ");
-  newArray = [];
+  let wordArray = string.split(" ");
+  let newArray = [];
   for (let word of wordArray) {
-    newWord = word[0].toUpperCase() + word.slice(1);
+    const newWord = word[0].toUpperCase() + word.slice(1);
     newArray.push(newWord);
   }
-  newString = newArray.join(" ");
+  const newString = newArray.join(" ");
   return newString;
 }
 
-exampleSentence = "I am a sentence";
+const exampleSentence = "I am a sentence";
 console.log(titleCase(exampleSentence));
 
 const userSentence = prompt(

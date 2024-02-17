@@ -1,8 +1,8 @@
 console.log("\nChallenge 6 Start:\n\n");
 
 function getLongestWord(string) {
-  wordArray = string.split(" ");
-  longestWord = "";
+  let wordArray = string.split(" ");
+  let longestWord = "";
   for (let word of wordArray) {
     if (word.length > longestWord.length) {
       longestWord = word;

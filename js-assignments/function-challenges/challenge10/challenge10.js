@@ -6,7 +6,7 @@ console.log("\nChallenge 10 Start:\n\n");
 // Note: No outside of pre-built functions and the '**' exponent operator is not allowed.
 
 function pow(baseVal, exponent) {
-  product = baseVal;
+  let product = baseVal;
   for (let i = 1; i < exponent; i++) {
     product *= baseVal;
   }
