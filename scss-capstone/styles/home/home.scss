@@ -7,8 +7,10 @@ body {
     z-index: 3;
     top: 0;
     background-attachment: fixed;
-    > .hero-wrapper {
+
+    .hero-wrapper {
       @include background-image-standard(url(../../assets/parallax_2.png));
+
       .hero-content {
         @include centered-flex(column);
         height: 100%;
@@ -44,12 +46,14 @@ body {
     width: 100%;
     z-index: 5;
     background-color: white;
-    > .section-wrapper {
+
+    .section-wrapper {
       width: 100%;
 
-      > .section-content {
+      .section-content {
         height: 100%;
         padding-bottom: 7em;
+
         .sub-section {
           font-family: $secondary-font-family;
 
@@ -62,18 +66,20 @@ body {
             font-size: 14px;
             font-weight: lighter;
             font-family: $main-font-family;
+
             &:nth-child(3) {
               color: $light-section-p-color;
             }
           }
         }
+
         h2 {
           font-size: 28px;
         }
       }
     }
 
-    > .section-wrapper:nth-child(1) {
+    .section-wrapper:nth-child(1) {
       .section-content {
         .sub-section {
           margin: auto;
@@ -82,18 +88,21 @@ body {
       }
     }
 
-    > .section-wrapper:nth-child(2) {
+    .section-wrapper:nth-child(2) {
       @include background-image-standard(url(../../assets/contact.jpg));
       color: white;
       background-attachment: fixed;
-      > .section-content {
+
+      .section-content {
         padding-bottom: 5.5em;
         background-color: $dark-overlay;
-        > .sub-section {
+
+        .sub-section {
           display: flex;
           flex-direction: column;
           flex-wrap: wrap;
           padding: 60px 40px 0px;
+
           h2 {
             align-self: flex-start;
             margin-bottom: 0;
@@ -115,12 +124,14 @@ body {
       }
     }
 
-    > .section-wrapper:nth-child(3) {
+    .section-wrapper:nth-child(3) {
       @include centered-flex(column);
       padding-top: 30px;
       padding-bottom: 0px;
+
       .section-content {
         padding-bottom: 0px;
+
         h2 {
           font-size: 24px;
           font-family: $secondary-font-family;
@@ -129,11 +140,13 @@ body {
 
         a {
           text-decoration: none;
+
           h3 {
             font-size: 18px;
             color: black;
             text-decoration: none;
             margin: 0px;
+
             &:hover {
               opacity: 0.75;
             }
@@ -170,17 +183,18 @@ body {
       }
     }
 
-    > .section-wrapper:nth-child(4) {
+    .section-wrapper:nth-child(4) {
       @include background-image-standard(url(../../assets/contact.jpg));
       color: white;
       background-color: transparent;
       box-shadow: 0 1px 10px -6px rgba(0, 0, 0, 0.42),
         0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px -2px rgba(0, 0, 0, 0.1);
-      > .section-content {
+
+      .section-content {
         background-color: $dark-overlay;
       }
 
-      > .section-content {
+      .section-content {
         padding: 6em 25px 2.5em;
         padding-bottom: 4.2em;
 
@@ -199,7 +213,7 @@ body {
           font-size: 36.4px;
         }
 
-        > .sub-section {
+        .sub-section {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -224,8 +238,8 @@ body {
   html {
     body {
       .hero-container {
-        > .hero-wrapper {
-          > .hero-content {
+        .hero-wrapper {
+          .hero-content {
             h1 {
               font-size: 67px;
               text-align: center;
@@ -236,13 +250,15 @@ body {
 
       .at-top {
         background-color: transparent;
-        > .nav-wrapper {
-          > .left-nav {
-            > a {
+
+        .nav-wrapper {
+          .left-nav {
+            a {
               color: white;
             }
           }
-          > .right-nav {
+
+          .right-nav {
             a {
               color: white;
             }
@@ -256,18 +272,21 @@ body {
 
       nav {
         box-shadow: none;
-        > .nav-wrapper {
-          > .left-nav {
+
+        .nav-wrapper {
+          .left-nav {
             a {
               color: $header-gray;
             }
+
             &:hover {
               opacity: 0.75;
             }
           }
-          > .right-nav {
+          .right-nav {
             a {
               color: $header-gray;
+
               &:hover {
                 opacity: 0.75;
                 background-color: rgba(255, 255, 255, 0.097);
@@ -295,6 +314,7 @@ body {
             margin: 0 10px;
             padding-left: 8vw;
             padding-right: 8vw;
+
             h2 {
               font-family: $secondary-font-family;
               font-size: 37px;
@@ -303,10 +323,12 @@ body {
               grid-column-end: 4;
               align-self: self-end;
             }
+
             .sub-section {
               h3 {
                 margin: 5px 0px;
               }
+
               p {
                 padding: 0px 5px;
               }
@@ -322,12 +344,15 @@ body {
               text-align: left;
               column-gap: 6em;
             }
+
             h2 {
               font-size: 37px;
             }
+
             p {
               padding-right: 2em;
             }
+
             img {
               grid-row-start: 1;
               grid-row-end: 3;
@@ -337,6 +362,7 @@ body {
         }
         .section-wrapper:nth-child(3) {
           padding: 0 2em;
+
           .section-content {
             display: grid;
             grid-template-rows: 1fr 2fr;
@@ -349,6 +375,7 @@ body {
               padding: 0 2em;
               margin-bottom: 0;
             }
+
             h2 {
               font-size: 37px;
               grid-column-start: 1;
@@ -356,6 +383,7 @@ body {
               margin-top: 2em;
               margin-bottom: 2em;
             }
+
             p {
               padding-right: 2em;
             }
@@ -366,6 +394,7 @@ body {
             h2 {
               padding-left: 10vw;
             }
+
             .sub-section {
               padding-left: 10vw;
             }

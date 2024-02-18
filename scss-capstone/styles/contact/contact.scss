@@ -4,6 +4,7 @@ body {
   form {
     min-width: 27em;
     padding-left: 0 1em;
+
     input,
     textarea {
       border: none;
@@ -39,12 +40,14 @@ body {
   display: flex;
   flex-direction: column;
   background-color: white;
+
   .hero-container {
     position: absolute;
     z-index: 3;
     width: 100%;
     top: 20vh;
     background-attachment: fixed;
+
     .hero-wrapper {
       .hero-content {
         @include centered-flex(column);
@@ -54,6 +57,7 @@ body {
         bottom: 5vh;
         color: white;
         z-index: 5;
+
         iframe {
           width: 100%;
         }
@@ -66,6 +70,7 @@ body {
       @include centered-flex;
       gap: 20vw;
       padding-bottom: 3em;
+
       .section-wrapper {
         .section-content {
           i {

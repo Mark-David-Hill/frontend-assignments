@@ -3,6 +3,7 @@
 body {
   nav {
     color: black;
+
     a {
       color: black;
     }
@@ -15,12 +16,14 @@ body {
     height: 25em;
     position: absolute;
     top: 100px;
+
     h1 {
       position: relative;
       bottom: 40px;
       color: white;
       font-size: 26px;
     }
+
     p {
       color: white;
     }
@@ -53,81 +56,81 @@ body {
       padding-top: 30px;
       padding-bottom: 0px;
 
-      .section-content {
-        p {
-          text-align: center;
-        }
+      p {
+        text-align: center;
+      }
 
-        .sub-section {
-          font-family: $secondary-font-family;
-          padding-bottom: 0px;
-        }
+      .sub-section {
+        font-family: $secondary-font-family;
+        padding-bottom: 0px;
+      }
 
-        h2 {
-          font-size: 28px;
-        }
+      h2 {
+        font-size: 28px;
+      }
 
-        h2 {
-          font-size: 24px;
-          font-family: $secondary-font-family;
-          margin-bottom: 3em;
-        }
+      h2 {
+        font-size: 24px;
+        font-family: $secondary-font-family;
+        margin-bottom: 3em;
+      }
 
-        a {
+      a {
+        text-decoration: none;
+
+        h3 {
+          font-size: 18px;
+          color: black;
           text-decoration: none;
-          h3 {
-            font-size: 18px;
-            color: black;
-            text-decoration: none;
-            margin: 0px;
+          margin: 0px;
+
+          &:hover {
+            opacity: 0.75;
+          }
+        }
+      }
+
+      .sub-section {
+        margin-bottom: 7em;
+        max-width: 70vw;
+
+        p {
+          span {
+            color: $link-color;
+
             &:hover {
-              opacity: 0.75;
+              color: $hot-pink;
+              cursor: pointer;
             }
           }
         }
 
-        .sub-section {
-          margin-bottom: 7em;
-          max-width: 70vw;
+        .blog1 {
+          @include blog-category($blog-color1);
+        }
 
-          p {
-            span {
-              color: $link-color;
+        .blog2 {
+          @include blog-category($blog-color2);
+        }
 
-              &:hover {
-                color: $hot-pink;
-                cursor: pointer;
-              }
-            }
-          }
+        .blog3 {
+          @include blog-category($blog-color3);
+        }
 
-          .blog1 {
-            @include blog-category($blog-color1);
-          }
+        .blog4 {
+          @include blog-category(rgb(255, 166, 0));
+        }
 
-          .blog2 {
-            @include blog-category($blog-color2);
-          }
+        .blog5 {
+          @include blog-category($blog-color3);
+        }
 
-          .blog3 {
-            @include blog-category($blog-color3);
-          }
+        .blog6 {
+          @include blog-category(rgb(0, 178, 0));
+        }
 
-          .blog4 {
-            @include blog-category(rgb(255, 166, 0));
-          }
-
-          .blog5 {
-            @include blog-category($blog-color3);
-          }
-
-          .blog6 {
-            @include blog-category(rgb(0, 178, 0));
-          }
-
-          .blog7 {
-            @include blog-category($blog-color1);
-          }
+        .blog7 {
+          @include blog-category($blog-color1);
         }
       }
     }

@@ -1,7 +1,12 @@
-body {
+body,
+html {
   margin: 0;
-  padding-top: 10em;
+  min-width: 100%;
+  min-height: 100%;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+body {
   background-color: #e5e5e5;
   overflow-x: hidden;
 }
@@ -23,6 +28,7 @@ body nav {
 body nav .nav-wrapper {
   margin: auto;
   display: flex;
+  width: 80%;
 }
 body nav .nav-wrapper a {
   text-decoration: none;
@@ -94,11 +100,9 @@ body footer .sub-section:nth-child(2) {
 
 @media (min-width: 768px) {
   body nav {
-    font-size: 30px;
     padding: 1.2em 0;
   }
   body nav > .nav-wrapper {
-    width: 800px;
     justify-content: space-between;
   }
   body footer {
@@ -111,11 +115,13 @@ body footer .sub-section:nth-child(2) {
     padding-right: 18vw;
   }
 }
-@media (min-width: 1200px) {
-  body nav > .nav-wrapper {
-    width: 1150px;
-  }
+h1 {
+  position: relative;
+  bottom: 40px;
+  color: white;
+  font-size: 26px;
 }
+
 body .hero-container {
   display: flex;
   flex-direction: row;
@@ -126,12 +132,6 @@ body .hero-container {
   height: 25em;
   position: absolute;
   top: 100px;
-}
-body .hero-container h1 {
-  position: relative;
-  bottom: 40px;
-  color: white;
-  font-size: 26px;
 }
 body .sections-container {
   position: absolute;
@@ -152,7 +152,7 @@ body .sections-container .section-wrapper {
   padding-bottom: 0px;
 }
 body .sections-container .section-wrapper .section-content {
-  padding-bottom: 0px;
+  max-width: 70vw;
 }
 body .sections-container .section-wrapper .section-content .sub-section {
   font-family: "Roboto Slab", "Times New Roman", serif;
@@ -183,7 +183,6 @@ body .sections-container .section-wrapper .section-content a h3:hover {
 }
 body .sections-container .section-wrapper .section-content .sub-section {
   margin-bottom: 7em;
-  max-width: 70vw;
 }
 body .sections-container .section-wrapper .section-content .sub-section p span {
   color: #23527c;
@@ -257,7 +256,7 @@ body .sections-container .section-wrapper .section-content .sub-section .blog7:h
 }
 
 @media (min-width: 768px) {
-  body .hero-container h1 {
+  h1 {
     font-size: 42px;
   }
   body .sections-container {

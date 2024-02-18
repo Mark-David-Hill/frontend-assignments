@@ -1,7 +1,12 @@
-body {
+body,
+html {
   margin: 0;
-  padding-top: 10em;
+  min-width: 100%;
+  min-height: 100%;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+body {
   background-color: #e5e5e5;
   overflow-x: hidden;
 }
@@ -23,6 +28,7 @@ body nav {
 body nav .nav-wrapper {
   margin: auto;
   display: flex;
+  width: 80%;
 }
 body nav .nav-wrapper a {
   text-decoration: none;
@@ -94,11 +100,9 @@ body footer .sub-section:nth-child(2) {
 
 @media (min-width: 768px) {
   body nav {
-    font-size: 30px;
     padding: 1.2em 0;
   }
   body nav > .nav-wrapper {
-    width: 800px;
     justify-content: space-between;
   }
   body footer {
@@ -109,11 +113,6 @@ body footer .sub-section:nth-child(2) {
   body footer .sub-section {
     flex-direction: row;
     padding-right: 18vw;
-  }
-}
-@media (min-width: 1200px) {
-  body nav > .nav-wrapper {
-    width: 1150px;
   }
 }
 body nav {
@@ -173,105 +172,105 @@ body .sections-container .section-wrapper {
   padding-top: 30px;
   padding-bottom: 0px;
 }
-body .sections-container .section-wrapper .section-content p {
+body .sections-container .section-wrapper p {
   text-align: center;
 }
-body .sections-container .section-wrapper .section-content .sub-section {
+body .sections-container .section-wrapper .sub-section {
   font-family: "Roboto Slab", "Times New Roman", serif;
   padding-bottom: 0px;
 }
-body .sections-container .section-wrapper .section-content h2 {
+body .sections-container .section-wrapper h2 {
   font-size: 28px;
 }
-body .sections-container .section-wrapper .section-content h2 {
+body .sections-container .section-wrapper h2 {
   font-size: 24px;
   font-family: "Roboto Slab", "Times New Roman", serif;
   margin-bottom: 3em;
 }
-body .sections-container .section-wrapper .section-content a {
+body .sections-container .section-wrapper a {
   text-decoration: none;
 }
-body .sections-container .section-wrapper .section-content a h3 {
+body .sections-container .section-wrapper a h3 {
   font-size: 18px;
   color: black;
   text-decoration: none;
   margin: 0px;
 }
-body .sections-container .section-wrapper .section-content a h3:hover {
+body .sections-container .section-wrapper a h3:hover {
   opacity: 0.75;
 }
-body .sections-container .section-wrapper .section-content .sub-section {
+body .sections-container .section-wrapper .sub-section {
   margin-bottom: 7em;
   max-width: 70vw;
 }
-body .sections-container .section-wrapper .section-content .sub-section p span {
+body .sections-container .section-wrapper .sub-section p span {
   color: #23527c;
 }
-body .sections-container .section-wrapper .section-content .sub-section p span:hover {
+body .sections-container .section-wrapper .sub-section p span:hover {
   color: #e91e63;
   cursor: pointer;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog1 {
+body .sections-container .section-wrapper .sub-section .blog1 {
   color: #89229b;
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog1:hover {
+body .sections-container .section-wrapper .sub-section .blog1:hover {
   opacity: 0.75;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog2 {
+body .sections-container .section-wrapper .sub-section .blog2 {
   color: #00bcd4;
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog2:hover {
+body .sections-container .section-wrapper .sub-section .blog2:hover {
   opacity: 0.75;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog3 {
+body .sections-container .section-wrapper .sub-section .blog3 {
   color: #f44336;
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog3:hover {
+body .sections-container .section-wrapper .sub-section .blog3:hover {
   opacity: 0.75;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog4 {
+body .sections-container .section-wrapper .sub-section .blog4 {
   color: rgb(255, 166, 0);
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog4:hover {
+body .sections-container .section-wrapper .sub-section .blog4:hover {
   opacity: 0.75;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog5 {
+body .sections-container .section-wrapper .sub-section .blog5 {
   color: #f44336;
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog5:hover {
+body .sections-container .section-wrapper .sub-section .blog5:hover {
   opacity: 0.75;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog6 {
+body .sections-container .section-wrapper .sub-section .blog6 {
   color: rgb(0, 178, 0);
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog6:hover {
+body .sections-container .section-wrapper .sub-section .blog6:hover {
   opacity: 0.75;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog7 {
+body .sections-container .section-wrapper .sub-section .blog7 {
   color: #89229b;
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
 }
-body .sections-container .section-wrapper .section-content .sub-section .blog7:hover {
+body .sections-container .section-wrapper .sub-section .blog7:hover {
   opacity: 0.75;
 }
 

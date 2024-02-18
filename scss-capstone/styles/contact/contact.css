@@ -1,7 +1,12 @@
-body {
+body,
+html {
   margin: 0;
-  padding-top: 10em;
+  min-width: 100%;
+  min-height: 100%;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+body {
   background-color: #e5e5e5;
   overflow-x: hidden;
 }
@@ -23,6 +28,7 @@ body nav {
 body nav .nav-wrapper {
   margin: auto;
   display: flex;
+  width: 80%;
 }
 body nav .nav-wrapper a {
   text-decoration: none;
@@ -94,11 +100,9 @@ body footer .sub-section:nth-child(2) {
 
 @media (min-width: 768px) {
   body nav {
-    font-size: 30px;
     padding: 1.2em 0;
   }
   body nav > .nav-wrapper {
-    width: 800px;
     justify-content: space-between;
   }
   body footer {
@@ -109,11 +113,6 @@ body footer .sub-section:nth-child(2) {
   body footer .sub-section {
     flex-direction: row;
     padding-right: 18vw;
-  }
-}
-@media (min-width: 1200px) {
-  body nav > .nav-wrapper {
-    width: 1150px;
   }
 }
 body {

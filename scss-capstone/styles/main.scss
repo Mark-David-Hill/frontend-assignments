@@ -42,6 +42,7 @@ body {
           padding: 10px 15px;
           font-size: 18px;
           font-weight: lighter;
+
           &:hover {
             opacity: 0.75;
           }
@@ -52,9 +53,11 @@ body {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5em;
+
         a {
           font-size: 12px;
           padding: 15px;
+
           &:hover {
             color: $hot-pink;
           }
@@ -64,6 +67,7 @@ body {
             opacity: 0.75;
           }
         }
+
         button {
           @include button-standard;
           font-family: $main-font-family;
@@ -83,10 +87,12 @@ body {
     padding: 32px 0px;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+
     p {
       padding: 15px;
       margin: 0px;
     }
+
     .sub-section {
       display: flex;
     }
@@ -102,6 +108,7 @@ body {
   body {
     nav {
       padding: 1.2em 0;
+
       > .nav-wrapper {
         justify-content: space-between;
       }
@@ -111,6 +118,7 @@ body {
       flex-direction: row;
       justify-content: space-between;
       padding-left: 9vw;
+
       .sub-section {
         flex-direction: row;
         padding-right: 18vw;
