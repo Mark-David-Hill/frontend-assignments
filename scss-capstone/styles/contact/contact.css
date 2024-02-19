@@ -191,22 +191,22 @@ body .sections-container .sections-sub-container {
   gap: 20vw;
   padding-bottom: 3em;
 }
-body .sections-container .sections-sub-container .section-wrapper .section-content i {
+body .sections-container .sections-sub-container .section-wrapper i {
   font-size: 25px;
   color: #e91e63;
 }
-body .sections-container .sections-sub-container .section-wrapper .section-content .sub-section {
+body .sections-container .sections-sub-container .section-wrapper .sub-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-body .sections-container .sections-sub-container .section-wrapper .section-content .sub-section .icon-pair {
+body .sections-container .sections-sub-container .section-wrapper .sub-section .icon-pair {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 18px;
 }
-body .sections-container .sections-sub-container .section-wrapper .section-content .sub-section p {
+body .sections-container .sections-sub-container .section-wrapper .sub-section p {
   padding-left: 38px;
   margin: 5px 0px;
   font-size: 14px;

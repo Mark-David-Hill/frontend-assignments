@@ -72,31 +72,29 @@ body {
       padding-bottom: 3em;
 
       .section-wrapper {
-        .section-content {
-          i {
-            font-size: 25px;
-            color: $hot-pink;
+        i {
+          font-size: 25px;
+          color: $hot-pink;
+        }
+
+        .sub-section {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .icon-pair {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 18px;
           }
 
-          .sub-section {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-
-            .icon-pair {
-              display: flex;
-              align-items: center;
-              gap: 8px;
-              font-size: 18px;
-            }
-
-            p {
-              padding-left: 38px;
-              margin: 5px 0px;
-              font-size: 14px;
-              color: $light-section-p-color;
-              font-weight: lighter;
-            }
+          p {
+            padding-left: 38px;
+            margin: 5px 0px;
+            font-size: 14px;
+            color: $light-section-p-color;
+            font-weight: lighter;
           }
         }
       }
