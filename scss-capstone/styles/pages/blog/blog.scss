@@ -1,0 +1,136 @@
+.blog-content {
+  h1 {
+    position: relative;
+    bottom: 40px;
+    color: white;
+    font-size: 26px;
+  }
+}
+
+body {
+  .blog-content {
+    .hero-container {
+      @include centered-flex;
+      background-image: linear-gradient(to right, rgb(181, 13, 170), $hot-pink);
+      width: 100vw;
+      height: 25em;
+      position: absolute;
+      top: 100px;
+    }
+
+    .sections-container {
+      position: absolute;
+      top: 25em;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 100%;
+      z-index: 3;
+      background-color: white;
+
+      .section-wrapper {
+        @include centered-flex(column);
+        padding-top: 30px;
+        padding-bottom: 0px;
+
+        .section-content {
+          max-width: 70vw;
+
+          .sub-section {
+            font-family: $secondary-font-family;
+
+            p {
+              font-size: 14px;
+              font-weight: lighter;
+              font-family: $main-font-family;
+
+              &:nth-child(3) {
+                color: $light-section-p-color;
+              }
+            }
+          }
+
+          h2 {
+            font-size: 28px;
+            color: black;
+          }
+
+          a {
+            text-decoration: none;
+
+            h3 {
+              font-size: 18px;
+              color: black;
+              text-decoration: none;
+              margin: 0px;
+
+              &:hover {
+                opacity: 0.75;
+              }
+            }
+          }
+
+          .sub-section {
+            margin-bottom: 7em;
+
+            p {
+              span {
+                color: $link-color;
+
+                &:hover {
+                  color: $hot-pink;
+                  cursor: pointer;
+                }
+              }
+            }
+
+            .blog1 {
+              @include blog-category($blog-color1);
+            }
+
+            .blog2 {
+              @include blog-category($blog-color2);
+            }
+
+            .blog3 {
+              @include blog-category($blog-color3);
+            }
+
+            .blog4 {
+              @include blog-category(rgb(255, 166, 0));
+            }
+
+            .blog5 {
+              @include blog-category($blog-color3);
+            }
+
+            .blog6 {
+              @include blog-category(rgb(0, 178, 0));
+            }
+
+            .blog7 {
+              @include blog-category($blog-color1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .blog-content {
+    h1 {
+      font-size: 42px;
+    }
+  }
+
+  body {
+    .blog-content {
+      .sections-container {
+        width: 96.5%;
+        border-radius: 5px;
+      }
+    }
+  }
+}
