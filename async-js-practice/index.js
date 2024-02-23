@@ -275,13 +275,66 @@
 // 3:18
 // Fetch starships, get 3rd starship's name
 
-const requestObj = new XMLHttpRequest();
-requestObj.open("GET", "https://www.swapi.tech/api/starships/3");
-requestObj.responseType = "json";
-requestObj.send();
-requestObj.onload = () => {
-  console.log(requestObj.response);
-  console.log(requestObj.response.result.properties.name);
-};
+// const requestObj = new XMLHttpRequest();
+// requestObj.open("GET", "https://www.swapi.tech/api/starships/3");
+// requestObj.responseType = "json";
+// requestObj.send();
+// requestObj.onload = () => {
+//   console.log(requestObj.response);
+//   console.log(requestObj.response.result.properties.name);
+// };
 
 // Challenge 3: Find another API, make successful request to API
+
+// fetch("https://swapi.tech/api/people/")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data));
+
+// fetch("https://swapi.tech/api/people/123431234")
+//   .then((res) => res.json())
+//   .then((data) => {
+//     console.log(data.results);
+//     console.log(data.results[0]);
+//     console.log(data.results[0]["name"]);
+//     for (const record of data.results) {
+//       console.log(record);
+//     }
+//     for (const record of data.results) {
+//       console.log(record["uid"]);
+//     }
+//   })
+//   .catch((err) => {
+//     console.error("SWAPI Error: ", err);
+//   });
+
+// Swapi API call with Fetch. Add a finally.
+// console logs, for loop
+// 3 catches, type our reasoning why one is better than another
+
+fetch("https://swapi.tech/api/planets/13123213")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+    console.log(data.results);
+    console.log(data.results[0]);
+    console.log(data.results[5].uid);
+    console.log(data.results[5].name);
+    for (const record of data.results) {
+      console.log(record);
+    }
+    for (const record of data.results) {
+      console.log(record.name);
+    }
+  })
+  // .catch((err) => {
+  //   console.log("SWAPI Error: ");
+  //   console.log(err);
+  // });
+  .catch((err) => {
+    console.error("SWAPI Error: ", err);
+  });
+
+// Method 1: No explicit error handling. Too generic- gives a message but doesn't provide helpful context for it.
+// Method 2: console.logging the error manually gives more contextual info about where in the code the error occurred.
+// Method 3: Gives even more contextual info by displaying the promise object that errored out, and displays in red so
+// it's more obvious it's an error
