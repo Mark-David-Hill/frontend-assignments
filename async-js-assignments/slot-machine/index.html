@@ -7,8 +7,19 @@
   </head>
   <body>
     <h1>Slot Machine</h1>
+    <h2>Total Score: 100</h2>
     <p>Open the Console to see the slot machine!</p>
-    <button onclick="startRound()">Start</button>
+    <p>
+      How many points would you like to bet for this round? Bet higher amounts
+      for bigger score multipliers!
+    </p>
+    <input type="radio" name="bet" value="10" checked />
+    <label for="bet">10 points (x2) </label>
+    <input type="radio" name="bet" value="50" />
+    <label for="bet">50 points (x10)</label>
+    <input type="radio" name="bet" value="100" />
+    <label for="bet">100 points (x20)</label>
+    <button onclick="startRound()">Start Round</button>
     <script src="./scripts/app.js"></script>
   </body>
 </html>

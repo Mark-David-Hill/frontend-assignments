@@ -18,6 +18,7 @@ const colSymbols = [
 
 let startingBalance = 100;
 let totalScore = 0;
+let canStartRound = true;
 
 class Column {
   constructor(position) {
@@ -36,23 +37,26 @@ const col3 = new Column(Math.floor(Math.random() * (colSymbols.length - 2)));
 
 function getDisplay(col1Position, col2Position, col3Position) {
   let display = `
- ______________
-| ${colSymbols[col1Position]} | ${colSymbols[col2Position]} | ${
+   ______________
+  | ${colSymbols[col1Position]} | ${colSymbols[col2Position]} | ${
     colSymbols[col3Position]
   } |
-| ${colSymbols[col1Position + 1]} | ${colSymbols[col2Position + 1]} | ${
+->| ${colSymbols[col1Position + 1]} | ${colSymbols[col2Position + 1]} | ${
     colSymbols[col3Position + 1]
   } |<-
-| ${colSymbols[col1Position + 2]} | ${colSymbols[col2Position + 2]} | ${
+  | ${colSymbols[col1Position + 2]} | ${colSymbols[col2Position + 2]} | ${
     colSymbols[col3Position + 2]
   } |
- --------------`;
+   --------------`;
   return display;
 }
 
-function getScore(col1, col2, col3, bet) {
-  totalScore -= bet;
+function displayScore() {
+  scoreDisplayElement = document.querySelector("h2");
+  scoreDisplayElement.innerText = `Total Points: ${totalScore}`;
+}
 
+function getScore(col1, col2, col3, bet) {
   symbols = [
     colSymbols[col1.position + 1],
     colSymbols[col2.position + 1],
@@ -91,11 +95,11 @@ function getScore(col1, col2, col3, bet) {
   fruitCount = watermelonCount + orangeCount + lemonCount + cherryCount;
   multiplier = 0;
   if (bet === 10) {
-    multiplier = 1;
+    multiplier = 2;
   } else if (bet === 50) {
-    multiplier = 5;
-  } else if (bet === 100) {
     multiplier = 10;
+  } else if (bet === 100) {
+    multiplier = 20;
   }
 
   if (bellCount === 3) {
@@ -130,11 +134,16 @@ function spinColumn(column) {
 }
 
 const initializeGame = () => {
+  canStartRound = true;
   totalScore = startingBalance;
+  displayScore();
   console.log(getDisplay(col1.position, col2.position, col3.position));
 };
 
 function playRound(bet) {
+  canStartRound = false;
+  totalScore -= bet;
+  displayScore();
   const spinCol1 = setInterval(() => {
     col1.moveCol();
   }, 100);
@@ -162,15 +171,21 @@ function playRound(bet) {
     () => {
       clearInterval(spinCol3);
       clearInterval(displayBoard);
-      const [baseScore, multiplier] = getScore(col1, col2, col3, bet);
+      let [baseScore, multiplier] = getScore(col1, col2, col3, bet);
       roundScore = baseScore * multiplier;
       totalScore += roundScore;
+      displayScore();
 
       console.clear();
       console.log(getDisplay(col1.position, col2.position, col3.position));
+      if (baseScore === 1000) {
+        console.log("Jackpot!!!!!!");
+      }
       console.log(
         `You bet ${bet} points and got a score of ${baseScore} x ${multiplier} for a combined score of ${roundScore}!\n Your Total Score is ${totalScore}.`
       );
+
+      canStartRound = true;
     },
 
     Math.floor(Math.random() * 3000 + 4000)
@@ -178,13 +193,22 @@ function playRound(bet) {
 }
 
 function startRound() {
-  let betAmount = Number(
-    prompt(
-      `You currently have ${totalScore} points. Would you like to bet 10, 50, or 100 points? (Multipliers x1, x5, x10)`
-    )
-  );
-
-  playRound(betAmount);
+  if (canStartRound) {
+    let betAmount = Number(
+      document.querySelector('input[name="bet"]:checked').value
+    );
+    if (totalScore >= betAmount) {
+      playRound(betAmount);
+    } else {
+      alert(
+        "On no, you don't have enough points to place that bet! Please select a lower bet or restart the game by refreshing the page."
+      );
+    }
+  } else {
+    alert(
+      "Please wait until the current round is finished before trying to start a new round!"
+    );
+  }
 }
 
 initializeGame();
