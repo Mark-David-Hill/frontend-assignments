@@ -4,22 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slot Machine</title>
+    <link rel="stylesheet" href="./styles/app.css" />
   </head>
   <body>
-    <h1>Slot Machine</h1>
-    <h2>Total Score: 100</h2>
-    <p>Open the Console to see the slot machine!</p>
-    <p>
-      How many points would you like to bet for this round? Bet higher amounts
-      for bigger score multipliers!
-    </p>
-    <input type="radio" name="bet" value="10" checked />
-    <label for="bet">10 points (x2) </label>
-    <input type="radio" name="bet" value="50" />
-    <label for="bet">50 points (x10)</label>
-    <input type="radio" name="bet" value="100" />
-    <label for="bet">100 points (x20)</label>
-    <button onclick="startRound()">Start Round</button>
+    <div class="main-section">
+      <div class="header-wrapper">
+        <h1>Slot Machine</h1>
+        <p>Open the Console to see the slot machine!</p>
+      </div>
+      <div class="betting-wrapper">
+        <h2>Total Score: 100</h2>
+        <p>
+          How many points would you like to bet for this round? Bet higher
+          amounts for bigger score multipliers!
+        </p>
+        <div class="radio-section">
+          <input type="radio" name="bet" value="3" checked />
+          <label for="bet">3 points (x1) </label>
+          <input type="radio" name="bet" value="10" />
+          <label for="bet">10 points (x2) </label>
+          <input type="radio" name="bet" value="50" />
+          <label for="bet">50 points (x10)</label>
+          <input type="radio" name="bet" value="100" />
+          <label for="bet">100 points (x20)</label>
+        </div>
+        <button onclick="startRound()">Start Round</button>
+      </div>
+    </div>
+    <div class="scoring-section">
+      <h2>Scoring</h2>
+      <div class="point-value-wrapper">
+        <p>🚫🚫🚫: 0 points</p>
+        <p>🍉 (any fruit): 1 point</p>
+        <p>🍊🍋 (any fruit): 2 points</p>
+        <p>🍉🍋🍒 (any mixed fruit): 5 points</p>
+        <p>🔔: 10 points</p>
+        <p>🍉🍉🍉: 10 points</p>
+        <p>🍊🍊🍊: 15 points</p>
+        <p>🍋🍋🍋: 20 points</p>
+        <p>🍒🍒🍒: 30 points</p>
+        <p>🔔🔔: 100 points</p>
+        <p>🔔🔔🔔: 1000 points</p>
+      </div>
+    </div>
     <script src="./scripts/app.js"></script>
   </body>
 </html>

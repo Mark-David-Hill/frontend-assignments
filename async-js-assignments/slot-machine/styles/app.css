@@ -1,0 +1,76 @@
+:root {
+  font-size: 18px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.main-section {
+  background-image: url(../assets/hero.jpg);
+  width: 100%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 30px;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 2em;
+}
+
+.header-wrapper,
+.betting-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #828992;
+  padding: 20px;
+  border: 10px dotted rgb(207, 218, 232);
+  border-radius: 20px;
+}
+
+.betting-wrapper {
+  color: white;
+  background-color: #94aca0ed;
+  border: 10px dotted #d9faeaed;
+  margin: 0 2em;
+}
+
+.betting-wrapper button {
+  color: white;
+  background-color: #fa3f35;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.radio-section label {
+  margin-right: 10px;
+}
+
+.scoring-section {
+  color: white;
+  background-color: #232532a2;
+  margin: 0 30px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.point-value-wrapper {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+  gap: 2em;
+}

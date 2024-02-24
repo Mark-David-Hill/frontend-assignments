@@ -94,7 +94,9 @@ function getScore(col1, col2, col3, bet) {
 
   fruitCount = watermelonCount + orangeCount + lemonCount + cherryCount;
   multiplier = 0;
-  if (bet === 10) {
+  if (bet === 3) {
+    multiplier = 1;
+  } else if (bet === 10) {
     multiplier = 2;
   } else if (bet === 50) {
     multiplier = 10;
