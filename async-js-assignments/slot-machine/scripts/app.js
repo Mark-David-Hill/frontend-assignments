@@ -127,12 +127,6 @@ function getScore(col1, col2, col3, bet) {
   }
 }
 
-function spinColumn(column) {
-  setInterval(() => {
-    column.moveCol();
-  }, 100);
-}
-
 const initializeGame = () => {
   canStartRound = true;
   totalScore = startingBalance;
@@ -159,37 +153,37 @@ function playRound(bet) {
     console.log(getDisplay(col1.position, col2.position, col3.position));
   }, 100);
 
-  setTimeout(
-    () => clearInterval(spinCol1),
-    Math.floor(Math.random() * 1000 + 2000)
-  );
-  setTimeout(
-    () => clearInterval(spinCol2),
-    Math.floor(Math.random() * 2000 + 3000)
-  );
-  setTimeout(
-    () => {
-      clearInterval(spinCol3);
-      clearInterval(displayBoard);
-      let [baseScore, multiplier] = getScore(col1, col2, col3, bet);
-      roundScore = baseScore * multiplier;
-      totalScore += roundScore;
-      displayScore();
+  const stopColumnTimer = () =>
+    new Promise((res) =>
+      setTimeout(res, Math.floor(Math.random() * 1000 + 2000))
+    );
 
-      console.clear();
-      console.log(getDisplay(col1.position, col2.position, col3.position));
-      if (baseScore === 1000) {
-        console.log("Jackpot!!!!!!");
-      }
-      console.log(
-        `You bet ${bet} points and got a score of ${baseScore} x ${multiplier} for a combined score of ${roundScore}!\n Your Total Score is ${totalScore}.`
-      );
+  async function roundTimer() {
+    await stopColumnTimer();
+    clearInterval(spinCol1);
+    await stopColumnTimer();
+    clearInterval(spinCol2);
+    await stopColumnTimer();
+    clearInterval(spinCol3);
+    clearInterval(displayBoard);
+    let [baseScore, multiplier] = getScore(col1, col2, col3, bet);
+    roundScore = baseScore * multiplier;
+    totalScore += roundScore;
+    displayScore();
 
-      canStartRound = true;
-    },
+    console.clear();
+    console.log(getDisplay(col1.position, col2.position, col3.position));
+    if (baseScore === 1000) {
+      console.log("Jackpot!!!!!!");
+    }
+    console.log(
+      `You bet ${bet} points and got a score of ${baseScore} x ${multiplier} for a combined score of ${roundScore}!\n Your Total Score is ${totalScore}.`
+    );
 
-    Math.floor(Math.random() * 3000 + 4000)
-  );
+    canStartRound = true;
+  }
+
+  roundTimer();
 }
 
 function startRound() {
