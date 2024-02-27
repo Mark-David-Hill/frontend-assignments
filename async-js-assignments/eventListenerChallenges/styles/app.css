@@ -1,0 +1,27 @@
+html,
+body {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.colors-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  min-height: 100px;
+}
+
+.colors-container div {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  color: white;
+}
