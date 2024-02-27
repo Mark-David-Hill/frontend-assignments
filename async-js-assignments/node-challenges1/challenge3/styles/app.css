@@ -1,0 +1,23 @@
+body {
+  width: 100%;
+}
+
+td div {
+  border: 1px solid blue;
+  padding: 2em;
+  margin: 0 1em;
+}
+
+.col1 {
+  color: white;
+  background-color: #210802;
+}
+.col2 {
+  color: rgb(89, 3, 3);
+  background-color: #0cb711;
+}
+
+.col3 {
+  color: rgb(255, 196, 88);
+  background-color: #1b2cdc;
+}
