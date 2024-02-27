@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="background-color: blue; color: white">Pizza Toppings</h1>
+
+    <p>Toppings Generally Accepted:</p>
+
+    <ul class="toppings-list">
+      <li>Pepperoni</li>
+      <li>Sausage</li>
+      <li>Mushrooms</li>
+      <li id="pineapple">Pineapple</li>
+    </ul>
+
+    <p>Toppings Generally Not Accepted:</p>
+
+    <input type="text" id="input-list" />
+
+    <ul class="non-toppings-list" id="non-toppings-list">
+      <li>Rhubarb</li>
+      <li>Oranges</li>
+      <li>Cereal</li>
+      <li>Milk</li>
+    </ul>
+
+    <p>
+      There is a rumor that some people don't like pineapple on pizza. The
+      reality is that you don't choose pinapple. Rather, pineapple chooses you.
+    </p>
+
+    <button onclick="logToConsole()">Print to the Console</button>
+    <button class="color-change-button">Color Change</button>
+    <button onclick="addToBodyandList()">Add to the Body and List</button>
+
+    <script></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
