@@ -1,29 +1,41 @@
-function getThrows() {
+const getThrows = function () {
   const options = ["rock", "paper", "scissors"];
-  let playerThrow = undefined;
+  const prompt1 = "Rock, Paper, or Scissors?";
+  const prompt2 =
+    "Sorry, I didn't understand that. Please enter Rock, Paper, or Scissors.";
+  let gaveInitialPrompt = false;
+  let playerThrow;
   while (true) {
-    playerThrow = prompt("Rock, Paper, or Scissors?");
-    lowerCaseThrow = playerThrow ? playerThrow.toLowerCase : "";
+    if (!gaveInitialPrompt) {
+      playerThrow = prompt(prompt1);
+      gaveInitialPrompt = true;
+    } else {
+      playerThrow = prompt(prompt2);
+    }
+    if (playerThrow === null) {
+      return false;
+    } else {
+      playerThrow = playerThrow.toLowerCase();
+    }
     if (
       playerThrow === options[0] ||
       playerThrow === options[1] ||
       playerThrow === options[2]
     ) {
       break;
-    } else {
-      prompt("Sorry, I didn't understand that.");
     }
   }
-  const randInt = Math.floor(Math.random() * 3);
-  const cpuThrow = options[randInt];
-  let throws = [];
-  throws.push(playerThrow);
-  throws.push(cpuThrow);
+  const randNum = Math.floor(Math.random() * 3);
+  const cpuThrow = options[randNum];
+  const throws = [playerThrow, cpuThrow];
   return throws;
-}
+};
 
 function checkIfWinner(throw1, throw2) {
   let isWinner = false;
+  if (throw1 === throw2) {
+    return "draw";
+  }
   const winScenarios = [
     ["rock", "scissors"],
     ["paper", "rock"],
@@ -38,25 +50,24 @@ function checkIfWinner(throw1, throw2) {
 }
 
 function playGame() {
-  let throws = getThrows();
-  prompt(
+  const throws = getThrows();
+  if (throws === false) {
+    return false;
+  }
+  alert(
     `Player: ${throws[0]} vs. CPU: ${throws[1]} \nPress Enter for the Results...`
   );
 
-  if (checkIfWinner(throws[0], throws[1])) {
-    return prompt("You win!");
-  } else if (checkIfWinner(throws[1], throws[0])) {
-    return prompt("You lose");
+  let isWinner = checkIfWinner(throws[0], throws[1]);
+  if (isWinner === "draw") {
+    alert(`You both threw ${throws[0]}. It was a draw.`);
+  } else if (isWinner === true) {
+    alert(`${throws[0]} beats ${throws[1]}. You win!`);
   } else {
-    return prompt("It was a draw");
+    alert(`${throws[1]} beats ${throws[0]}. You lose.`);
   }
-}
-
-while (true) {
-  if (
-    prompt("Press Enter to play rock paper scissors. Type 'q' to quit") === "q"
-  ) {
-    break;
+  const playAgain = prompt("Do you want to play again? (y/n)");
+  if (playAgain && playAgain.toLowerCase() === "y") {
+    playGame();
   }
-  playGame();
 }
