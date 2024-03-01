@@ -1,28 +1,6 @@
-const colSymbols = [
-  "🍉",
-  "🍉",
-  "🍉",
-  "🍉",
-  "🍊",
-  "🍊",
-  "🍊",
-  "🍋",
-  "🍋",
-  "🍒",
-  "🚫",
-  "🔔",
-  "🚫",
-  "🍉",
-  "🍉",
-];
-
-let startingBalance = 100;
-let totalScore = 0;
-let canStartRound = true;
-
 class Column {
-  constructor(position) {
-    this.position = position;
+  constructor() {
+    this.position = Math.floor(Math.random() * (colSymbols.length - 2));
   }
   moveCol() {
     this.position < colSymbols.length - 3
@@ -31,12 +9,8 @@ class Column {
   }
 }
 
-const col1 = new Column(Math.floor(Math.random() * (colSymbols.length - 2)));
-const col2 = new Column(Math.floor(Math.random() * (colSymbols.length - 2)));
-const col3 = new Column(Math.floor(Math.random() * (colSymbols.length - 2)));
-
 function getDisplay(col1Position, col2Position, col3Position) {
-  let display = `
+  const display = `
    ______________
   | ${colSymbols[col1Position]} | ${colSymbols[col2Position]} | ${
     colSymbols[col3Position]
@@ -168,7 +142,7 @@ function playRound(bet) {
     await stopColumnTimer();
     clearInterval(spinCol3);
     clearInterval(displayBoard);
-    let [baseScore, multiplier] = getScore(col1, col2, col3, bet);
+    const [baseScore, multiplier] = getScore(col1, col2, col3, bet);
     roundScore = baseScore * multiplier;
     totalScore += roundScore;
     displayScore();
@@ -190,7 +164,7 @@ function playRound(bet) {
 
 function startRound() {
   if (canStartRound) {
-    let betAmount = Number(
+    const betAmount = Number(
       document.querySelector('input[name="bet"]:checked').value
     );
     if (totalScore >= betAmount) {
@@ -206,5 +180,15 @@ function startRound() {
     );
   }
 }
+
+const colSymbols = ["🍉", "🍉", "🍉", "🍉", "🍊", "🍊", "🍊", "🍋", "🍋", "🍒", "🚫","🔔", "🚫", "🍉", "🍉"];
+
+const startingBalance = 100;
+let totalScore = 0;
+let canStartRound = true;
+
+const col1 = new Column();
+const col2 = new Column();
+const col3 = new Column();
 
 initializeGame();
