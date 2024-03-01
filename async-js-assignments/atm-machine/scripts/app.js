@@ -1,23 +1,13 @@
 class User {
-  constructor(
-    firstName,
-    lastName,
-    email,
-    password,
-    balance = 0.0,
-    deposit = 0.0,
-    withdraw = 0.0
-  ) {
+  constructor(firstName, lastName, email, password, balance = 0.0, deposit = 0.0, withdraw = 0.0) {
     (this.firstName = firstName),
-      (this.lastName = lastName),
-      (this.email = email),
-      (this.password = password),
-      (this.balance = balance),
-      (this.deposit = deposit),
-      (this.withdraw = withdraw);
+    (this.lastName = lastName),
+    (this.email = email),
+    (this.password = password),
+    (this.balance = balance),
+    (this.deposit = deposit),
+    (this.withdraw = withdraw);
   }
-
-  viewBalance() {}
 }
 
 function viewBalance() {
