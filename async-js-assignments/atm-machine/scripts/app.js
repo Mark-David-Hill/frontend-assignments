@@ -20,10 +20,6 @@ class User {
   viewBalance() {}
 }
 
-class Atm {}
-
-const mark = new User("Mark", "Hill", "mark@fake.com", "1234");
-
 function viewBalance() {
   alert(`Your balance is $${mark.balance}`);
 }
@@ -107,3 +103,5 @@ function login() {
     alert("Invalid email or password");
   }
 }
+
+const mark = new User("Mark", "Hill", "mark@fake.com", "1234");
