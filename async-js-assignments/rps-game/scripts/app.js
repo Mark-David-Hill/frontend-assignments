@@ -41,7 +41,7 @@ function checkIfWinner(throw1, throw2) {
     ["paper", "rock"],
     ["scissors", "paper"],
   ];
-  winScenarios.forEach((scenario) => {
+  winScenarios.forEach(scenario => {
     if (throw1 === scenario[0] && throw2 === scenario[1]) {
       isWinner = true;
     }
