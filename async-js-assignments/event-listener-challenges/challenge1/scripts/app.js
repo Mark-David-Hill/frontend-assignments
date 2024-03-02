@@ -1,31 +1,9 @@
 function generateHex() {
   let hexString = "#";
+  const hexValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]
   for (let i = 0; i < 6; i++) {
-    const randInt = Math.floor(Math.random() * 16);
-    let hexCharacter = "";
-    switch (randInt) {
-      case 10:
-        hexCharacter = "A";
-        break;
-      case 11:
-        hexCharacter = "B";
-        break;
-      case 12:
-        hexCharacter = "C";
-        break;
-      case 13:
-        hexCharacter = "D";
-        break;
-      case 14:
-        hexCharacter = "E";
-        break;
-      case 15:
-        hexCharacter = "F";
-        break;
-      default:
-        hexCharacter = randInt;
-        break;
-    }
+    const randNum = Math.floor(Math.random() * 16);
+    let hexCharacter = hexValues[randNum];
     hexString += hexCharacter;
   }
   return hexString;
