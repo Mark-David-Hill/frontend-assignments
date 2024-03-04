@@ -28,6 +28,7 @@ h2 {
   height: 100vh;
   background-color: $light;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -35,5 +36,27 @@ h2 {
     color: white;
     background-color: $primary;
     padding: 1em 6em;
+  }
+}
+
+.names-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    text-align: left;
+
+    p {
+      &:nth-child(1) {
+        width: 100%;
+      }
+    }
+
+    > div {
+      display: flex;
+    }
   }
 }

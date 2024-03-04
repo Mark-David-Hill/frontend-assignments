@@ -25,6 +25,7 @@ h2 {
   height: 100vh;
   background-color: lightgray;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -32,4 +33,21 @@ h2 {
   color: white;
   background-color: navy;
   padding: 1em 6em;
+}
+
+.names-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.names-wrapper > div {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  text-align: left;
+}
+.names-wrapper > div p:nth-child(1) {
+  width: 100%;
+}
+.names-wrapper > div > div {
+  display: flex;
 }/*# sourceMappingURL=common.css.map */
