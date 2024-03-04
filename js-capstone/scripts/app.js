@@ -20,9 +20,11 @@ function populateNamesList(names, namesWrapper) {
 
     const nameHeader = document.createElement("p");
     nameHeader.innerText = name;
+    nameHeader.classList.add("list-name");
 
     const weight = document.createElement("p");
     weight.innerText = "0";
+    weight.classList.add("weight");
 
     const buttonsWrapper = document.createElement("div");
     const minusButton = document.createElement("button");
@@ -40,18 +42,40 @@ function populateNamesList(names, namesWrapper) {
 }
 
 function selectRandomStudent() {
-  // namesArray.length
-  const randNum = Math.floor(Math.random() * namesArray.length);
-  // for (let index = 0; index < 30; index++) {
-  //   console.log(randNum);
-  // }
-  selectedStudentEl.innerText = namesArray[randNum];
+  if (!isSelectingName) {
+    isSelectingName = true;
+    spotlightDiv.classList.add("on");
+    for (let i = 0; i < namesWrapper.children.length; i++) {
+      namesWrapper.children[i].classList.remove("selected");
+    }
+    selectedStudentEl.innerText = "Drum roll...";
+    const shuffleInterval = setInterval(() => {
+      for (let i = namesWrapper.children.length; i >= 0; i--) {
+        namesWrapper.appendChild(
+          namesWrapper.children[(Math.random() * i) | 0]
+        );
+      }
+    }, 100);
+    setTimeout(() => {
+      const randNum = Math.floor(Math.random() * namesWrapper.children.length);
+      console.log(namesWrapper.children[randNum]);
+      selectedStudentEl.innerText =
+        namesWrapper.children[randNum].children[0].innerText;
+      namesWrapper.children[randNum].classList.add("selected");
+      spotlightDiv.classList.remove("on");
+      clearInterval(shuffleInterval);
+
+      isSelectingName = false;
+    }, 2000);
+  }
 }
 
 const namesWrapper = document.getElementsByClassName("names-wrapper")[0];
 const selectedStudentEl =
   document.getElementsByClassName("selected-student")[0];
+const spotlightDiv = document.getElementsByClassName("spotlight")[0];
 let namesArray = [];
+let isSelectingName = false;
 
 getStudents()
   .then((studentArray) => studentArray.map(getNames))

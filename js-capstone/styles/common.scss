@@ -8,6 +8,34 @@ body {
   display: flex;
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.spotlight.on {
+  position: fixed;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+    circle at 60% 50%,
+    #00000000 10px,
+    #000000ee 400px
+  );
+  pointer-events: none;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+}
+
 h2 {
   text-wrap: nowrap;
   padding: 0 2em;
@@ -39,20 +67,29 @@ h2 {
   }
 }
 
+h2 {
+  color: $light;
+}
+
 .names-wrapper {
   display: flex;
   flex-direction: column;
+
+  .selected {
+    background-color: rgb(255, 162, 0);
+  }
 
   > div {
     display: flex;
     gap: 2em;
     align-items: center;
     text-align: left;
+    padding: 0 2em;
+    border-radius: 5px;
 
-    p {
-      &:nth-child(1) {
-        width: 100%;
-      }
+    .list-name {
+      width: 100%;
+      color: $light;
     }
 
     > div {
