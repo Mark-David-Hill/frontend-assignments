@@ -52,10 +52,32 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+.main-section div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .main-section button {
   color: white;
   background-color: navy;
   padding: 1em 6em;
+}
+@keyframes spin-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.main-section .fa-spinner {
+  font-size: 20px;
+  animation-timing-function: linear;
+  animation: spin-animation 0.5s infinite;
+  display: none;
+}
+.main-section .fa-spinner.spin {
+  display: block;
 }
 
 h2 {

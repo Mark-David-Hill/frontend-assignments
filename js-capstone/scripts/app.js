@@ -45,6 +45,7 @@ function selectRandomStudent() {
   if (!isSelectingName) {
     isSelectingName = true;
     spotlightDiv.classList.add("on");
+    loadSpinner.classList.add("spin");
     for (let i = 0; i < namesWrapper.children.length; i++) {
       namesWrapper.children[i].classList.remove("selected");
     }
@@ -63,6 +64,7 @@ function selectRandomStudent() {
         namesWrapper.children[randNum].children[0].innerText;
       namesWrapper.children[randNum].classList.add("selected");
       spotlightDiv.classList.remove("on");
+      loadSpinner.classList.remove("spin");
       clearInterval(shuffleInterval);
 
       isSelectingName = false;
@@ -74,6 +76,7 @@ const namesWrapper = document.getElementsByClassName("names-wrapper")[0];
 const selectedStudentEl =
   document.getElementsByClassName("selected-student")[0];
 const spotlightDiv = document.getElementsByClassName("spotlight")[0];
+const loadSpinner = document.getElementsByClassName("fa-spinner")[0];
 let namesArray = [];
 let isSelectingName = false;
 
