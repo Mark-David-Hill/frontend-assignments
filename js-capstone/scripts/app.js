@@ -23,19 +23,21 @@ function populateNamesList(names, namesWrapper) {
     nameHeader.classList.add("list-name");
 
     const weight = document.createElement("p");
-    weight.innerText = "0";
+    weight.innerText = "1";
     weight.classList.add("weight");
 
     const buttonsWrapper = document.createElement("div");
     const minusButton = document.createElement("button");
-    minusButton.innerText = "+";
+    minusButton.innerText = "-";
+    minusButton.addEventListener("click", decrementWeight);
     const plusButton = document.createElement("button");
-    plusButton.innerText = "-";
+    plusButton.innerText = "+";
+    plusButton.addEventListener("click", incrementWeight);
 
     studentWrapper.appendChild(nameHeader);
     studentWrapper.appendChild(weight);
-    buttonsWrapper.appendChild(plusButton);
     buttonsWrapper.appendChild(minusButton);
+    buttonsWrapper.appendChild(plusButton);
     studentWrapper.appendChild(buttonsWrapper);
     namesWrapper.appendChild(studentWrapper);
   });
@@ -58,17 +60,61 @@ function selectRandomStudent() {
       }
     }, 100);
     setTimeout(() => {
-      const randNum = Math.floor(Math.random() * namesWrapper.children.length);
-      console.log(namesWrapper.children[randNum]);
-      selectedStudentEl.innerText =
-        namesWrapper.children[randNum].children[0].innerText;
-      namesWrapper.children[randNum].classList.add("selected");
+      const weightedNames = getWeightedNamesArray();
+      const randNum = Math.floor(Math.random() * weightedNames.length);
+      const selectedName = weightedNames[randNum];
+      selectedStudentEl.innerText = selectedName;
+      const studentElement = getStudentElementByName(selectedName);
+      studentElement.classList.add("selected");
       spotlightDiv.classList.remove("on");
       loadSpinner.classList.remove("spin");
       clearInterval(shuffleInterval);
 
       isSelectingName = false;
     }, 2000);
+  }
+}
+
+function incrementWeight() {
+  if (!isSelectingName) {
+    weightValueElement = this.parentElement.parentElement.children[1];
+    currentValue = Number(weightValueElement.innerText);
+    weightValueElement.innerText = currentValue + 1;
+  }
+}
+
+function decrementWeight() {
+  if (!isSelectingName) {
+    weightValueElement = this.parentElement.parentElement.children[1];
+    currentValue = Number(weightValueElement.innerText);
+    currentValue > 0 ? (weightValueElement.innerText = currentValue - 1) : null;
+  }
+}
+
+function getWeightedNamesArray() {
+  let namesArray = [];
+  for (
+    let studentIndex = 0;
+    studentIndex < namesWrapper.children.length;
+    studentIndex++
+  ) {
+    const weight = Number(
+      namesWrapper.children[studentIndex].children[1].innerText
+    );
+    for (let nameCount = 0; nameCount < weight; nameCount++) {
+      namesArray.push(
+        namesWrapper.children[studentIndex].children[0].innerText
+      );
+    }
+  }
+  return namesArray;
+}
+
+function getStudentElementByName(name) {
+  for (let i = 0; i < namesWrapper.children.length; i++) {
+    if (namesWrapper.children[i].children[0].innerText === name) {
+      return namesWrapper.children[i];
+    }
   }
 }
 
