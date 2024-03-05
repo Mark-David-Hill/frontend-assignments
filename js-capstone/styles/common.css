@@ -37,10 +37,10 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-right: 10px solid white;
+  border-right: 10px solid #653232;
   height: 100vh;
   color: white;
-  background-color: navy;
+  background-color: #dd3232;
 }
 
 .main-section {
@@ -51,22 +51,36 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url(../assets/theatre.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.main-section div {
+.main-section .chosen-student-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8%;
+  color: white;
+  background-color: #66746c;
+  border: 10px solid #963732;
+  border-radius: 5px;
+  font-size: 30px;
+}
+.main-section .chosen-student-wrapper div {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.main-section button {
+.main-section .chosen-student-wrapper button {
   color: white;
-  background-color: navy;
+  background-color: #dd3232;
   padding: 1em 6em;
   border-radius: 5px;
 }
-.main-section button:hover {
+.main-section .chosen-student-wrapper button:hover {
   opacity: 0.8;
 }
-.main-section button:active {
+.main-section .chosen-student-wrapper button:active {
   background-color: rgb(0, 0, 105);
 }
 @keyframes spin-animation {
@@ -77,13 +91,12 @@ h2 {
     transform: rotate(360deg);
   }
 }
-.main-section .fa-spinner {
-  font-size: 20px;
+.main-section .chosen-student-wrapper .fa-spinner {
   animation-timing-function: linear;
   animation: spin-animation 0.5s infinite;
   display: none;
 }
-.main-section .fa-spinner.spin {
+.main-section .chosen-student-wrapper .fa-spinner.spin {
   display: block;
 }
 
@@ -96,7 +109,7 @@ h2 {
   flex-direction: column;
 }
 .names-wrapper .selected {
-  background-color: rgb(255, 162, 0);
+  background-color: #963732;
 }
 .names-wrapper > div {
   display: flex;

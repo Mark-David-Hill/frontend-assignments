@@ -1,4 +1,4 @@
-async function getStudents() {
+async function fetchStudents() {
   try {
     const response = await fetch("https://fe-students.onrender.com/api/users");
     const jsonData = await response.json();
@@ -43,7 +43,23 @@ function populateNamesList(names, namesWrapper) {
   });
 }
 
-function selectRandomStudent() {
+function resolveStudentSelection(shuffleInterval) {
+  setTimeout(() => {
+    const weightedNames = getWeightedNamesArray();
+    const randNum = Math.floor(Math.random() * weightedNames.length);
+    const selectedName = weightedNames[randNum];
+    selectedStudentEl.innerText = selectedName;
+    const studentElement = getStudentElementByName(selectedName);
+    studentElement.classList.add("selected");
+    spotlightDiv.classList.remove("on");
+    loadSpinner.classList.remove("spin");
+    clearInterval(shuffleInterval);
+
+    isSelectingName = false;
+  }, 2000);
+}
+
+function startStudentSelection() {
   if (!isSelectingName) {
     isSelectingName = true;
     spotlightDiv.classList.add("on");
@@ -59,19 +75,7 @@ function selectRandomStudent() {
         );
       }
     }, 100);
-    setTimeout(() => {
-      const weightedNames = getWeightedNamesArray();
-      const randNum = Math.floor(Math.random() * weightedNames.length);
-      const selectedName = weightedNames[randNum];
-      selectedStudentEl.innerText = selectedName;
-      const studentElement = getStudentElementByName(selectedName);
-      studentElement.classList.add("selected");
-      spotlightDiv.classList.remove("on");
-      loadSpinner.classList.remove("spin");
-      clearInterval(shuffleInterval);
-
-      isSelectingName = false;
-    }, 2000);
+    resolveStudentSelection(shuffleInterval);
   }
 }
 
@@ -126,7 +130,7 @@ const loadSpinner = document.getElementsByClassName("fa-spinner")[0];
 let namesArray = [];
 let isSelectingName = false;
 
-getStudents()
+fetchStudents()
   .then((studentArray) => studentArray.map(getNames))
   .then((nameArray) => populateNamesList(nameArray, namesWrapper))
   .catch((err) => console.error(err));
