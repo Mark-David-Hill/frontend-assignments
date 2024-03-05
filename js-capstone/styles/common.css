@@ -61,6 +61,13 @@ h2 {
   color: white;
   background-color: navy;
   padding: 1em 6em;
+  border-radius: 5px;
+}
+.main-section button:hover {
+  opacity: 0.8;
+}
+.main-section button:active {
+  background-color: rgb(0, 0, 105);
 }
 @keyframes spin-animation {
   0% {

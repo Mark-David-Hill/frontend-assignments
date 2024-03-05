@@ -70,6 +70,15 @@ h2 {
     color: white;
     background-color: $primary;
     padding: 1em 6em;
+    border-radius: 5px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      background-color: rgb(0, 0, 105);
+    }
   }
 
   @keyframes spin-animation {
