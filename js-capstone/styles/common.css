@@ -55,6 +55,11 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.main-section h3 {
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 .main-section .chosen-student-wrapper {
   display: flex;
   flex-direction: column;

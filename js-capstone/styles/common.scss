@@ -59,18 +59,15 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // background-color: #3f4e51;
   background-image: url(../assets/theatre.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  // background: linear-gradient(0.25turn, #000000, #ebf8e1, #000000);
-  // background: rgb(2, 0, 36);
-  // background: radial-gradient(
-  //   circle,
-  //   rgba(2, 0, 36, 1) 0%,
-  //   rgba(255, 255, 255, 1) 0%,
-  //   rgba(0, 0, 0, 1) 100%
-  // );
+
+  h3 {
+    font-family: "Rye", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 
   .chosen-student-wrapper {
     display: flex;
