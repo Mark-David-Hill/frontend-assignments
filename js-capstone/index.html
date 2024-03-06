@@ -25,9 +25,24 @@
     <div class="sidebar">
       <div class="name-header-wrapper">
         <h2>Random Student Generator</h2>
-        <hr />
       </div>
+      <hr />
       <div class="names-wrapper"></div>
+      <hr />
+      <div class="description-wrapper">
+        <p>
+          Each student has a weighted number next to their name which decreases
+          each time they are chosen. The higher the number, the more likely they
+          are to be chosen. A weight of 0 equals no chance of being chosen. If
+          all students end up with a weight of 0 after a student is chosen,
+          their weights will be reset to the default of 5.
+        </p>
+        <p>
+          You can automatically change these values with the + and - buttons
+          next to each student.
+        </p>
+        <p></p>
+      </div>
     </div>
     <div class="main-section">
       <div class="chosen-student-wrapper">
@@ -36,7 +51,9 @@
           <i class="fa-solid fa-spinner"></i>
           <p class="selected-student">...</p>
         </div>
-        <button onclick="startStudentSelection()">Select a Student</button>
+        <button class="student-select-button" onclick="startStudentSelection()">
+          Select a Student
+        </button>
       </div>
     </div>
     <script src="./scripts/app.js"></script>

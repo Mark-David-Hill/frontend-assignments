@@ -41,6 +41,14 @@ h2 {
   height: 100vh;
   color: white;
   background-color: #dd3232;
+  max-width: 24vw;
+}
+.sidebar hr {
+  width: 80%;
+}
+.sidebar .description-wrapper {
+  width: 60%;
+  line-height: 1.4;
 }
 
 .main-section {
@@ -86,7 +94,7 @@ h2 {
   opacity: 0.8;
 }
 .main-section .chosen-student-wrapper button:active {
-  background-color: rgb(0, 0, 105);
+  background-color: rgb(105, 0, 0);
 }
 @keyframes spin-animation {
   0% {

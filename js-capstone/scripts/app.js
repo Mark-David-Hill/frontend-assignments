@@ -23,16 +23,16 @@ function populateNamesList(names, namesWrapper) {
     nameHeader.classList.add("list-name");
 
     const weight = document.createElement("p");
-    weight.innerText = "1";
+    weight.innerText = "5";
     weight.classList.add("weight");
 
     const buttonsWrapper = document.createElement("div");
     const minusButton = document.createElement("button");
     minusButton.innerText = "-";
-    minusButton.addEventListener("click", decrementWeight);
+    minusButton.addEventListener("click", changeWeight);
     const plusButton = document.createElement("button");
     plusButton.innerText = "+";
-    plusButton.addEventListener("click", incrementWeight);
+    plusButton.addEventListener("click", changeWeight);
 
     studentWrapper.appendChild(nameHeader);
     studentWrapper.appendChild(weight);
@@ -49,19 +49,25 @@ function resolveStudentSelection(shuffleInterval) {
     const randNum = Math.floor(Math.random() * weightedNames.length);
     const selectedName = weightedNames[randNum];
     selectedStudentEl.innerText = selectedName;
+    selectedStudentEl.children[1];
     const studentElement = getStudentElementByName(selectedName);
+    changeWeight(studentElement.children[2].children[0]);
+    if (isAllZeroWeight()) {
+      resetWeights();
+    }
     studentElement.classList.add("selected");
     spotlightDiv.classList.remove("on");
     loadSpinner.classList.remove("spin");
     clearInterval(shuffleInterval);
-
+    studentSelectButton.disabled = false;
     isSelectingName = false;
   }, 2000);
 }
 
 function startStudentSelection() {
-  if (!isSelectingName) {
-    isSelectingName = true;
+  const weightedNames = getWeightedNamesArray();
+  if (weightedNames.length > 0) {
+    studentSelectButton.disabled = true;
     spotlightDiv.classList.add("on");
     loadSpinner.classList.add("spin");
     for (let i = 0; i < namesWrapper.children.length; i++) {
@@ -76,22 +82,31 @@ function startStudentSelection() {
       }
     }, 100);
     resolveStudentSelection(shuffleInterval);
+  } else {
+    alert(
+      "In order to select a student, at least 1 student must have a weight above 0"
+    );
   }
 }
 
-function incrementWeight() {
-  if (!isSelectingName) {
-    weightValueElement = this.parentElement.parentElement.children[1];
-    currentValue = Number(weightValueElement.innerText);
-    weightValueElement.innerText = currentValue + 1;
-  }
+function changeWeight(buttonElement = null) {
+  weightValueElement = this.children
+    ? this.parentElement.parentElement.children[1]
+    : buttonElement.parentElement.parentElement.children[1];
+  currentValue = Number(weightValueElement.innerText);
+  const changeValue = this.innerText === "+" ? 1 : -1;
+  currentValue > 0
+    ? (weightValueElement.innerText = currentValue + changeValue)
+    : null;
 }
 
-function decrementWeight() {
-  if (!isSelectingName) {
-    weightValueElement = this.parentElement.parentElement.children[1];
-    currentValue = Number(weightValueElement.innerText);
-    currentValue > 0 ? (weightValueElement.innerText = currentValue - 1) : null;
+function resetWeights() {
+  for (
+    let studentIndex = 0;
+    studentIndex < namesWrapper.children.length;
+    studentIndex++
+  ) {
+    namesWrapper.children[studentIndex].children[1].innerText = "5";
   }
 }
 
@@ -114,6 +129,19 @@ function getWeightedNamesArray() {
   return namesArray;
 }
 
+function isAllZeroWeight() {
+  for (
+    let studentIndex = 0;
+    studentIndex < namesWrapper.children.length;
+    studentIndex++
+  ) {
+    if (namesWrapper.children[studentIndex].children[1].innerText !== "0") {
+      return false;
+    }
+  }
+  return true;
+}
+
 function getStudentElementByName(name) {
   for (let i = 0; i < namesWrapper.children.length; i++) {
     if (namesWrapper.children[i].children[0].innerText === name) {
@@ -125,6 +153,9 @@ function getStudentElementByName(name) {
 const namesWrapper = document.getElementsByClassName("names-wrapper")[0];
 const selectedStudentEl =
   document.getElementsByClassName("selected-student")[0];
+const studentSelectButton = document.getElementsByClassName(
+  "student-select-button"
+)[0];
 const spotlightDiv = document.getElementsByClassName("spotlight")[0];
 const loadSpinner = document.getElementsByClassName("fa-spinner")[0];
 let namesArray = [];
