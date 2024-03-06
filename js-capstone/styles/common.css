@@ -43,6 +43,10 @@ h2 {
   background-color: #dd3232;
   max-width: 24vw;
 }
+.sidebar h2 {
+  text-wrap: wrap;
+  text-align: center;
+}
 .sidebar hr {
   width: 80%;
 }
@@ -96,6 +100,9 @@ h2 {
 .main-section .chosen-student-wrapper button:active {
   background-color: rgb(105, 0, 0);
 }
+.main-section .chosen-student-wrapper button:disabled {
+  background-color: gray;
+}
 @keyframes spin-animation {
   0% {
     transform: rotate(0deg);
@@ -135,6 +142,9 @@ h2 {
 .names-wrapper > div .list-name {
   width: 100%;
   color: rgb(245, 245, 245);
+}
+.names-wrapper > div .no-weight {
+  color: rgb(194, 194, 194);
 }
 .names-wrapper > div > div {
   display: flex;

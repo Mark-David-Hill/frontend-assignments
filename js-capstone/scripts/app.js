@@ -90,14 +90,33 @@ function startStudentSelection() {
 }
 
 function changeWeight(buttonElement = null) {
-  weightValueElement = this.children
-    ? this.parentElement.parentElement.children[1]
-    : buttonElement.parentElement.parentElement.children[1];
-  currentValue = Number(weightValueElement.innerText);
-  const changeValue = this.innerText === "+" ? 1 : -1;
-  currentValue > 0
-    ? (weightValueElement.innerText = currentValue + changeValue)
-    : null;
+  let studentDiv = null;
+  let weightValueElement = null;
+  if (this.children) {
+    studentDiv = this.parentElement.parentElement;
+    weightValueElement = studentDiv.children[1];
+    studentDiv.children[1].innerText === "1" && this.innerText === "-"
+      ? studentDiv.children[0].classList.add("no-weight")
+      : null;
+    let currentValue = Number(weightValueElement.innerText);
+    const changeValue = this.innerText === "+" ? 1 : -1;
+    this.innerText === "+" || (currentValue > 0 && this.innerText === "-")
+      ? (weightValueElement.innerText = currentValue + changeValue)
+      : null;
+    studentDiv.children[1].innerText === "0"
+      ? studentDiv.children[0].classList.add("no-weight")
+      : studentDiv.children[0].classList.remove("no-weight");
+  } else {
+    studentDiv = buttonElement.parentElement.parentElement;
+    weightValueElement = studentDiv.children[1];
+    let currentValue = Number(weightValueElement.innerText);
+    if (currentValue > 0) {
+      weightValueElement.innerText = currentValue - 1;
+    }
+    weightValueElement.innerText === "0"
+      ? studentDiv.children[0].classList.add("no-weight")
+      : null;
+  }
 }
 
 function resetWeights() {
@@ -106,7 +125,10 @@ function resetWeights() {
     studentIndex < namesWrapper.children.length;
     studentIndex++
   ) {
-    namesWrapper.children[studentIndex].children[1].innerText = "5";
+    const studentDiv = namesWrapper.children[studentIndex];
+    console.log(studentDiv);
+    studentDiv.children[1].innerText = "5";
+    studentDiv.children[0].classList.remove("no-weight");
   }
 }
 

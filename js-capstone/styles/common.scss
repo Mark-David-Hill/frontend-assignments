@@ -51,6 +51,11 @@ h2 {
   background-color: $primary;
   max-width: 24vw;
 
+  h2 {
+    text-wrap: wrap;
+    text-align: center;
+  }
+
   hr {
     width: 80%;
   }
@@ -109,6 +114,10 @@ h2 {
       &:active {
         background-color: rgb(105, 0, 0);
       }
+
+      &:disabled {
+        background-color: gray;
+      }
     }
 
     @keyframes spin-animation {
@@ -155,6 +164,10 @@ h2 {
     .list-name {
       width: 100%;
       color: $light;
+    }
+
+    .no-weight {
+      color: rgb(194, 194, 194);
     }
 
     > div {
