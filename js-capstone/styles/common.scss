@@ -42,10 +42,8 @@ h2 {
 }
 
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-right: 10px solid #653232;
+  @include flex-standard(column, center, center);
+  border-right: 10px solid $dark;
   height: 100vh;
   color: white;
   background-color: $primary;
@@ -68,12 +66,7 @@ h2 {
 
 .main-section {
   width: 100%;
-  height: 100vh;
-  background-color: $light;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-standard(column, center, center);
   background-image: url(../assets/theatre.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -85,13 +78,11 @@ h2 {
   }
 
   .chosen-student-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-standard(column, center, center);
     padding: 8%;
     color: white;
-    background-color: #66746c;
-    border: 10px solid #963732;
+    background-color: $secondary;
+    border: 10px solid $highlight;
     border-radius: 5px;
     font-size: 30px;
 
@@ -146,17 +137,15 @@ h2 {
 }
 
 .names-wrapper {
-  display: flex;
-  flex-direction: column;
+  @include flex-standard(column, flex-start, stretch);
 
   .selected {
-    background-color: #963732;
+    background-color: $highlight;
   }
 
   > div {
-    display: flex;
+    @include flex-standard;
     gap: 2em;
-    align-items: center;
     text-align: left;
     padding: 0 2em;
     border-radius: 5px;
