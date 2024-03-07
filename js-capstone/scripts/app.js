@@ -5,63 +5,43 @@ async function fetchStudents() {
     const results = jsonData.results;
     return results;
   } catch (e) {
+    alert(
+      `${e} Was unable to fetch student names. Please try again by refreshing the page.`
+    );
     throw new Error(e);
   }
 }
 
-function getNames(student) {
-  return student.name;
+function createNewElement(elementType, innerText, newClass = null) {
+  const newElement = document.createElement(elementType);
+  newElement.innerText = innerText;
+  newClass ? newElement.classList.add(newClass) : null;
+  return newElement;
+}
+
+function appendChildren(parentElement, children) {
+  children.forEach((child) => {
+    parentElement.appendChild(child);
+  });
 }
 
 function populateNamesList(names, namesWrapper) {
   namesArray = names;
   names.forEach((name) => {
     const studentWrapper = document.createElement("div");
-
-    const nameHeader = document.createElement("p");
-    nameHeader.innerText = name;
-    nameHeader.classList.add("list-name");
-
-    const weight = document.createElement("p");
-    weight.innerText = "5";
-    weight.classList.add("weight");
+    const nameHeader = createNewElement("p", name, "list-name");
+    const weight = createNewElement("p", "3", "weight");
 
     const buttonsWrapper = document.createElement("div");
-    const minusButton = document.createElement("button");
-    minusButton.innerText = "-";
+    const minusButton = createNewElement("button", "-");
     minusButton.addEventListener("click", changeWeight);
-    const plusButton = document.createElement("button");
-    plusButton.innerText = "+";
+    const plusButton = createNewElement("button", "+");
     plusButton.addEventListener("click", changeWeight);
 
-    studentWrapper.appendChild(nameHeader);
-    studentWrapper.appendChild(weight);
-    buttonsWrapper.appendChild(minusButton);
-    buttonsWrapper.appendChild(plusButton);
-    studentWrapper.appendChild(buttonsWrapper);
+    appendChildren(buttonsWrapper, [minusButton, plusButton]);
+    appendChildren(studentWrapper, [nameHeader, weight, buttonsWrapper]);
     namesWrapper.appendChild(studentWrapper);
   });
-}
-
-function resolveStudentSelection(shuffleInterval) {
-  setTimeout(() => {
-    const weightedNames = getWeightedNamesArray();
-    const randNum = Math.floor(Math.random() * weightedNames.length);
-    const selectedName = weightedNames[randNum];
-    selectedStudentEl.innerText = selectedName;
-    selectedStudentEl.children[1];
-    const studentElement = getStudentElementByName(selectedName);
-    changeWeight(studentElement.children[2].children[0]);
-    if (isAllZeroWeight()) {
-      resetWeights();
-    }
-    studentElement.classList.add("selected");
-    spotlightDiv.classList.remove("on");
-    loadSpinner.classList.remove("spin");
-    clearInterval(shuffleInterval);
-    studentSelectButton.disabled = false;
-    isSelectingName = false;
-  }, 2000);
 }
 
 function startStudentSelection() {
@@ -81,12 +61,32 @@ function startStudentSelection() {
         );
       }
     }, 100);
-    resolveStudentSelection(shuffleInterval);
+    resolveStudentSelection(shuffleInterval, weightedNames);
   } else {
     alert(
       "In order to select a student, at least 1 student must have a weight above 0"
     );
   }
+}
+
+function resolveStudentSelection(shuffleInterval, weightedNames) {
+  setTimeout(() => {
+    const randNum = Math.floor(Math.random() * weightedNames.length);
+    const selectedName = weightedNames[randNum];
+    selectedStudentEl.innerText = selectedName;
+    selectedStudentEl.children[1];
+    const studentElement = getStudentElementByName(selectedName);
+    changeWeight(studentElement.children[2].children[0]);
+    if (isAllZeroWeight()) {
+      resetWeights();
+    }
+    studentElement.classList.add("selected");
+    spotlightDiv.classList.remove("on");
+    loadSpinner.classList.remove("spin");
+    clearInterval(shuffleInterval);
+    studentSelectButton.disabled = false;
+    isSelectingName = false;
+  }, 2000);
 }
 
 function changeWeight(buttonElement = null) {
@@ -127,7 +127,7 @@ function resetWeights() {
   ) {
     const studentDiv = namesWrapper.children[studentIndex];
     console.log(studentDiv);
-    studentDiv.children[1].innerText = "5";
+    studentDiv.children[1].innerText = "3";
     studentDiv.children[0].classList.remove("no-weight");
   }
 }
@@ -172,6 +172,10 @@ function getStudentElementByName(name) {
   }
 }
 
+function getName(student) {
+  return student.name;
+}
+
 const namesWrapper = document.getElementsByClassName("names-wrapper")[0];
 const selectedStudentEl =
   document.getElementsByClassName("selected-student")[0];
@@ -184,6 +188,6 @@ let namesArray = [];
 let isSelectingName = false;
 
 fetchStudents()
-  .then((studentArray) => studentArray.map(getNames))
+  .then((studentArray) => studentArray.map(getName))
   .then((nameArray) => populateNamesList(nameArray, namesWrapper))
   .catch((err) => console.error(err));
