@@ -26,7 +26,6 @@ function appendChildren(parentElement, children) {
 }
 
 function populateNamesList(names, namesWrapper) {
-  namesArray = names;
   names.forEach((name) => {
     const studentWrapper = document.createElement("div");
     const nameHeader = createNewElement("p", name, "list-name");
@@ -44,24 +43,27 @@ function populateNamesList(names, namesWrapper) {
   });
 }
 
+function setIsLoading(weightedNames) {
+  studentSelectButton.disabled = true;
+  spotlightDiv.classList.add("on");
+  loadSpinner.classList.add("spin");
+  for (let i = 0; i < namesWrapper.children.length; i++) {
+    namesWrapper.children[i].classList.remove("selected");
+  }
+
+  selectedStudentEl.innerText = "Drum roll...";
+  const shuffleInterval = setInterval(() => {
+    for (let i = namesWrapper.children.length; i >= 0; i--) {
+      namesWrapper.appendChild(namesWrapper.children[(Math.random() * i) | 0]);
+    }
+  }, 100);
+  resolveStudentSelection(shuffleInterval, weightedNames);
+}
+
 function startStudentSelection() {
   const weightedNames = getWeightedNamesArray();
   if (weightedNames.length > 0) {
-    studentSelectButton.disabled = true;
-    spotlightDiv.classList.add("on");
-    loadSpinner.classList.add("spin");
-    for (let i = 0; i < namesWrapper.children.length; i++) {
-      namesWrapper.children[i].classList.remove("selected");
-    }
-    selectedStudentEl.innerText = "Drum roll...";
-    const shuffleInterval = setInterval(() => {
-      for (let i = namesWrapper.children.length; i >= 0; i--) {
-        namesWrapper.appendChild(
-          namesWrapper.children[(Math.random() * i) | 0]
-        );
-      }
-    }, 100);
-    resolveStudentSelection(shuffleInterval, weightedNames);
+    setIsLoading(weightedNames);
   } else {
     alert(
       "In order to select a student, at least 1 student must have a weight above 0"
@@ -74,12 +76,9 @@ function resolveStudentSelection(shuffleInterval, weightedNames) {
     const randNum = Math.floor(Math.random() * weightedNames.length);
     const selectedName = weightedNames[randNum];
     selectedStudentEl.innerText = selectedName;
-    selectedStudentEl.children[1];
     const studentElement = getStudentElementByName(selectedName);
     changeWeight(studentElement.children[2].children[0]);
-    if (isAllZeroWeight()) {
-      resetWeights();
-    }
+    isAllZeroWeight() ? resetWeights() : null;
     studentElement.classList.add("selected");
     spotlightDiv.classList.remove("on");
     loadSpinner.classList.remove("spin");
@@ -89,33 +88,40 @@ function resolveStudentSelection(shuffleInterval, weightedNames) {
   }, 2000);
 }
 
-function changeWeight(buttonElement = null) {
-  let studentDiv = null;
-  let weightValueElement = null;
-  if (this.children) {
-    studentDiv = this.parentElement.parentElement;
-    weightValueElement = studentDiv.children[1];
-    studentDiv.children[1].innerText === "1" && this.innerText === "-"
-      ? studentDiv.children[0].classList.add("no-weight")
-      : null;
-    let currentValue = Number(weightValueElement.innerText);
-    const changeValue = this.innerText === "+" ? 1 : -1;
-    this.innerText === "+" || (currentValue > 0 && this.innerText === "-")
-      ? (weightValueElement.innerText = currentValue + changeValue)
-      : null;
-    studentDiv.children[1].innerText === "0"
-      ? studentDiv.children[0].classList.add("no-weight")
-      : studentDiv.children[0].classList.remove("no-weight");
+function changeWeightFromButton(button) {
+  const studentDiv = button.parentElement.parentElement;
+  const weightValueElement = studentDiv.children[1];
+  const currentValue = Number(weightValueElement.innerText);
+  const changeValue = button.innerText === "+" ? 1 : -1;
+  if (studentDiv.children[1].innerText === "1" && button.innerText === "-") {
+    studentDiv.children[0].classList.add("no-weight");
+  }
+
+  if (button.innerText === "+" || (currentValue > 0 && button.innerText === "-")) {
+    weightValueElement.innerText = currentValue + changeValue;
+  }
+
+  if (studentDiv.children[1].innerText === "0") {
+    studentDiv.children[0].classList.add("no-weight");
   } else {
-    studentDiv = buttonElement.parentElement.parentElement;
-    weightValueElement = studentDiv.children[1];
-    let currentValue = Number(weightValueElement.innerText);
+    studentDiv.children[0].classList.remove("no-weight");
+  }
+}
+
+function changeWeight(buttonElement = null) {
+  if (this.children) {
+    changeWeightFromButton(this);
+  } else {
+    const studentDiv = buttonElement.parentElement.parentElement;
+    const weightValueElement = studentDiv.children[1];
+    const currentValue = Number(weightValueElement.innerText);
     if (currentValue > 0) {
       weightValueElement.innerText = currentValue - 1;
     }
-    weightValueElement.innerText === "0"
-      ? studentDiv.children[0].classList.add("no-weight")
-      : null;
+    
+    if (weightValueElement.innerText === "0") {
+      studentDiv.children[0].classList.add("no-weight")
+    }
   }
 }
 
@@ -126,7 +132,6 @@ function resetWeights() {
     studentIndex++
   ) {
     const studentDiv = namesWrapper.children[studentIndex];
-    console.log(studentDiv);
     studentDiv.children[1].innerText = "3";
     studentDiv.children[0].classList.remove("no-weight");
   }
@@ -184,10 +189,9 @@ const studentSelectButton = document.getElementsByClassName(
 )[0];
 const spotlightDiv = document.getElementsByClassName("spotlight")[0];
 const loadSpinner = document.getElementsByClassName("fa-spinner")[0];
-let namesArray = [];
 let isSelectingName = false;
 
 fetchStudents()
   .then((studentArray) => studentArray.map(getName))
-  .then((nameArray) => populateNamesList(nameArray, namesWrapper))
+  .then((namesArray) => populateNamesList(namesArray, namesWrapper))
   .catch((err) => console.error(err));
