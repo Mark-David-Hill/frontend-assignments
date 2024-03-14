@@ -1,0 +1,6 @@
+.logo {
+  @include component-standard;
+  background-color: $light;
+  padding: 14px 32px;
+  margin: 15px;
+}

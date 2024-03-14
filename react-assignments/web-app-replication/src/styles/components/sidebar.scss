@@ -1,0 +1,9 @@
+.sidebar {
+  @include component-standard(none);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  height: 100vh;
+  background-color: $sidebar;
+}

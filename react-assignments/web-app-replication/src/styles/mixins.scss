@@ -1,0 +1,11 @@
+@mixin component-standard($border-radius: 3px) {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: $light;
+}
+
+@mixin flex-standard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

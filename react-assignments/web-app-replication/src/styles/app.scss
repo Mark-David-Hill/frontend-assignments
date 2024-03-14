@@ -1,0 +1,34 @@
+body {
+  width: 100%;
+  margin: 0px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 634px) {
+  .page-container {
+    flex-direction: column;
+
+    .sidebar {
+      height: 20%;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media (max-width: 489px) {
+  .page-container {
+    .main-container {
+      .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+      }
+    }
+  }
+}

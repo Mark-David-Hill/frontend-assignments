@@ -1,0 +1,10 @@
+.footer {
+  width: 100%;
+  position: relative;
+
+  div {
+    @include component-standard;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
