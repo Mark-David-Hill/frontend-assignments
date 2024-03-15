@@ -21,7 +21,9 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <h1>The Fellowship of the Ring</h1>
-        <ProfileCardList logger={this.logInfo} />
+        <div className="profile-card-list-container">
+          <ProfileCardList logger={this.logInfo} />
+        </div>
         <Footer />
       </div>
     );

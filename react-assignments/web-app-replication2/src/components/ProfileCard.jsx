@@ -3,7 +3,7 @@ import { Component } from "react";
 class ProfileCard extends Component {
   render() {
     return (
-      <div className="card-wrapper">
+      <div className="card-container">
         <div className="header-wrapper">
           <img
             src={this.props.imageSource}

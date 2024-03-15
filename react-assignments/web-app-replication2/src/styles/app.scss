@@ -1,3 +1,37 @@
 body {
   width: 100%;
+  text-align: center;
+  background-color: #f6ede2;
+  margin: 0;
+}
+
+.profile-card-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar,
+.footer {
+  width: 100%;
+  background-color: #002c32;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  gap: 20px;
+
+  button {
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    border: 1px dotted white;
+    border-radius: 5px;
+    padding: 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
