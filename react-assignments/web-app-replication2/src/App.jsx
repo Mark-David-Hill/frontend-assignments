@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-import "./App.css";
+import "./styles/main.scss";
 
 import ProfileCardList from "./components/ProfileCardList";
 import Navbar from "./components/Navbar";
@@ -12,8 +12,8 @@ class App extends Component {
     this.logInfo = this.logInfo.bind(this);
   }
 
-  logInfo(title) {
-    console.log(`This is ${title}'s info`);
+  logInfo(title, description) {
+    console.log(`Name: ${title}\n\nDescription: ${description}`);
   }
 
   render() {
