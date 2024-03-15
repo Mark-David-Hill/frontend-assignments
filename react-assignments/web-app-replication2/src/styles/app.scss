@@ -15,7 +15,7 @@ body {
 .navbar,
 .footer {
   width: 100%;
-  background-color: #002c32;
+  background-color: $dark;
   color: white;
   display: flex;
   justify-content: center;
@@ -32,6 +32,7 @@ body {
 
     &:hover {
       cursor: pointer;
+      background-color: #004953;
     }
   }
 }

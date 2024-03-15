@@ -1,10 +1,13 @@
 import { Component } from "react";
 
+import icons from "./helpers/icons";
 import "./styles/main.scss";
 
 import ProfileCardList from "./components/ProfileCardList";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
+icons();
 
 class App extends Component {
   constructor() {
