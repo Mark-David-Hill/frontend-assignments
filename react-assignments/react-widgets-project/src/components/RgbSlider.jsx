@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 function RgbSlider() {
-  const [redValue, setRedValue] = useState(0);
-  const [greenValue, setGreenValue] = useState(0);
-  const [blueValue, setBlueValue] = useState(0);
-  const [color, setColor] = useState("rgb(0, 0, 0)");
+  const [redValue, setRedValue] = useState(50);
+  const [greenValue, setGreenValue] = useState(50);
+  const [blueValue, setBlueValue] = useState(50);
+  const [color, setColor] = useState("rgb(50, 50, 50)");
 
   useEffect(() => {
     setColor("rgb(" + redValue + ", " + greenValue + ", " + blueValue + ")");
