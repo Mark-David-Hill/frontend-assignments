@@ -1,15 +1,21 @@
 import "./App.css";
 
-import ShowHideWidget from "./components/ShowHideWidget.jsx";
-import GretingWidget from "./components/GreetingWidget.jsx";
-import Counter from "./components/CounterWidget.jsx";
+import ClockWidget from "./components/ClockWidget.jsx";
+import FontSizer from "./components/FontSizer.jsx";
+import TextAlign from "./components/TextAlign.jsx";
+import ShowHide from "./components/ShowHide.jsx";
+import Greeting from "./components/Greeting.jsx";
+import Counter from "./components/Counter.jsx";
 
 function App() {
   return (
     <div className="App">
       <Counter />
-      <GretingWidget />
-      <ShowHideWidget />
+      <Greeting />
+      <ShowHide />
+      <FontSizer />
+      <TextAlign />
+      <ClockWidget />
     </div>
   );
 }

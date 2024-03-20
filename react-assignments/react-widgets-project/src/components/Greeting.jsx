@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-function GretingWidget() {
+function Greeting() {
   const greetingMessage = "Hello, how are you today?";
   const farewellMessage = "Goodbye, hope to see you soon.";
   const [message, setMessage] = useState(greetingMessage);
 
   return (
-    <div>
+    <div className="widget">
       <h2>{message}</h2>
       <button
         onClick={() =>
@@ -21,4 +21,4 @@ function GretingWidget() {
   );
 }
 
-export default GretingWidget;
+export default Greeting;
