@@ -1,5 +1,6 @@
 import "./App.css";
 
+import ColorChanger from "./components/ColorChanger.jsx";
 import ClockWidget from "./components/ClockWidget.jsx";
 import FontSizer from "./components/FontSizer.jsx";
 import TextAlign from "./components/TextAlign.jsx";
@@ -16,6 +17,7 @@ function App() {
       <FontSizer />
       <TextAlign />
       <ClockWidget />
+      <ColorChanger />
     </div>
   );
 }
