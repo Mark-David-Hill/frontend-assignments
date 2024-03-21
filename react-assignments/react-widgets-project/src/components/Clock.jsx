@@ -1,5 +1,7 @@
 import { Component } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class Clock extends Component {
   constructor() {
     super();
@@ -13,15 +15,8 @@ class Clock extends Component {
   }
 
   componentDidMount() {
-    console.log("mounted");
     this.getTime();
-    // this.timer = setInterval(() => this.getTime(), 1000);
   }
-
-  // componentDidUpdate() {
-  //   // this.timer = setInterval(() => this.getTime(), 1000);
-  //   console.log("updated");
-  // }
 
   componentWillUnmount() {
     clearInterval(this.timer);
@@ -48,13 +43,15 @@ class Clock extends Component {
     return (
       <div className="clock">
         <h3>{this.state.date.toDateString()}</h3>
-        {this.state.minutes && (
+        {this.state.minutes ? (
           <h2>
             {this.state.hours < 10 && 0}
             {this.state.hours}:{this.state.minutes < 10 && 0}
             {this.state.minutes}:{this.state.seconds < 10 && 0}
             {this.state.seconds}
           </h2>
+        ) : (
+          <FontAwesomeIcon icon="fa-circle-notch" spin />
         )}
       </div>
     );

@@ -4,7 +4,7 @@ function ShowHide() {
   const [isHidden, setIsHidden] = useState(false);
 
   return (
-    <div>
+    <div className="widget-container">
       <h2 style={isHidden ? { display: "none" } : { display: "block" }}>
         Hide Me
       </h2>

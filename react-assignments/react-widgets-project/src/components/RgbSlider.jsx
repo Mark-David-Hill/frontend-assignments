@@ -11,35 +11,44 @@ function RgbSlider() {
   }, [redValue, greenValue, blueValue]);
 
   return (
-    <div>
+    <div className="widget-container rgb-slider">
       <div className="color-box" style={{ backgroundColor: color }}></div>
       <h3>
         rgb({redValue}, {greenValue}, {blueValue})
       </h3>
-      <input
-        type="range"
-        min="0"
-        max="255"
-        onChange={(e) => setRedValue(e.target.value)}
-        className="slider"
-        id="redSlider"
-      />
-      <input
-        type="range"
-        min="0"
-        max="255"
-        onChange={(e) => setGreenValue(e.target.value)}
-        className="slider"
-        id="greenSlider"
-      />
-      <input
-        type="range"
-        min="0"
-        max="255"
-        onChange={(e) => setBlueValue(e.target.value)}
-        className="slider"
-        id="blueSlider"
-      />
+      <div className="horizontal red">
+        <label htmlFor="red-slider">R</label>
+        <input
+          type="range"
+          min="0"
+          max="255"
+          onChange={(e) => setRedValue(e.target.value)}
+          className="red-slider"
+          id="red-slider"
+        />
+      </div>
+      <div className="horizontal green">
+        <label htmlFor="green-slider">G</label>
+        <input
+          type="range"
+          min="0"
+          max="255"
+          onChange={(e) => setGreenValue(e.target.value)}
+          className="slider"
+          id="green-slider"
+        />
+      </div>
+      <div className="horizontal blue">
+        <label htmlFor="blue-slider">B</label>
+        <input
+          type="range"
+          min="0"
+          max="255"
+          onChange={(e) => setBlueValue(e.target.value)}
+          className="slider"
+          id="blue-slider"
+        />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+.rgb-slider {
+  .color-box {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(221, 0, 0);
+  }
+
+  .red,
+  .green,
+  .blue {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+  }
+
+  .red {
+    border: 2px solid red;
+  }
+
+  .green {
+    border: 2px solid green;
+  }
+
+  .blue {
+    border: 2px solid blue;
+  }
+}

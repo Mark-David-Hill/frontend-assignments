@@ -6,7 +6,7 @@ function Greeting() {
   const [message, setMessage] = useState(greetingMessage);
 
   return (
-    <div className="widget">
+    <div className="widget-container">
       <h2>{message}</h2>
       <button
         onClick={() =>

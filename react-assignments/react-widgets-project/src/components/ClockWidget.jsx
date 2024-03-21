@@ -6,7 +6,7 @@ function ClockWidget() {
   const [isMounted, setIsMounted] = useState(true);
 
   return (
-    <div>
+    <div className="widget-container">
       {isMounted && <Clock />}
       <button onClick={() => setIsMounted((prev) => !prev)}>
         {isMounted ? "Unmount" : "Mount"}

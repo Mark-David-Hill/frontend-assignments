@@ -4,7 +4,7 @@ function ColorChanger() {
   const [textColor, setTextColor] = useState("black");
 
   return (
-    <div>
+    <div className="widget-container color-changer">
       <h2 style={{ color: textColor }}>{textColor}</h2>
       <input
         placeholder="color name"
