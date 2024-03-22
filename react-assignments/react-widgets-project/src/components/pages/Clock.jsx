@@ -23,7 +23,7 @@ class Clock extends Component {
   }
 
   getTime() {
-    setInterval(() => {
+    this.timer = setInterval(() => {
       this.setState(() => {
         return { date: new Date() };
       });

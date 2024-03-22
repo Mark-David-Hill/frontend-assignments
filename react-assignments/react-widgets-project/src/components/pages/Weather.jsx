@@ -16,7 +16,6 @@ function Weather() {
         setWeatherType(getWeatherFromCode(data.current.weather_code));
         setWindSpeed(data.current.wind_speed_10m);
         setTemp(data.current.temperature_2m);
-        console.log(data.current.weather_code);
       })
       .catch((err) => {
         console.error("Get Weather Data Error: ", err);
