@@ -8,6 +8,7 @@ import RgbSlider from "./components/RgbSlider.jsx";
 import ShowHide from "./components/ShowHide.jsx";
 import Greeting from "./components/Greeting.jsx";
 import Counter from "./components/Counter.jsx";
+import Weather from "./components/Weather.jsx";
 
 import "./styles/main.scss";
 
@@ -26,6 +27,7 @@ function App() {
         <ClockWidget />
         <ColorChanger />
         <RgbSlider />
+        <Weather />
       </div>
     </div>
   );
