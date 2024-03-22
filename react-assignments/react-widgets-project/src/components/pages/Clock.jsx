@@ -10,6 +10,7 @@ class Clock extends Component {
       hours: "",
       minutes: "",
       seconds: "",
+      timer: null,
     };
     this.getTime = this.getTime.bind(this);
   }

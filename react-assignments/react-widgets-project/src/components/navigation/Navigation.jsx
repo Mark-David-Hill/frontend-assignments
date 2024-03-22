@@ -10,26 +10,26 @@ import ShowHide from "../pages/ShowHide";
 import Counter from "../pages/Counter";
 import Weather from "../pages/Weather";
 import NoPage from "../pages/NoPage";
-import Login from "../pages/Login";
 
 function Navigation() {
   return (
-    <Switch>
-      <Redirect exact from="/" to="/login" component={Login} />
-      <Route path="/login" component={Login} />
-      <Route path="/color-changer" component={ColorChanger} />
-      <Route path="/clock" component={ClockWidget} />
-      <Route path="/font-sizer" component={FontSizer} />
-      <Route path="/text-align" component={TextAlign} />
-      <Route path="/rgb-slider" component={RgbSlider} />
-      <Route path="/greeting" component={Greeting} />
-      <Route path="/show-hide" component={ShowHide} />
-      <Route path="/counter" component={Counter} />
-      <Route path="/weather" component={Weather} />
+    <div>
+      <Switch>
+        <Redirect exact from="/" to="/counter" component={Counter} />
+        <Route path="/color-changer" component={ColorChanger} />
+        <Route path="/clock" component={ClockWidget} />
+        <Route path="/font-sizer" component={FontSizer} />
+        <Route path="/text-align" component={TextAlign} />
+        <Route path="/rgb-slider" component={RgbSlider} />
+        <Route path="/greeting" component={Greeting} />
+        <Route path="/show-hide" component={ShowHide} />
+        <Route path="/counter" component={Counter} />
+        <Route path="/weather" component={Weather} />
 
-      <Route path="/no-page" component={NoPage} />
-      <Route to="*" component={NoPage} />
-    </Switch>
+        <Route path="/no-page" component={NoPage} />
+        <Route to="*" component={NoPage} />
+      </Switch>
+    </div>
   );
 }
 
