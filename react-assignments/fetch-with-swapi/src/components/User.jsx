@@ -1,11 +1,11 @@
 export default function User(props) {
   return (
-    <div className="user-container">
+    <div>
       <h2>{props.currentUser}</h2>
       {props.homeworld ? (
-        <h3>Homeworld: {props.homeworld}</h3>
+        <h2>Homeworld: {props.homeworld}</h2>
       ) : props.isFetchingHomeworld ? (
-        <h3>Loading...</h3>
+        <h2>loading...</h2>
       ) : (
         props.currentUser && (
           <button onClick={() => props.setIsFetchingHomeworld(true)}>

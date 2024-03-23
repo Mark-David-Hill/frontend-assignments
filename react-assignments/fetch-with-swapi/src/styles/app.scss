@@ -1,0 +1,22 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  color: $star-wars-yellow;
+  background-color: black;
+  background-image: url(../assets/stars.jpg);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.App {
+  height: 800px;
+  perspective: 400px;
+}

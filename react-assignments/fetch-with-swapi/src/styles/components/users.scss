@@ -1,0 +1,26 @@
+.users-container {
+  max-height: 100vh;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  position: relative;
+  top: 0;
+  transform: rotateX(20deg) translateZ(0);
+}
+
+.user-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  button {
+    border: 3px solid $star-wars-yellow;
+    border-radius: 2px;
+    color: $star-wars-yellow;
+    background-color: black;
+    font-size: 20px;
+  }
+}

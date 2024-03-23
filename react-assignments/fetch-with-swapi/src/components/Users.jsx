@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import User from "./User";
 import FetchedResults from "./FetchedResults";
 
@@ -28,6 +30,9 @@ export default function Users() {
         .then((res) => res.json())
         .then((data) => {
           setHomeworldUrl(data.result.properties.homeworld);
+        })
+        .catch((err) => {
+          console.error("Get User Error: ", err);
         });
     }
   }, [isFetchingHomeworld, userUrl]);
@@ -38,14 +43,17 @@ export default function Users() {
         .then((res) => res.json())
         .then((data) => {
           setHomeworld(data.result.properties.name);
+        })
+        .catch((err) => {
+          console.error("Get Homeworld Error: ", err);
         });
     }
   }, [homeworldUrl]);
 
   return (
     <div className="users-container">
-      <h2>Users</h2>
-      {users && (
+      <h1>Star Wars</h1>
+      {users ? (
         <FetchedResults
           users={users}
           setCurrentUser={setCurrentUser}
@@ -54,16 +62,20 @@ export default function Users() {
           setHomeworld={setHomeworld}
           setIsFetchingHomeworld={setIsFetchingHomeworld}
         />
+      ) : (
+        <FontAwesomeIcon icon="fa-circle-notch" spin size="xl" />
       )}
-      {currentUser && (
-        <User
-          currentUser={currentUser}
-          homeworldUrl={homeworldUrl}
-          homeworld={homeworld}
-          isFetchingHomeworld={isFetchingHomeworld}
-          setIsFetchingHomeworld={setIsFetchingHomeworld}
-        />
-      )}
+      <div className="user-container">
+        {currentUser && (
+          <User
+            currentUser={currentUser}
+            homeworldUrl={homeworldUrl}
+            homeworld={homeworld}
+            isFetchingHomeworld={isFetchingHomeworld}
+            setIsFetchingHomeworld={setIsFetchingHomeworld}
+          />
+        )}
+      </div>
     </div>
   );
 }
