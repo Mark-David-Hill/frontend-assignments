@@ -9,7 +9,6 @@ export default function Users() {
   const [users, setUsers] = useState();
   const [currentUser, setCurrentUser] = useState();
   const [userUrl, setUserUrl] = useState();
-  const [homeworldUrl, setHomeworldUrl] = useState();
   const [homeworld, setHomeworld] = useState();
   const [isFetchingHomeworld, setIsFetchingHomeworld] = useState();
 
@@ -24,41 +23,15 @@ export default function Users() {
       });
   }, []);
 
-  useEffect(() => {
-    if (isFetchingHomeworld && userUrl) {
-      fetch(userUrl)
-        .then((res) => res.json())
-        .then((data) => {
-          setHomeworldUrl(data.result.properties.homeworld);
-        })
-        .catch((err) => {
-          console.error("Get User Error: ", err);
-        });
-    }
-  }, [isFetchingHomeworld, userUrl]);
-
-  useEffect(() => {
-    if (homeworldUrl) {
-      fetch(homeworldUrl)
-        .then((res) => res.json())
-        .then((data) => {
-          setHomeworld(data.result.properties.name);
-        })
-        .catch((err) => {
-          console.error("Get Homeworld Error: ", err);
-        });
-    }
-  }, [homeworldUrl]);
-
   return (
     <div className="users-container">
       <h1>Star Wars</h1>
       {users ? (
         <FetchedResults
           users={users}
-          setCurrentUser={setCurrentUser}
+          userUrl={userUrl}
           setUserUrl={setUserUrl}
-          setHomeworldUrl={setHomeworldUrl}
+          setCurrentUser={setCurrentUser}
           setHomeworld={setHomeworld}
           setIsFetchingHomeworld={setIsFetchingHomeworld}
         />
@@ -68,9 +41,10 @@ export default function Users() {
       <div className="user-container">
         {currentUser && (
           <User
+            userUrl={userUrl}
             currentUser={currentUser}
-            homeworldUrl={homeworldUrl}
             homeworld={homeworld}
+            setHomeworld={setHomeworld}
             isFetchingHomeworld={isFetchingHomeworld}
             setIsFetchingHomeworld={setIsFetchingHomeworld}
           />

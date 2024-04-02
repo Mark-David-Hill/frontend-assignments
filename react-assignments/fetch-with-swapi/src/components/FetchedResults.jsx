@@ -1,16 +1,23 @@
 export default function FetchedResults(props) {
+  const {
+    users,
+    setCurrentUser,
+    setUserUrl,
+    setHomeworld,
+    setIsFetchingHomeworld,
+  } = props;
+
   return (
     <div className="user-buttons-wrapper">
-      {props.users.map((character, index) => {
+      {users.map((character, index) => {
         return (
           <button
             key={index}
             onClick={() => {
-              props.setCurrentUser(character.name);
-              props.setUserUrl(character.url);
-              props.setHomeworldUrl(null);
-              props.setHomeworld(null);
-              props.setIsFetchingHomeworld(false);
+              setCurrentUser(character.name);
+              setUserUrl(character.url);
+              setHomeworld(null);
+              setIsFetchingHomeworld(false);
             }}
           >
             <h3>{character.name}</h3>
