@@ -1,11 +1,5 @@
 export default function FetchedResults(props) {
-  const {
-    users,
-    setCurrentUser,
-    setUserUrl,
-    setHomeworld,
-    setIsFetchingHomeworld,
-  } = props;
+  const { isLoading, users, setCurrentUser } = props;
 
   return (
     <div className="user-buttons-wrapper">
@@ -13,11 +7,9 @@ export default function FetchedResults(props) {
         return (
           <button
             key={index}
+            disabled={isLoading}
             onClick={() => {
-              setCurrentUser(character.name);
-              setUserUrl(character.url);
-              setHomeworld(null);
-              setIsFetchingHomeworld(false);
+              setCurrentUser(character);
             }}
           >
             <h3>{character.name}</h3>

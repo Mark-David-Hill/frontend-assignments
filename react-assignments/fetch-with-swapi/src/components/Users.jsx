@@ -2,17 +2,16 @@ import { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import User from "./User";
 import FetchedResults from "./FetchedResults";
+import User from "./User";
 
 export default function Users() {
-  const [users, setUsers] = useState();
-  const [currentUser, setCurrentUser] = useState();
-  const [userUrl, setUserUrl] = useState();
-  const [homeworld, setHomeworld] = useState();
-  const [isFetchingHomeworld, setIsFetchingHomeworld] = useState();
+  const [currentUser, setCurrentUser] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch("https://www.swapi.tech/api/people/")
       .then((res) => res.json())
       .then((data) => {
@@ -20,7 +19,8 @@ export default function Users() {
       })
       .catch((err) => {
         console.error("Get Users Error: ", err);
-      });
+      })
+      .finally(setIsLoading(false));
   }, []);
 
   return (
@@ -28,26 +28,22 @@ export default function Users() {
       <h1>Star Wars</h1>
       {users ? (
         <FetchedResults
+          isLoading={isLoading}
           users={users}
-          userUrl={userUrl}
-          setUserUrl={setUserUrl}
           setCurrentUser={setCurrentUser}
-          setHomeworld={setHomeworld}
-          setIsFetchingHomeworld={setIsFetchingHomeworld}
         />
       ) : (
         <FontAwesomeIcon icon="fa-circle-notch" spin size="xl" />
       )}
       <div className="user-container">
         {currentUser && (
-          <User
-            userUrl={userUrl}
-            currentUser={currentUser}
-            homeworld={homeworld}
-            setHomeworld={setHomeworld}
-            isFetchingHomeworld={isFetchingHomeworld}
-            setIsFetchingHomeworld={setIsFetchingHomeworld}
-          />
+          <div>
+            <User
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+              currentUser={currentUser}
+            />
+          </div>
         )}
       </div>
     </div>
